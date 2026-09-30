@@ -110,3 +110,32 @@ export interface HeroSlide {
   secondaryCtaLink?: string;
   categoryTag: string;
 }
+
+export interface BlogComment {
+  id: string;
+  name: string;
+  phone: string;
+  email: string;
+  comment: string;
+  createdAt: string;
+}
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  titleBn?: string;
+  excerpt: string;
+  excerptBn?: string;
+  content: string;
+  contentBn?: string;
+  category: string;
+  categorySlug: string;
+  author: string;
+  date: string;
+  viewsCount: number;
+  commentsCount: number;
+  image: string;
+  tags: string[];
+  comments: BlogComment[];
+}

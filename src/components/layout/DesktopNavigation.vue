@@ -38,7 +38,7 @@ const navItems = computed<NavItem[]>(() => [
   { key: 'shop', label: localeStore.t('nav.shop'), link: '/shop' },
   { key: 'allCategories', label: localeStore.t('nav.allCategories'), link: '/shop', isDropdown: true },
   { key: 'newArrivals', label: localeStore.t('nav.newArrivals'), link: '/shop?sortBy=newest', badge: 'NEW' },
-  { key: 'offers', label: localeStore.t('nav.offers'), link: '/offers', badge: 'HOT' },
+  { key: 'blog', label: localeStore.t('nav.blog'), link: '/blog' },
   { key: 'about', label: localeStore.t('nav.about'), link: '/about' },
   { key: 'contact', label: localeStore.t('nav.contact'), link: '/contact' }
 ]);

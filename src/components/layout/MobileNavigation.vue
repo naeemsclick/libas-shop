@@ -114,6 +114,7 @@ function close() {
 
               <li><router-link to="/shop?sortBy=newest" @click="close">{{ localeStore.t('nav.newArrivals') }}</router-link></li>
               <li><router-link to="/offers" @click="close">{{ localeStore.t('nav.offers') }}</router-link></li>
+              <li><router-link to="/blog" @click="close">{{ localeStore.t('nav.blog') }}</router-link></li>
               <li><router-link to="/about" @click="close">{{ localeStore.t('nav.about') }}</router-link></li>
               <li><router-link to="/contact" @click="close">{{ localeStore.t('nav.contact') }}</router-link></li>
             </ul>

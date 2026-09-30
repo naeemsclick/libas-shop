@@ -39,6 +39,7 @@ const localeStore = useLocaleStore();
             <li><router-link to="/shop">{{ localeStore.t('nav.shop') }}</router-link></li>
             <li><router-link to="/shop?sortBy=newest">{{ localeStore.t('nav.newArrivals') }}</router-link></li>
             <li><router-link to="/offers">{{ localeStore.t('nav.offers') }}</router-link></li>
+            <li><router-link to="/blog">{{ localeStore.t('nav.blog') }}</router-link></li>
             <li><router-link to="/about">{{ localeStore.t('nav.about') }}</router-link></li>
             <li><router-link to="/contact">{{ localeStore.t('nav.contact') }}</router-link></li>
           </ul>

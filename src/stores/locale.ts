@@ -44,6 +44,7 @@ const translations: Record<string, { bn: string; en: string }> = {
   'nav.offers': { bn: 'স্পেশাল অফার', en: 'SPECIAL OFFERS' },
   'nav.about': { bn: 'আমাদের সম্পর্কে', en: 'ABOUT US' },
   'nav.contact': { bn: 'যোগাযোগ', en: 'CONTACT' },
+  'nav.blog': { bn: 'ব্লগ ও খবর', en: 'BLOG' },
 
   // Header & Search
   'header.searchPlaceholder': {
