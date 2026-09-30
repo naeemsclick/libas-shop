@@ -220,8 +220,8 @@ useSeo({
   height: 460px;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: 0 16px 36px rgba(29, 42, 35, 0.12);
-  border: 2px solid rgba(190, 145, 52, 0.3);
+  box-shadow: 0 20px 48px rgba(29, 42, 35, 0.22), 0 0 28px rgba(190, 145, 52, 0.35);
+  border: 2.5px solid #BE9134;
 
   .boutique-img {
     width: 100%;

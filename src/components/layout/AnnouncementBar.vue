@@ -196,7 +196,7 @@ const tickerItems = computed(() => [
 
   .customer-care-link {
     font-weight: 700;
-    animation: phoneFlickerGold 2.8s ease-in-out infinite;
+    animation: phoneFlickerGold 6.0s ease-in-out infinite;
 
     .cc-icon {
       color: var(--color-accent);
@@ -204,11 +204,11 @@ const tickerItems = computed(() => [
   }
 
 @keyframes phoneFlickerGold {
-  0%, 100% {
+  0%, 40%, 100% {
     color: #FFFFFF;
     text-shadow: none;
   }
-  50% {
+  60%, 80% {
     color: #BE9134;
     text-shadow: 0 0 8px rgba(190, 145, 52, 0.45);
   }
