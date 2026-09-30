@@ -52,9 +52,42 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
   border-radius: var(--radius-xl);
   padding: 36px;
   box-shadow: 0 12px 32px rgba(29, 42, 35, 0.25);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 0%,
+      transparent 42%,
+      rgba(255, 255, 255, 0.08) 48%,
+      rgba(190, 145, 52, 0.3) 50%,
+      rgba(255, 255, 255, 0.08) 52%,
+      transparent 58%,
+      transparent 100%
+    );
+    transform: rotate(30deg);
+    animation: flashShineSwipe 4.8s infinite ease-in-out;
+    pointer-events: none;
+  }
 
   @media (max-width: 768px) {
     padding: 24px 16px;
+  }
+}
+
+@keyframes flashShineSwipe {
+  0% {
+    transform: translateX(-120%) rotate(30deg);
+  }
+  30%, 100% {
+    transform: translateX(120%) rotate(30deg);
   }
 }
 

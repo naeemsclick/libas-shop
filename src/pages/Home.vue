@@ -35,7 +35,7 @@ useSeo({
       badgeBn="ঈদ স্পেশাল"
       categorySlug="clothing"
       link="/category/clothing"
-      :filter-fn="p => p.name.toLowerCase().includes('eid') || p.name.includes('ঈদ') || p.categorySlug === 'clothing'"
+      :filter-fn="p => (p.name.toLowerCase().includes('jubba') || p.name.includes('জুব্বা') || p.name.toLowerCase().includes('panjabi')) && !p.name.toLowerCase().includes('hoodie')"
     />
 
     <!-- 2. NEW ARRIVALS -->
@@ -56,7 +56,7 @@ useSeo({
       badgeBn="প্রিমিয়াম জুব্বা"
       categorySlug="clothing"
       link="/category/clothing"
-      :filter-fn="p => p.name.toLowerCase().includes('jubba') || p.name.includes('জুব্বা') || p.categorySlug === 'clothing'"
+      :filter-fn="p => p.name.toLowerCase().includes('jubba') || p.name.includes('জুব্বা') || p.name.toLowerCase().includes('thobe')"
     />
 
     <!-- 4. WINTER COLLECTION -->
@@ -67,7 +67,7 @@ useSeo({
       badgeBn="শীতের পোশাক"
       categorySlug="clothing"
       link="/category/clothing"
-      :filter-fn="p => p.name.toLowerCase().includes('waistcoat') || p.name.toLowerCase().includes('koti') || p.name.toLowerCase().includes('winter')"
+      :filter-fn="p => p.name.toLowerCase().includes('hoodie') || p.name.toLowerCase().includes('koti') || p.name.toLowerCase().includes('waistcoat')"
     />
 
     <!-- 5. ATTAR & PERFUMES -->
@@ -101,7 +101,7 @@ useSeo({
       badgeBn="ক্যাজুয়াল টি-শার্ট"
       categorySlug="clothing"
       link="/category/clothing"
-      :filter-fn="p => p.name.toLowerCase().includes('t-shirt') || p.name.toLowerCase().includes('shirt') || p.categorySlug === 'clothing'"
+      :filter-fn="p => p.name.toLowerCase().includes('t-shirt') || p.name.toLowerCase().includes('tshirt')"
     />
 
     <!-- 9. SUNNAH ITEM -->

@@ -43,7 +43,7 @@ const { isScrolled, scrollToTop } = useScroll(300);
     color: var(--color-white);
     border-color: var(--color-accent-dark);
     transform: translateY(-4px) scale(1.08);
-    box-shadow: 0 10px 24px rgba(229, 139, 139, 0.45);
+    box-shadow: 0 10px 24px rgba(190, 145, 52, 0.55);
   }
 
   @media (max-width: 768px) {

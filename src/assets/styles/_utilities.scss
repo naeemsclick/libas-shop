@@ -96,6 +96,45 @@
     }
   }
 
+/* Shining Light Swipe Hover Effect */
+.btn-shine-effect, .slide-cta-btn, .add-cart-btn, .buy-now-btn, .whatsapp-order-btn {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -75%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.45) 50%,
+      transparent 100%
+    );
+    transform: rotate(25deg);
+    transition: none;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    animation: btnShineSwipe 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+@keyframes btnShineSwipe {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
   &--outline {
     background-color: transparent;
     border-color: var(--color-primary);

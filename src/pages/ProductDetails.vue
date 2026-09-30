@@ -214,7 +214,7 @@ function handleWhatsAppOrder() {
           <!-- Direct WhatsApp Order button -->
           <button type="button" class="whatsapp-order-btn" @click="handleWhatsAppOrder">
             <MessageCircle :size="18" />
-            <span>Order via WhatsApp (+88 01410 740 844)</span>
+            <span>Order via WhatsApp (+88 01717 000 414)</span>
           </button>
 
           <!-- Delivery Guarantee summary -->
@@ -498,19 +498,31 @@ function handleWhatsAppOrder() {
   }
 
   .option-chip {
-    padding: 8px 16px;
-    border: 1px solid var(--color-border);
+    padding: 8px 18px;
+    border: 1.5px solid var(--color-border);
     border-radius: var(--radius-md);
     background: white;
     font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--color-charcoal);
     cursor: pointer;
-    transition: var(--transition-fast);
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+
+    &:hover {
+      border-color: var(--color-accent);
+      color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(190, 145, 52, 0.2);
+    }
 
     &.active {
-      border-color: var(--color-primary);
-      background: var(--color-primary-subtle);
-      color: var(--color-primary-dark);
-      font-weight: 600;
+      border-color: var(--color-accent);
+      background: linear-gradient(135deg, #1D2A23 0%, #2C3F35 100%);
+      color: #FFFFFF;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(29, 42, 35, 0.25);
+      transform: scale(1.03);
     }
   }
 }

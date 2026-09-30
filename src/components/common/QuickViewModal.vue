@@ -342,18 +342,28 @@ function handleToggleWishlist() {
 
   .pill-btn {
     padding: 6px 14px;
-    border: 1px solid var(--color-border);
+    border: 1.5px solid var(--color-border);
     border-radius: var(--radius-sm);
     background: white;
     font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-charcoal);
     cursor: pointer;
-    transition: var(--transition-fast);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &:hover {
+      border-color: var(--color-accent);
+      color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(190, 145, 52, 0.18);
+    }
 
     &.active {
-      border-color: var(--color-primary);
-      background: var(--color-primary-subtle);
-      color: var(--color-primary-dark);
-      font-weight: 600;
+      border-color: var(--color-accent);
+      background: linear-gradient(135deg, #1D2A23 0%, #2C3F35 100%);
+      color: #FFFFFF;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(29, 42, 35, 0.25);
     }
   }
 }

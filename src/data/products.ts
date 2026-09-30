@@ -3181,5 +3181,59 @@ export const productsData: Product[] = [
       "LIBAS",
       "Original"
     ]
+  },
+  {
+    "id": "libas-7105",
+    "slug": "emirati-royal-thobe-jubba",
+    "name": "Emirati Royal Thobe | এমিরেটস রয়্যাল জুব্বা",
+    "category": "Clothing",
+    "categorySlug": "clothing",
+    "images": [
+      "https://libas.shop/wp-content/uploads/2026/02/Libas-Elite-Jubba-eid-Special-10.webp",
+      "https://libas.shop/wp-content/uploads/2026/02/Libas-Elite-Jubba-eid-Special-11.webp"
+    ],
+    "price": 2700,
+    "compareAtPrice": 3900,
+    "discount": 30,
+    "rating": 4.9,
+    "reviewsCount": 32,
+    "stock": 45,
+    "isNew": true,
+    "isFeatured": true,
+    "isBestSeller": true,
+    "isFlashSale": false,
+    "badge": "NEW",
+    "description": "Emirati Royal Thobe Jubba crafted from ultra-soft suiting cotton for royal comfort.",
+    "shortDescription": "Royal Emirati Thobe Jubba by LIBAS Shop.",
+    "sizes": ["50-20", "52-21", "54-22"],
+    "colors": ["White", "Beige", "Navy"],
+    "tags": ["Clothing", "Jubba", "LIBAS"]
+  },
+  {
+    "id": "libas-7106",
+    "slug": "classic-sultan-cotton-jubba",
+    "name": "Classic Sultan Jubba | সুলতান সুতি জুব্বা",
+    "category": "Clothing",
+    "categorySlug": "clothing",
+    "images": [
+      "https://libas.shop/wp-content/uploads/2026/02/Libas-Elite-Jubba-eid-Special-7.webp",
+      "https://libas.shop/wp-content/uploads/2026/02/Libas-Elite-Jubba-eid-Special-9.webp"
+    ],
+    "price": 2400,
+    "compareAtPrice": 3400,
+    "discount": 29,
+    "rating": 4.8,
+    "reviewsCount": 21,
+    "stock": 40,
+    "isNew": true,
+    "isFeatured": false,
+    "isBestSeller": true,
+    "isFlashSale": true,
+    "badge": "29% OFF",
+    "description": "Classic Sultan Cotton Jubba for everyday prayers & festive celebrations.",
+    "shortDescription": "Classic Sultan Cotton Jubba by LIBAS Shop.",
+    "sizes": ["50-20", "52-21", "54-22"],
+    "colors": ["White", "Ash", "Black"],
+    "tags": ["Clothing", "Jubba", "LIBAS"]
   }
 ];

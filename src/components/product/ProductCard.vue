@@ -230,7 +230,7 @@ function handleQuickView(e: Event) {
   bottom: 10px;
   left: 10px;
   right: 10px;
-  background: var(--color-primary);
+  background: var(--color-taupe);
   color: white;
   border: none;
   border-radius: var(--radius-sm);
@@ -341,6 +341,41 @@ function handleQuickView(e: Event) {
 .old-price {
   font-size: 0.82rem;
   color: var(--color-taupe);
-  text-decoration: line-through;
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: var(--color-error);
+    transform: translateY(-50%) scaleX(0);
+    transform-origin: left center;
+    animation: strikethroughExpand 0.55s 0.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
 }
-</style>
+
+@keyframes strikethroughExpand {
+  to {
+    transform: translateY(-50%) scaleX(1);
+  }
+}
+
+.badge--sale {
+  animation: badgeSlideInRight 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes badgeSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}</style>
