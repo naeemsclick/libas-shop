@@ -145,9 +145,11 @@ onMounted(() => {
 <style scoped lang="scss">
 .order-tracking-page {
   background: linear-gradient(180deg, #F9F7F2 0%, #F4F0E6 100%);
-  min-height: 100vh;
   position: relative;
   overflow: hidden;
+  padding-top: 32px;
+  padding-bottom: 24px !important;
+  min-height: auto !important;
 }
 
 .breadcrumb {

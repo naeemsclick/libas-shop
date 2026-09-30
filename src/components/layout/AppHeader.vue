@@ -143,7 +143,9 @@ onUnmounted(() => {
   position: sticky;
   top: 0;
   z-index: 950;
-  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
 
@@ -151,12 +153,14 @@ onUnmounted(() => {
   background: rgba(255, 255, 255, 0.65) !important;
   backdrop-filter: blur(20px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  box-shadow: 0 8px 32px rgba(29, 42, 35, 0.14) !important;
+  box-shadow: 0 8px 32px rgba(29, 42, 35, 0.15) !important;
   border-bottom: 1.5px solid rgba(190, 145, 52, 0.35) !important;
 }
 
 .main-header-row {
-  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 8px 0;
   border-bottom: 1px solid rgba(226, 232, 228, 0.8);
   transition: all 0.3s ease;
