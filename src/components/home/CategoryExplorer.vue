@@ -208,14 +208,24 @@ const categoriesList = computed<CategoryCircleItem[]>(() => [
   position: relative;
   border: 1.5px solid var(--color-accent);
 
-  &::after {
+  /* Soft rotating gold glowing halo behind shape */
+  &::before {
     content: '';
     position: absolute;
-    inset: -5px;
+    inset: -6px;
     border-radius: 50%;
-    border: 2.2px dotted #2D4035;
-    filter: drop-shadow(0 0 3px rgba(45, 64, 53, 0.65));
-    animation: rotateDottedCircle 9s linear infinite;
+    background: conic-gradient(
+      from 0deg,
+      rgba(190, 145, 52, 0.05) 0%,
+      rgba(190, 145, 52, 0.35) 30%,
+      rgba(247, 239, 207, 0.7) 50%,
+      rgba(190, 145, 52, 0.35) 70%,
+      rgba(190, 145, 52, 0.05) 100%
+    );
+    filter: blur(5px);
+    opacity: 0.65;
+    animation: rotateGoldHalo 9s linear infinite;
+    z-index: -1;
     pointer-events: none;
   }
 
@@ -223,14 +233,14 @@ const categoriesList = computed<CategoryCircleItem[]>(() => [
     width: 64px;
     height: 64px;
 
-    &::after {
-      inset: -4px;
-      border-width: 2px;
+    &::before {
+      inset: -5px;
+      filter: blur(4px);
     }
   }
 }
 
-@keyframes rotateDottedCircle {
+@keyframes rotateGoldHalo {
   0% {
     transform: rotate(0deg);
   }
