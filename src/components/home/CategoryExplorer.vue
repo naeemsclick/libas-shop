@@ -206,10 +206,36 @@ const categoriesList = computed<CategoryCircleItem[]>(() => [
   justify-content: center;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+  border: 1.5px solid var(--color-accent);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    border: 2.2px dotted #2D4035;
+    filter: drop-shadow(0 0 3px rgba(45, 64, 53, 0.65));
+    animation: rotateDottedCircle 9s linear infinite;
+    pointer-events: none;
+  }
 
   @media (max-width: 600px) {
     width: 64px;
     height: 64px;
+
+    &::after {
+      inset: -4px;
+      border-width: 2px;
+    }
+  }
+}
+
+@keyframes rotateDottedCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
