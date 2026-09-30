@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue';
 import { Phone, Mail, MessageCircle, MapPin, Send, CheckCircle, Clock, Sparkles } from 'lucide-vue-next';
+import FloatingSparkles from '@/components/common/FloatingSparkles.vue';
 import { useSeo } from '@/composables/useSeo';
 
 useSeo({
@@ -35,6 +36,7 @@ function handleSubmit() {
 
 <template>
   <div class="contact-page section-spacing">
+    <FloatingSparkles />
     <div class="container">
       <nav class="breadcrumb">
         <router-link to="/">Home</router-link>
@@ -157,6 +159,8 @@ function handleSubmit() {
 .contact-page {
   background: linear-gradient(180deg, #F9F7F2 0%, #F4F0E6 100%);
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .breadcrumb {

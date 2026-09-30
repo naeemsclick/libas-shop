@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Sparkles, ShieldCheck, Heart, Award, ArrowRight, Store } from 'lucide-vue-next';
+import FloatingSparkles from '@/components/common/FloatingSparkles.vue';
 import { useSeo } from '@/composables/useSeo';
 import boutiqueInterior from '@/assets/images/boutique_interior.jpg';
 
@@ -11,6 +12,7 @@ useSeo({
 
 <template>
   <div class="about-page section-spacing">
+    <FloatingSparkles />
     <div class="container">
       <nav class="breadcrumb">
         <router-link to="/">Home</router-link>
@@ -120,6 +122,8 @@ useSeo({
 .about-page {
   background: linear-gradient(180deg, #F9F7F2 0%, #F4F0E6 100%);
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .breadcrumb {

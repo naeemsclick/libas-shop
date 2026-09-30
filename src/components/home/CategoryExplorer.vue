@@ -206,7 +206,7 @@ const categoriesList = computed<CategoryCircleItem[]>(() => [
   justify-content: center;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
-  border: 1.5px solid var(--color-accent);
+  border: 3px solid #FFFFFF;
 
   @media (max-width: 600px) {
     width: 64px;
