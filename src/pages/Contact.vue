@@ -111,7 +111,7 @@ function handleSubmit() {
           <form v-else class="contact-form" @submit.prevent="handleSubmit">
             <div class="form-group">
               <label>Your Name *</label>
-              <input v-model="form.name" type="text" placeholder="e.g. Tanvir Hossain" required />
+              <input v-model="form.name" type="text" placeholder="Naeem Nahiyan" required />
             </div>
 
             <div class="form-row">

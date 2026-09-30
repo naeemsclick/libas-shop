@@ -117,36 +117,17 @@ async function handleSubmitOrder() {
               <textarea v-model="form.address" rows="3" placeholder="House no, Road no, Apartment, Area details..." required></textarea>
             </div>
 
-            <div class="form-row">
-              <div class="form-group">
-                <label>City *</label>
-                <select v-model="form.city">
-                  <option value="Dhaka">Dhaka</option>
-                  <option value="Chattogram">Chattogram</option>
-                  <option value="Sylhet">Sylhet</option>
-                  <option value="Rajshahi">Rajshahi</option>
-                  <option value="Khulna">Khulna</option>
-                  <option value="Other">Other District</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label>Area / Thana *</label>
-                <input v-model="form.area" type="text" placeholder="e.g. Dhanmondi / Gulshan" required />
-              </div>
-            </div>
-
             <!-- Delivery Zone Selector -->
             <div class="form-group shipping-option-group">
               <label>Delivery Zone *</label>
               <div class="zone-options">
                 <label :class="['zone-card', { active: cartStore.selectedArea === 'inside' }]">
                   <input type="radio" v-model="cartStore.selectedArea" value="inside" />
-                  <span>Inside Dhaka (৳60)</span>
+                  <span>Inside Dhaka (৳80)</span>
                 </label>
                 <label :class="['zone-card', { active: cartStore.selectedArea === 'outside' }]">
                   <input type="radio" v-model="cartStore.selectedArea" value="outside" />
-                  <span>Outside Dhaka (৳120)</span>
+                  <span>Outside Dhaka (৳130)</span>
                 </label>
               </div>
             </div>

@@ -59,13 +59,13 @@ onMounted(() => {
     <div class="container">
       <div class="tracking-card">
         <h1 class="page-title text-center">Track Your Order</h1>
-        <p class="subtitle text-center">Enter your Order ID (e.g. RM-123456) to check current delivery status.</p>
+        <p class="subtitle text-center">Enter your Order ID (e.g. LIB-849201) or Mobile Number (e.g. 01717000414) to check status.</p>
 
         <form class="tracking-form" @submit.prevent="handleTrackOrder">
           <input
             v-model="orderIdInput"
             type="text"
-            placeholder="Enter Order ID (RM-123456)..."
+            placeholder="Enter Order ID or Mobile Number..."
             required
             class="tracking-input"
           />

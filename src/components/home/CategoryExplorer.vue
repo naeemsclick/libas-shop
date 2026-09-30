@@ -26,9 +26,9 @@ const categoriesList = computed<CategoryCircleItem[]>(() => [
     nameBn: 'পোশাক',
     link: '/category/clothing',
     lucideIcon: Shirt,
-    bgTint: '#EEF6F3',
-    borderColor: '#3D8866',
-    glowColor: 'rgba(61, 136, 102, 0.2)'
+    bgTint: '#FAF5EA',
+    borderColor: '#BE9134',
+    glowColor: 'rgba(190, 145, 52, 0.25)'
   },
   {
     id: 'womens-collection',
@@ -37,9 +37,9 @@ const categoriesList = computed<CategoryCircleItem[]>(() => [
     link: '/category/womens-collection',
     isCustomIcon: true,
     iconName: 'womens-collection',
-    bgTint: '#FDF2F4',
-    borderColor: '#EE6D75',
-    glowColor: 'rgba(238, 109, 117, 0.2)'
+    bgTint: '#FAF5EA',
+    borderColor: '#BE9134',
+    glowColor: 'rgba(190, 145, 52, 0.25)'
   },
   {
     id: 'perfume',
@@ -47,9 +47,9 @@ const categoriesList = computed<CategoryCircleItem[]>(() => [
     nameBn: 'পারফিউম ও আতর',
     link: '/category/perfume',
     lucideIcon: Sparkles,
-    bgTint: '#F5F0FF',
-    borderColor: '#9B51E0',
-    glowColor: 'rgba(155, 81, 224, 0.2)'
+    bgTint: '#FAF5EA',
+    borderColor: '#BE9134',
+    glowColor: 'rgba(190, 145, 52, 0.25)'
   },
   {
     id: 'watch',
@@ -57,9 +57,9 @@ const categoriesList = computed<CategoryCircleItem[]>(() => [
     nameBn: 'ঘড়ি',
     link: '/category/watch',
     lucideIcon: Watch,
-    bgTint: '#F0F6FF',
-    borderColor: '#2F80ED',
-    glowColor: 'rgba(47, 128, 237, 0.2)'
+    bgTint: '#FAF5EA',
+    borderColor: '#BE9134',
+    glowColor: 'rgba(190, 145, 52, 0.25)'
   },
   {
     id: 'shoes',
@@ -67,9 +67,9 @@ const categoriesList = computed<CategoryCircleItem[]>(() => [
     nameBn: 'জুতা',
     link: '/category/shoes',
     lucideIcon: Footprints,
-    bgTint: '#FFF8EC',
-    borderColor: '#F2994A',
-    glowColor: 'rgba(242, 153, 74, 0.2)'
+    bgTint: '#FAF5EA',
+    borderColor: '#BE9134',
+    glowColor: 'rgba(190, 145, 52, 0.25)'
   },
   {
     id: 'sunnah',
@@ -78,9 +78,9 @@ const categoriesList = computed<CategoryCircleItem[]>(() => [
     link: '/category/sunnah',
     isCustomIcon: true,
     iconName: 'sunnah',
-    bgTint: '#EFF9F2',
-    borderColor: '#27AE60',
-    glowColor: 'rgba(39, 174, 96, 0.2)'
+    bgTint: '#FAF5EA',
+    borderColor: '#BE9134',
+    glowColor: 'rgba(190, 145, 52, 0.25)'
   },
   {
     id: 'view-all',
@@ -88,7 +88,7 @@ const categoriesList = computed<CategoryCircleItem[]>(() => [
     nameBn: 'সব দেখুন',
     link: '/shop',
     lucideIcon: LayoutGrid,
-    bgTint: '#F7F7F7',
+    bgTint: '#FAF5EA',
     borderColor: '#BE9134',
     glowColor: 'rgba(190, 145, 52, 0.25)'
   }

@@ -16,9 +16,9 @@ export async function createOrder(orderPayload: Partial<Order>): Promise<Order> 
       email: orderPayload.email,
       address: orderPayload.address || 'Dhaka',
       city: orderPayload.city || 'Dhaka',
-      area: orderPayload.area || 'Dhanmondi',
+      area: orderPayload.area || 'Dhaka',
       items: orderPayload.items || [],
-      shippingFee: orderPayload.shippingFee || 60,
+      shippingFee: orderPayload.shippingFee || 80,
       subtotal: orderPayload.subtotal || 0,
       discount: orderPayload.discount || 0,
       totalAmount: orderPayload.totalAmount || 0,
@@ -37,28 +37,33 @@ export async function createOrder(orderPayload: Partial<Order>): Promise<Order> 
   }
 }
 
-export async function getOrderById(orderId: string): Promise<Order | null> {
+export async function getOrderById(query: string): Promise<Order | null> {
+  const cleanQuery = query.trim().toLowerCase();
+  if (!cleanQuery) return null;
+
   try {
-    return await apiFetch<Order>(`/orders/${orderId}`);
+    return await apiFetch<Order>(`/orders/${cleanQuery}`);
   } catch {
     const existingOrders: Order[] = JSON.parse(localStorage.getItem('libas_orders') || localStorage.getItem('rowha_orders') || '[]');
-    const found = existingOrders.find((o) => o.id.toLowerCase() === orderId.toLowerCase());
+    const found = existingOrders.find(
+      (o) => o.id.toLowerCase() === cleanQuery || o.phone.replace(/[^0-9]/g, '').includes(cleanQuery.replace(/[^0-9]/g, ''))
+    );
     if (found) return found;
 
-    // Default fallback demo order if requested order ID matches demo format
-    if (orderId.toLowerCase().startsWith('lib-') || orderId.toLowerCase().startsWith('rm-')) {
+    // Default fallback demo order if requested order ID or phone matches format
+    if (cleanQuery.startsWith('lib-') || cleanQuery.startsWith('rm-') || cleanQuery.length >= 11 || cleanQuery.includes('017')) {
       return {
-        id: orderId.toUpperCase(),
-        customerName: 'Demo Customer',
-        phone: '+8801717000414',
-        address: 'House 12, Road 4, Dhanmondi',
+        id: cleanQuery.toUpperCase().startsWith('LIB-') ? cleanQuery.toUpperCase() : 'LIB-849201',
+        customerName: 'Naeem Nahiyan',
+        phone: cleanQuery.length >= 10 ? cleanQuery : '01717000414',
+        address: 'Dhaka, Bangladesh',
         city: 'Dhaka',
-        area: 'Dhanmondi',
+        area: 'Inside Dhaka',
         items: [],
-        shippingFee: 60,
+        shippingFee: 80,
         subtotal: 2450,
         discount: 0,
-        totalAmount: 2510,
+        totalAmount: 2530,
         paymentMethod: 'Cash on Delivery',
         status: 'shipped',
         createdAt: new Date(Date.now() - 86400000 * 2).toISOString(),

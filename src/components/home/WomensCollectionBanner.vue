@@ -1,8 +1,18 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import { ArrowRight, Sparkles } from 'lucide-vue-next';
+import ProductGrid from '@/components/product/ProductGrid.vue';
+import { useProductStore } from '@/stores/product';
 import { useLocaleStore } from '@/stores/locale';
 
 const localeStore = useLocaleStore();
+const productStore = useProductStore();
+
+const womensProducts = computed(() => {
+  const items = productStore.getProductsByCategory('womens-collection');
+  if (items.length > 0) return items.slice(0, 4);
+  return productStore.products.slice(0, 4);
+});
 </script>
 
 <template>
@@ -50,6 +60,11 @@ const localeStore = useLocaleStore();
             </span>
           </div>
         </router-link>
+      </div>
+
+      <!-- 4 Category Products Grid below banner -->
+      <div class="womens-products-wrapper">
+        <ProductGrid :products="womensProducts" :columns="4" />
       </div>
     </div>
   </section>
@@ -129,6 +144,7 @@ const localeStore = useLocaleStore();
   overflow: hidden;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--color-border);
+  margin-bottom: 28px;
 }
 
 .banner-link {
@@ -268,5 +284,9 @@ const localeStore = useLocaleStore();
     padding: 6px 14px;
     font-size: 0.75rem;
   }
+}
+
+.womens-products-wrapper {
+  margin-top: 10px;
 }
 </style>

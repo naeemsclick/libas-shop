@@ -5,7 +5,7 @@ import ProductGrid from '@/components/product/ProductGrid.vue';
 import { useProductStore } from '@/stores/product';
 
 const productStore = useProductStore();
-const bestSellers = computed(() => productStore.bestSellers.slice(0, 8));
+const bestSellers = computed(() => productStore.bestSellers.slice(0, 4));
 </script>
 
 <template>

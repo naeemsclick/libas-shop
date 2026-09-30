@@ -8,8 +8,8 @@ export const useCartStore = defineStore('cart', () => {
   const discountPercent = ref<number>(0);
   const selectedArea = ref<'inside' | 'outside'>('inside');
 
-  const insideDhakaShipping = 60;
-  const outsideDhakaShipping = 120;
+  const insideDhakaShipping = 80;
+  const outsideDhakaShipping = 130;
 
   const itemCount = computed(() => {
     return items.value.reduce((total, item) => total + item.quantity, 0);
