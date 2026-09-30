@@ -56,6 +56,11 @@ export async function onRequest(context) {
   }
 
   const rewriter = new HTMLRewriter()
+    .on('meta[property="fb:app_id"]', {
+      element(el) {
+        el.setAttribute('content', '966498565353724');
+      }
+    })
     .on('title', {
       element(el) {
         el.setInnerContent(pageTitle);
