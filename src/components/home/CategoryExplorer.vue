@@ -46,7 +46,8 @@ const categoriesList = computed<CategoryCircleItem[]>(() => [
     name: 'Perfume',
     nameBn: 'পারফিউম ও আতর',
     link: '/category/perfume',
-    lucideIcon: Sparkles,
+    isCustomIcon: true,
+    iconName: 'perfume',
     bgTint: '#FAF5EA',
     borderColor: '#BE9134',
     glowColor: 'rgba(190, 145, 52, 0.25)'

@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
-import { ChevronDown, ChevronRight, Shirt, ShoppingBag, Sparkles, Watch, Footprints, Bookmark } from 'lucide-vue-next';
+import { ChevronDown, ChevronRight, Shirt, Watch, Footprints, Bookmark } from 'lucide-vue-next';
+import CategoryIcons from '@/components/common/CategoryIcons.vue';
 import { useLocaleStore } from '@/stores/locale';
 
 const route = useRoute();
@@ -18,7 +19,9 @@ export interface SubMenuItem {
   key: string;
   label: string;
   link: string;
-  icon: any;
+  icon?: any;
+  isCustomIcon?: boolean;
+  iconName?: string;
   subCategories?: SubCategoryItem[];
 }
 
@@ -47,7 +50,8 @@ const categorySubMenu = computed<SubMenuItem[]>(() => [
     key: 'womensCollection',
     label: localeStore.t('nav.womensCollection'),
     link: '/category/womens-collection',
-    icon: ShoppingBag,
+    isCustomIcon: true,
+    iconName: 'womens-collection',
     subCategories: [
       { label: 'Dubai Cherry Abaya', link: '/category/womens-collection' },
       { label: 'Borka & Hijab Set', link: '/category/womens-collection' },
@@ -58,7 +62,8 @@ const categorySubMenu = computed<SubMenuItem[]>(() => [
     key: 'perfume',
     label: localeStore.t('nav.perfume'),
     link: '/category/perfume',
-    icon: Sparkles,
+    isCustomIcon: true,
+    iconName: 'perfume',
     subCategories: [
       { label: 'Alcohol-Free Attar', link: '/category/perfume' },
       { label: 'Organic Cambodian Oud', link: '/category/perfume' },
@@ -158,7 +163,8 @@ function isCategoryActive(): boolean {
               <li v-for="sub in categorySubMenu" :key="sub.key" class="dropdown-item-wrapper">
                 <router-link :to="sub.link" class="dropdown-item" @click="isCategoryDropdownOpen = false">
                   <div class="item-icon-wrapper">
-                    <component :is="sub.icon" :size="16" />
+                    <CategoryIcons v-if="sub.isCustomIcon" :name="sub.iconName!" :size="16" />
+                    <component v-else :is="sub.icon" :size="16" />
                   </div>
                   <span class="item-label">{{ sub.label }}</span>
                   <ChevronRight v-if="sub.subCategories?.length" :size="14" class="sub-arrow" />

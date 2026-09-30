@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { Sparkles, ShieldCheck, Heart, Award, ArrowRight, Store } from 'lucide-vue-next';
-import FloatingSparkles from '@/components/common/FloatingSparkles.vue';
 import { useSeo } from '@/composables/useSeo';
 import boutiqueInterior from '@/assets/images/boutique_interior.jpg';
 
@@ -12,7 +11,6 @@ useSeo({
 
 <template>
   <div class="about-page section-spacing">
-    <FloatingSparkles />
     <div class="container">
       <nav class="breadcrumb">
         <router-link to="/">Home</router-link>
@@ -37,12 +35,12 @@ useSeo({
         <div class="image-box glass-image-container">
           <img
             :src="boutiqueInterior"
-            alt="LIBAS Shop Luxury Islamic Boutique Store Interior"
+            alt="LIBAS Shop Showroom Interior"
             class="boutique-img"
           />
           <div class="image-glass-badge">
             <Store :size="16" />
-            <span>LIBAS Flagship Boutique Interior</span>
+            <span>LIBAS Shop Showroom Interior</span>
           </div>
         </div>
 

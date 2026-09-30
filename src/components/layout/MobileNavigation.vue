@@ -87,7 +87,7 @@ function close() {
                   </li>
                   <li>
                     <router-link to="/category/perfume" @click="close">
-                      <Sparkles :size="15" class="sub-link-icon" />
+                      <CategoryIcons name="perfume" :size="15" class="sub-link-icon" />
                       <span>{{ localeStore.t('nav.perfume') }}</span>
                     </router-link>
                   </li>
