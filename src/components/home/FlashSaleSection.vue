@@ -47,7 +47,7 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
 }
 
 .flash-banner-card {
-  background: linear-gradient(135deg, #3A5646 0%, #273A2F 100%);
+  background: linear-gradient(135deg, #24362B 0%, #17241C 100%);
   border: 3.5px solid var(--color-accent);
   border-radius: var(--radius-xl);
   padding: 36px;
@@ -73,7 +73,7 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
       transparent 100%
     );
     transform: rotate(30deg);
-    animation: flashShineSwipe 2.0s infinite cubic-bezier(0.2, 1, 0.4, 1);
+    animation: flashShineSwipe 5.0s infinite ease-in-out;
     pointer-events: none;
   }
 
@@ -86,7 +86,7 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
   0% {
     transform: translateX(-130%) rotate(30deg);
   }
-  75% {
+  65% {
     transform: translateX(130%) rotate(30deg);
   }
   100% {
