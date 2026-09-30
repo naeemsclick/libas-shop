@@ -1,15 +1,17 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
-import { Menu, ShoppingBag, User, Search, X } from 'lucide-vue-next';
+import { Menu, ShoppingBag, User, Search, X, Heart } from 'lucide-vue-next';
 import AnnouncementBar from './AnnouncementBar.vue';
 import SearchBar from './SearchBar.vue';
 import DesktopNavigation from './DesktopNavigation.vue';
 import MobileNavigation from './MobileNavigation.vue';
 import { useCartStore } from '@/stores/cart';
+import { useWishlistStore } from '@/stores/wishlist';
 import { useUiStore } from '@/stores/ui';
 import { useLocaleStore } from '@/stores/locale';
 
 const cartStore = useCartStore();
+const wishlistStore = useWishlistStore();
 const uiStore = useUiStore();
 const localeStore = useLocaleStore();
 
@@ -82,6 +84,16 @@ onUnmounted(() => {
           <!-- Account Icon Button -->
           <router-link to="/account" class="action-icon-btn account-link" title="My Account">
             <User :size="22" />
+          </router-link>
+
+          <!-- Wishlist Icon Button -->
+          <router-link to="/wishlist" class="action-icon-btn wishlist-link-btn" title="View Wishlist">
+            <div class="icon-badge-wrapper">
+              <Heart :size="22" />
+              <span v-if="wishlistStore.count > 0" class="action-badge action-badge--wishlist">
+                {{ wishlistStore.count }}
+              </span>
+            </div>
           </router-link>
 
           <!-- Cart Icon Button -->

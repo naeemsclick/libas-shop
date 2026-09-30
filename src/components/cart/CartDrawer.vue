@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
-import { X, ShoppingBag, ArrowRight, Tag } from 'lucide-vue-next';
+import { X, ShoppingBag, ArrowRight, Tag, Plus, Sparkles } from 'lucide-vue-next';
 import { useUiStore } from '@/stores/ui';
 import { useCartStore } from '@/stores/cart';
+import { useProductStore } from '@/stores/product';
 import { useLocaleStore } from '@/stores/locale';
 import CartItem from './CartItem.vue';
 import EmptyState from '@/components/common/EmptyState.vue';
@@ -12,10 +13,18 @@ import { formatPrice } from '@/utils/formatters';
 const router = useRouter();
 const uiStore = useUiStore();
 const cartStore = useCartStore();
+const productStore = useProductStore();
 const localeStore = useLocaleStore();
 
 const couponInput = ref('');
 const couponMsg = ref<{ success: boolean; text: string } | null>(null);
+
+const suggestedProducts = computed(() => {
+  const cartIds = cartStore.items.map(i => i.product.id);
+  return productStore.products
+    .filter(p => !cartIds.includes(p.id))
+    .slice(0, 3);
+});
 
 function close() {
   uiStore.closeCartDrawer();
@@ -125,6 +134,32 @@ function goToCart() {
             <button type="button" class="btn btn--ghost btn--sm w-full" @click="goToCart">
               {{ localeStore.isBangla ? 'সম্পূর্ণ কার্ট পেজ দেখুন' : 'View Full Cart Page' }}
             </button>
+          </div>
+
+          <!-- Suggested Products Section (Cross-Selling 3 Items) -->
+          <div v-if="suggestedProducts.length > 0" class="drawer-suggested-section">
+            <h4 class="suggested-title">
+              <Sparkles :size="13" class="title-icon" />
+              <span>{{ localeStore.isBangla ? 'আপনার জন্য প্রস্তাবিত (Suggested)' : 'You May Also Like' }}</span>
+            </h4>
+            <div class="suggested-list">
+              <div v-for="item in suggestedProducts" :key="item.id" class="suggested-card">
+                <img :src="item.images[0]" :alt="item.name" class="suggested-thumb" />
+                <div class="suggested-info">
+                  <span class="item-name" :title="item.name">{{ item.name }}</span>
+                  <span class="item-price">{{ formatPrice(item.price) }}</span>
+                </div>
+                <button
+                  type="button"
+                  class="suggested-add-btn"
+                  title="Add to Cart"
+                  @click="cartStore.addItem(item, 1)"
+                >
+                  <Plus :size="13" />
+                  <span>{{ localeStore.isBangla ? 'যোগ' : 'Add' }}</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -300,6 +335,101 @@ function goToCart() {
 
   .w-full {
     width: 100%;
+  }
+}
+
+.drawer-suggested-section {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--color-border);
+}
+
+.suggested-title {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 8px;
+
+  .title-icon {
+    color: var(--color-accent);
+  }
+}
+
+.suggested-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.suggested-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 8px;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: var(--transition-fast);
+
+  &:hover {
+    border-color: var(--color-accent);
+    background: #FFFFFF;
+  }
+}
+
+.suggested-thumb {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.suggested-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.item-name {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-price {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.suggested-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  flex-shrink: 0;
+
+  &:hover {
+    background: var(--color-accent);
+    transform: scale(1.05);
   }
 }
 
