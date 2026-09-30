@@ -110,7 +110,7 @@ function handleQuickView(e: Event) {
 
       <div class="rating-row">
         <div class="stars">
-          <Star v-for="i in 5" :key="i" :size="12" class="star-icon" fill="#F4A261" />
+          <Star v-for="i in 5" :key="i" :size="12" class="star-icon" fill="#BE9134" />
         </div>
         <span class="rating-text">({{ product.reviewsCount }})</span>
       </div>

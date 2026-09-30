@@ -32,7 +32,7 @@ const translations: Record<string, { bn: string; en: string }> = {
 
   // Navigation
   'nav.home': { bn: 'হোম', en: 'HOME' },
-  'nav.shop': { bn: 'সব পণ্য', en: 'SHOP ALL' },
+  'nav.shop': { bn: 'সকল প্রোডাক্ট', en: 'ALL PRODUCTS' },
   'nav.allCategories': { bn: 'সকল ক্যাটাগরি', en: 'ALL CATEGORY' },
   'nav.clothing': { bn: 'পোশাক', en: 'CLOTHING' },
   'nav.womensCollection': { bn: 'উইমেনস কালেকশন', en: "WOMEN'S COLLECTION" },

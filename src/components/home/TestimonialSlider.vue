@@ -35,7 +35,7 @@ const modules = [Autoplay, Pagination];
             <Quote :size="36" class="quote-icon" />
             
             <div class="stars">
-              <Star v-for="i in t.rating" :key="i" :size="16" fill="#F4A261" class="star" />
+              <Star v-for="i in t.rating" :key="i" :size="16" fill="#BE9134" class="star" />
             </div>
 
             <p class="comment">“{{ t.comment }}”</p>
@@ -125,7 +125,7 @@ const modules = [Autoplay, Pagination];
   display: flex;
   gap: 3px;
   margin-bottom: 14px;
-  color: #F4A261;
+  color: #BE9134;
 }
 
 .comment {

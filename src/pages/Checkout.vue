@@ -98,7 +98,7 @@ async function handleSubmitOrder() {
           <form class="checkout-form" @submit.prevent="handleSubmitOrder">
             <div class="form-group">
               <label>Full Name *</label>
-              <input v-model="form.fullName" type="text" placeholder="e.g. Nusrat Jahan" required />
+              <input v-model="form.fullName" type="text" placeholder="Hasib R Rahman" required />
             </div>
 
             <div class="form-row">

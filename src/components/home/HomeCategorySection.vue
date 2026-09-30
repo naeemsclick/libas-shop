@@ -27,10 +27,9 @@ const filteredProducts = computed(() => {
     list = productStore.getProductsByCategory(props.categorySlug);
   }
   
-  if (list.length < 4) {
-    // Fill up to 4 if category list is smaller
-    const remainder = productStore.products.filter(p => !list.includes(p));
-    list = [...list, ...remainder];
+  if (list.length < 4 && props.categorySlug) {
+    const sameCat = productStore.getProductsByCategory(props.categorySlug).filter(p => !list.includes(p));
+    list = [...list, ...sameCat];
   }
   
   return list.slice(0, 4);

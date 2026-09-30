@@ -47,11 +47,11 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
 }
 
 .flash-banner-card {
-  background: linear-gradient(135deg, #FAF4EF 0%, #F5EAE1 100%);
-  border: 1.5px solid var(--color-beige);
+  background: linear-gradient(135deg, #1D2A23 0%, #141E19 100%);
+  border: 1.5px solid var(--color-accent);
   border-radius: var(--radius-xl);
   padding: 36px;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 12px 32px rgba(29, 42, 35, 0.25);
 
   @media (max-width: 768px) {
     padding: 24px 16px;
@@ -82,7 +82,7 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
   align-items: center;
   gap: 6px;
   background: var(--color-accent);
-  color: white;
+  color: #FFFFFF;
   padding: 4px 12px;
   border-radius: var(--radius-full);
   font-size: 0.75rem;
@@ -93,7 +93,7 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
 
 .section-title {
   font-size: 1.9rem;
-  color: var(--color-charcoal);
+  color: #FFFFFF;
 
   @media (max-width: 768px) {
     font-size: 1.5rem;
@@ -108,11 +108,11 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
   .timer-label {
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--color-taupe);
+    color: #ECEFEA;
   }
 }
 
 .flash-cta {
-  box-shadow: 0 6px 18px rgba(229, 139, 139, 0.3);
+  box-shadow: 0 6px 18px rgba(190, 145, 52, 0.35);
 }
 </style>

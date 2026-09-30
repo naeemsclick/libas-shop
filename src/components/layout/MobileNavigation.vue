@@ -113,7 +113,12 @@ function close() {
               </li>
 
               <li><router-link to="/shop?sortBy=newest" @click="close">{{ localeStore.t('nav.newArrivals') }}</router-link></li>
-              <li><router-link to="/offers" @click="close">{{ localeStore.t('nav.offers') }}</router-link></li>
+              <li>
+                <router-link to="/offers" @click="close" class="mobile-badge-link">
+                  <span>{{ localeStore.t('nav.offers') }}</span>
+                  <span class="mobile-nav-badge badge-hot">HOT</span>
+                </router-link>
+              </li>
               <li><router-link to="/blog" @click="close">{{ localeStore.t('nav.blog') }}</router-link></li>
               <li><router-link to="/about" @click="close">{{ localeStore.t('nav.about') }}</router-link></li>
               <li><router-link to="/contact" @click="close">{{ localeStore.t('nav.contact') }}</router-link></li>
@@ -610,6 +615,40 @@ function close() {
         color: var(--color-accent);
       }
     }
+  }
+}
+
+.mobile-badge-link {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-nav-badge {
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-transform: uppercase;
+  animation: badgePulseBlink 1.6s infinite cubic-bezier(0.4, 0, 0.6, 1);
+
+  &.badge-hot {
+    background: linear-gradient(135deg, #BE9134 0%, #A37928 100%);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(190, 145, 52, 0.5);
+  }
+}
+
+@keyframes badgePulseBlink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.12);
   }
 }
 
