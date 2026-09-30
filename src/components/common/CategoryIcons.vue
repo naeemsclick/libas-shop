@@ -64,7 +64,7 @@ withDefaults(defineProps<Props>(), {
     <path d="M16 6l2 1"/>
   </svg>
 
-  <!-- Custom Women's Dress / Abaya Icon for Women's Collection -->
+  <!-- Custom Women's Collection Elegant Dress / Abaya Icon -->
   <svg
     v-else-if="name === 'womensCloth' || name === 'womens-collection' || name === 'womens'"
     xmlns="http://www.w3.org/2000/svg"
@@ -73,14 +73,13 @@ withDefaults(defineProps<Props>(), {
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="1.8"
+    stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"
     :class="customClass"
   >
-    <path d="M9 3h6l1.5 4h-9z"/>
-    <path d="M7.5 7l-2.5 14h14l-2.5-14"/>
-    <path d="M12 7v14"/>
-    <path d="M9.5 11c1.5 1 3.5 1 5 0"/>
+    <path d="M12 2a2.5 2.5 0 0 0-2.5 2.5V6L5 9l2 13h10l2-13-4.5-3V4.5A2.5 2.5 0 0 0 12 2z"/>
+    <path d="M9.5 9l2.5 2.5 2.5-2.5"/>
+    <path d="M12 11.5V22"/>
   </svg>
 </template>

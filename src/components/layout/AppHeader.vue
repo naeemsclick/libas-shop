@@ -136,18 +136,19 @@ onUnmounted(() => {
   position: sticky;
   top: 0;
   z-index: 950;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 20px rgba(29, 42, 35, 0.08);
+  border-bottom: 1px solid rgba(190, 145, 52, 0.18);
 }
 
 .main-header-row {
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   padding: 8px 0;
-  border-bottom: 1px solid rgba(226, 232, 228, 0.8);
+  border-bottom: 1px solid rgba(190, 145, 52, 0.15);
   transition: var(--transition-normal);
 }
 

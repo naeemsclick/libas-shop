@@ -64,10 +64,13 @@ onMounted(() => {
       </nav>
 
       <div class="tracking-card glass-card">
-        <div class="header-badge text-center">
-          <Sparkles :size="14" />
-          <span>REAL-TIME TRACKING SYSTEM</span>
+        <div class="header-badge-wrapper">
+          <div class="header-badge">
+            <Sparkles :size="14" />
+            <span>REAL-TIME TRACKING SYSTEM</span>
+          </div>
         </div>
+        
         <h1 class="page-title text-center">Track Your Order</h1>
         <p class="subtitle text-center">Enter your Order ID (e.g. LIB-849201) or Mobile Number (e.g. 01717000414) to check status.</p>
 
@@ -90,7 +93,7 @@ onMounted(() => {
         <!-- Tracking Timeline Result -->
         <div v-if="searchedOrder" class="tracking-results">
           <div class="result-header glass-header-inner">
-            <div>
+            <div class="result-info">
               <span class="order-label">Order Details</span>
               <h3 class="order-id-title">{{ searchedOrder.id }}</h3>
               <span class="order-date">Placed on {{ formatDate(searchedOrder.createdAt) }}</span>
@@ -127,9 +130,11 @@ onMounted(() => {
               <ShieldCheck :size="18" class="shield-gold" />
               <h4>Delivery & Order Summary</h4>
             </div>
-            <p class="customer-info"><strong>Recipient:</strong> {{ searchedOrder.customerName }} ({{ searchedOrder.phone }})</p>
-            <p class="address-info"><strong>Address:</strong> {{ searchedOrder.address }}, {{ searchedOrder.area }}, {{ searchedOrder.city }}</p>
-            <p class="amount">Total Amount: <strong>{{ formatPrice(searchedOrder.totalAmount) }}</strong> (Payment: {{ searchedOrder.paymentMethod }})</p>
+            <div class="summary-details">
+              <p class="customer-info"><strong>Recipient:</strong> {{ searchedOrder.customerName }} ({{ searchedOrder.phone }})</p>
+              <p class="address-info"><strong>Address:</strong> {{ searchedOrder.address }}, {{ searchedOrder.area }}, {{ searchedOrder.city }}</p>
+              <p class="amount">Total Amount: <strong>{{ formatPrice(searchedOrder.totalAmount) }}</strong> (Payment: {{ searchedOrder.paymentMethod }})</p>
+            </div>
           </div>
         </div>
       </div>
@@ -160,7 +165,7 @@ onMounted(() => {
 .text-center { text-align: center; }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-radius: var(--radius-xl);
@@ -171,6 +176,12 @@ onMounted(() => {
   margin: 0 auto;
 
   @media (max-width: 768px) { padding: 28px 18px; }
+}
+
+.header-badge-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
 }
 
 .header-badge {
@@ -184,7 +195,6 @@ onMounted(() => {
   font-weight: 700;
   letter-spacing: 0.05em;
   border-radius: var(--radius-full);
-  margin-bottom: 14px;
   border: 1px solid rgba(190, 145, 52, 0.25);
 }
 
@@ -238,16 +248,23 @@ onMounted(() => {
 .result-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 32px;
-  background: rgba(246, 243, 236, 0.7);
+  background: rgba(246, 243, 236, 0.75);
   padding: 18px 20px;
   border-radius: var(--radius-lg);
   border: 1px solid rgba(190, 145, 52, 0.2);
+  text-align: left;
+}
+
+.result-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .order-label { font-size: 0.78rem; font-weight: 700; color: #BE9134; text-transform: uppercase; letter-spacing: 0.04em; }
-.order-id-title { font-size: 1.55rem; margin-bottom: 2px; color: var(--color-charcoal); }
+.order-id-title { font-size: 1.55rem; color: var(--color-charcoal); margin: 0; }
 .order-date { font-size: 0.84rem; color: var(--color-taupe); }
 
 .status-pill-badge {
@@ -258,6 +275,7 @@ onMounted(() => {
   font-size: 0.84rem;
   border: 1px solid #BE9134;
   box-shadow: 0 4px 12px rgba(45, 64, 53, 0.25);
+  white-space: nowrap;
 }
 
 .timeline-wrapper {
@@ -331,18 +349,27 @@ onMounted(() => {
   border-radius: var(--radius-lg);
   font-size: 0.92rem;
   color: var(--color-charcoal);
+  text-align: left;
 }
 
 .summary-header {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(190, 145, 52, 0.2);
+  padding-bottom: 10px;
 
   .shield-gold { color: #BE9134; }
-  h4 { font-size: 1.1rem; color: var(--color-charcoal); }
+  h4 { font-size: 1.1rem; color: var(--color-charcoal); margin: 0; }
 }
 
-.customer-info, .address-info { margin-bottom: 6px; color: var(--color-taupe); }
-.amount { margin-top: 12px; color: var(--color-charcoal); font-size: 1rem; border-top: 1px solid rgba(190, 145, 52, 0.2); padding-top: 10px; }
+.summary-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.customer-info, .address-info { margin: 0; color: var(--color-taupe); line-height: 1.5; }
+.amount { margin-top: 6px; color: var(--color-charcoal); font-size: 1rem; border-top: 1px dashed rgba(190, 145, 52, 0.3); padding-top: 10px; }
 </style>
