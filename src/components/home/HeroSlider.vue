@@ -370,16 +370,49 @@ const localeStore = useLocaleStore();
   border-radius: 999px;
   transition: all 0.3s ease;
   box-shadow: 0 6px 18px rgba(190, 145, 52, 0.4);
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.55) 50%,
+      transparent 100%
+    );
+    transform: rotate(25deg);
+    transition: none;
+    pointer-events: none;
+  }
 
   &:hover {
     background: var(--color-accent-dark);
     transform: translateY(-2px);
     box-shadow: 0 8px 22px rgba(163, 121, 40, 0.5);
+
+    &::after {
+      animation: btnShineSwipe 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
   }
 
   @media (max-width: 600px) {
     padding: 6px 14px;
     font-size: 0.75rem;
+  }
+}
+
+@keyframes btnShineSwipe {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 125%;
   }
 }
 

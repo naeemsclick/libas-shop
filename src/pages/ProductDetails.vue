@@ -684,6 +684,33 @@ function handleWhatsAppOrder() {
   }
 }
 
+.add-cart-btn, .buy-now-btn, .whatsapp-order-btn {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.55) 50%,
+      transparent 100%
+    );
+    transform: rotate(25deg);
+    transition: none;
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    animation: btnShineSwipe 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
 .whatsapp-order-btn {
   display: flex;
   align-items: center;

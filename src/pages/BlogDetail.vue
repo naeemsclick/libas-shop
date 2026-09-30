@@ -7,6 +7,8 @@ import type { BlogPost, BlogComment } from '@/types';
 import { useLocaleStore } from '@/stores/locale';
 import { useSeo } from '@/composables/useSeo';
 
+import { watch } from 'vue';
+
 const route = useRoute();
 const localeStore = useLocaleStore();
 
@@ -14,10 +16,24 @@ const post = computed<BlogPost | undefined>(() => {
   return blogsData.find(b => b.slug === route.params.slug) || blogsData[0];
 });
 
-useSeo({
-  title: post.value ? post.value.title : 'Blog Article | LIBAS Shop',
-  description: post.value ? post.value.excerpt : 'Read our latest article on modest fashion.'
-});
+watch(
+  post,
+  (newPost) => {
+    if (newPost) {
+      const blogImg = newPost.image.startsWith('http')
+        ? newPost.image
+        : `https://libas.shop${newPost.image}`;
+      useSeo({
+        title: newPost.title,
+        description: newPost.excerpt,
+        image: blogImg,
+        url: `https://libas.shop/blog/${newPost.slug}`,
+        type: 'article'
+      });
+    }
+  },
+  { immediate: true }
+);
 
 const recentPosts = computed(() => {
   return blogsData.filter(b => b.slug !== post.value?.slug).slice(0, 4);

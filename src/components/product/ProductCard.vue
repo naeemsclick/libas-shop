@@ -230,7 +230,7 @@ function handleQuickView(e: Event) {
   bottom: 10px;
   left: 10px;
   right: 10px;
-  background: var(--color-taupe);
+  background: #3A5646;
   color: white;
   border: none;
   border-radius: var(--radius-sm);
@@ -249,7 +249,7 @@ function handleQuickView(e: Event) {
   white-space: nowrap;
 
   &:hover {
-    background: var(--color-primary-dark);
+    background: #273C30;
   }
 
   &.success {

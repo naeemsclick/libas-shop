@@ -38,12 +38,15 @@ export function useSeo(options: SeoOptions) {
     const pageUrl = options.url || (typeof window !== 'undefined' ? window.location.href : DEFAULT_URL);
 
     setMetaTag('meta[name="description"]', 'content', descText);
+    setMetaTag('meta[property="og:site_name"]', 'content', 'LIBAS Shop');
+    setMetaTag('meta[property="og:type"]', 'content', options.type || 'article');
     setMetaTag('meta[property="og:title"]', 'content', titleText);
     setMetaTag('meta[property="og:description"]', 'content', descText);
     setMetaTag('meta[property="og:image"]', 'content', imgUrl);
     setMetaTag('meta[property="og:image:secure_url"]', 'content', imgUrl);
     setMetaTag('meta[property="og:url"]', 'content', pageUrl);
-    
+
+    setMetaTag('meta[name="twitter:card"]', 'content', 'summary_large_image');
     setMetaTag('meta[name="twitter:title"]', 'content', titleText);
     setMetaTag('meta[name="twitter:description"]', 'content', descText);
     setMetaTag('meta[name="twitter:image"]', 'content', imgUrl);
