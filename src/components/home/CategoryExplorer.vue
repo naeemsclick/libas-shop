@@ -208,44 +208,9 @@ const categoriesList = computed<CategoryCircleItem[]>(() => [
   position: relative;
   border: 1.5px solid var(--color-accent);
 
-  /* Soft rotating gold glowing halo behind shape */
-  &::before {
-    content: '';
-    position: absolute;
-    inset: -6px;
-    border-radius: 50%;
-    background: conic-gradient(
-      from 0deg,
-      rgba(190, 145, 52, 0.05) 0%,
-      rgba(190, 145, 52, 0.35) 30%,
-      rgba(247, 239, 207, 0.7) 50%,
-      rgba(190, 145, 52, 0.35) 70%,
-      rgba(190, 145, 52, 0.05) 100%
-    );
-    filter: blur(5px);
-    opacity: 0.65;
-    animation: rotateGoldHalo 9s linear infinite;
-    z-index: -1;
-    pointer-events: none;
-  }
-
   @media (max-width: 600px) {
     width: 64px;
     height: 64px;
-
-    &::before {
-      inset: -5px;
-      filter: blur(4px);
-    }
-  }
-}
-
-@keyframes rotateGoldHalo {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 
