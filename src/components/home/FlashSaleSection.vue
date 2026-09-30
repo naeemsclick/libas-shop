@@ -73,7 +73,7 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
       transparent 100%
     );
     transform: rotate(30deg);
-    animation: flashShineSwipe 4s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    animation: flashShineSwipe 5s infinite cubic-bezier(0.25, 1, 0.5, 1);
     pointer-events: none;
   }
 
@@ -86,7 +86,7 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
   0% {
     transform: translateX(-120%) rotate(30deg);
   }
-  65% {
+  88% {
     transform: translateX(120%) rotate(30deg);
   }
   100% {
