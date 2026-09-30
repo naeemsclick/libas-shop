@@ -11,24 +11,21 @@ const localeStore = useLocaleStore();
       <div class="footer-grid">
         <!-- Col 1: Brand Info -->
         <div class="footer-col brand-col">
-          <router-link to="/" class="footer-logo-link" title="Rowha Mart Home">
-            <img src="/images/logo.png" alt="Rowha Mart Logo" class="footer-logo" />
+          <router-link to="/" class="footer-logo-link" title="LIBAS Shop Home">
+            <img src="/images/logo.png" alt="LIBAS Shop Logo" class="footer-logo" />
           </router-link>
           <p class="brand-slogan">{{ localeStore.t('footer.slogan') }}</p>
           <p class="brand-desc">
             {{ localeStore.t('footer.desc') }}
           </p>
           <div class="social-icons">
-            <a href="https://www.facebook.com/rowhamart/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook">
+            <a href="https://www.facebook.com/libasshopbd" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook">
               <Facebook :size="18" />
             </a>
-            <a href="https://www.instagram.com/rowhamart/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+            <a href="https://www.instagram.com/libasshopbd" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
               <Instagram :size="18" />
             </a>
-            <a href="https://www.tiktok.com/@rowhamart/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok">
-              <Video :size="18" />
-            </a>
-            <a href="https://wa.me/8801410740844" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp">
+            <a href="https://wa.me/8801717000414" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp">
               <MessageCircle :size="18" />
             </a>
           </div>
@@ -51,9 +48,12 @@ const localeStore = useLocaleStore();
         <div class="footer-col">
           <h4 class="col-title">{{ localeStore.t('footer.categories') }}</h4>
           <ul class="footer-links">
-            <li><router-link to="/category/fashion">{{ localeStore.t('nav.fashion') }}</router-link></li>
-            <li><router-link to="/category/gadgets">{{ localeStore.t('nav.gadgets') }}</router-link></li>
-            <li><router-link to="/category/beauty">{{ localeStore.t('nav.beauty') }}</router-link></li>
+            <li><router-link to="/category/clothing">{{ localeStore.t('nav.clothing') }}</router-link></li>
+            <li><router-link to="/category/womens-collection">{{ localeStore.t('nav.womensCollection') }}</router-link></li>
+            <li><router-link to="/category/perfume">{{ localeStore.t('nav.perfume') }}</router-link></li>
+            <li><router-link to="/category/watch">{{ localeStore.t('nav.watch') }}</router-link></li>
+            <li><router-link to="/category/shoes">{{ localeStore.t('nav.shoes') }}</router-link></li>
+            <li><router-link to="/category/sunnah">{{ localeStore.t('nav.sunnah') }}</router-link></li>
           </ul>
         </div>
 
@@ -75,15 +75,15 @@ const localeStore = useLocaleStore();
           <ul class="contact-list">
             <li>
               <Phone :size="16" class="contact-icon" />
-              <a href="tel:+8801410740844">+88 01410 740 844</a>
+              <a href="tel:+8801717000414">+88 01717 000 414</a>
             </li>
             <li>
               <MessageCircle :size="16" class="contact-icon" />
-              <a href="https://wa.me/8801410740844" target="_blank" rel="noopener">WhatsApp Support</a>
+              <a href="https://wa.me/8801717000414" target="_blank" rel="noopener">WhatsApp Support</a>
             </li>
             <li>
               <Mail :size="16" class="contact-icon" />
-              <a href="mailto:rowhamart@gmail.com">rowhamart@gmail.com</a>
+              <a href="mailto:hello@libas.shop">hello@libas.shop</a>
             </li>
             <li>
               <MapPin :size="16" class="contact-icon" />
@@ -101,7 +101,7 @@ const localeStore = useLocaleStore();
           {{ localeStore.t('footer.rights') }}
         </p>
         <p class="creator">
-          Created by |
+          Design & Developed by |
           <a
             href="https://www.facebook.com/naeemdaprince/"
             target="_blank"
@@ -118,8 +118,8 @@ const localeStore = useLocaleStore();
 
 <style scoped lang="scss">
 .app-footer {
-  background: linear-gradient(135deg, #1C352C 0%, #25463B 60%, #192F27 100%);
-  color: #E2EFE9;
+  background: linear-gradient(135deg, #1D2A23 0%, #141E19 60%, #0E1511 100%);
+  color: #ECEFEA;
   padding-top: 64px;
   border-top: 4px solid var(--color-accent);
 }

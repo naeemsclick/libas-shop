@@ -4,7 +4,7 @@ import { useSeo } from '@/composables/useSeo';
 
 useSeo({
   title: '404 - Page Not Found',
-  description: 'The page you are looking for does not exist on Rowha Mart.'
+  description: 'The page you are looking for does not exist on LIBAS Shop.'
 });
 </script>
 

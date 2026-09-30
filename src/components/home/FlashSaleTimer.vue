@@ -1,23 +1,32 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
+import { useLocaleStore } from '@/stores/locale';
 
 const props = defineProps<{
   targetDate?: string;
 }>();
 
+const localeStore = useLocaleStore();
+
 const hours = ref('08');
 const minutes = ref('45');
 const seconds = ref('12');
 
+let targetTimestamp = 0;
 let timerInterval: ReturnType<typeof setInterval> | null = null;
 
-function updateCountdown() {
-  const target = props.targetDate
-    ? new Date(props.targetDate).getTime()
-    : new Date().getTime() + 8 * 3600 * 1000 + 45 * 60 * 1000;
+function initTarget() {
+  if (props.targetDate) {
+    targetTimestamp = new Date(props.targetDate).getTime();
+  } else {
+    // 12 hours, 45 mins countdown target from initial page load
+    targetTimestamp = Date.now() + 12 * 3600 * 1000 + 45 * 60 * 1000;
+  }
+}
 
-  const now = new Date().getTime();
-  const diff = target - now;
+function updateCountdown() {
+  const now = Date.now();
+  let diff = targetTimestamp - now;
 
   if (diff <= 0) {
     hours.value = '00';
@@ -36,6 +45,7 @@ function updateCountdown() {
 }
 
 onMounted(() => {
+  initTarget();
   updateCountdown();
   timerInterval = setInterval(updateCountdown, 1000);
 });
@@ -49,17 +59,17 @@ onUnmounted(() => {
   <div class="flash-sale-timer">
     <div class="time-block">
       <span class="time-val">{{ hours }}</span>
-      <span class="time-unit">Hours</span>
+      <span class="time-unit">{{ localeStore.isBangla ? 'ঘণ্টা' : 'Hours' }}</span>
     </div>
     <span class="colon">:</span>
     <div class="time-block">
       <span class="time-val">{{ minutes }}</span>
-      <span class="time-unit">Mins</span>
+      <span class="time-unit">{{ localeStore.isBangla ? 'মিনিট' : 'Mins' }}</span>
     </div>
     <span class="colon">:</span>
     <div class="time-block">
       <span class="time-val">{{ seconds }}</span>
-      <span class="time-unit">Secs</span>
+      <span class="time-unit">{{ localeStore.isBangla ? 'সেকেন্ড' : 'Secs' }}</span>
     </div>
   </div>
 </template>
@@ -76,44 +86,48 @@ onUnmounted(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--color-charcoal);
+  background: var(--color-primary-dark);
   color: var(--color-white);
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 14px rgba(29, 42, 35, 0.25);
+  border: 1px solid rgba(190, 145, 52, 0.3);
 
   @media (max-width: 480px) {
-    width: 42px;
-    height: 42px;
+    width: 46px;
+    height: 46px;
   }
 }
 
 .time-val {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.35rem;
+  font-weight: 800;
   line-height: 1;
+  color: #FFFFFF;
 
   @media (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 
 .time-unit {
-  font-size: 0.62rem;
-  color: var(--color-taupe);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-accent);
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  margin-top: 3px;
 
   @media (max-width: 480px) {
-    font-size: 0.55rem;
+    font-size: 0.58rem;
   }
 }
 
 .colon {
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: var(--color-charcoal);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--color-primary-dark);
 }
 </style>

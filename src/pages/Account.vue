@@ -5,15 +5,15 @@ import { useSeo } from '@/composables/useSeo';
 
 useSeo({
   title: 'My Account',
-  description: 'Manage your Rowha Mart profile and order history.'
+  description: 'Manage your LIBAS Shop profile and order history.'
 });
 
 const activeTab = ref<'profile' | 'orders' | 'addresses'>('profile');
 
 const demoUser = ref({
   name: 'Valued Customer',
-  phone: '+88 01410 740 844',
-  email: 'customer@rowhamart.com',
+  phone: '+88 01717 000 414',
+  email: 'customer@libas.shop',
   address: 'House 14, Road 5, Dhanmondi, Dhaka'
 });
 </script>
@@ -102,13 +102,13 @@ const demoUser = ref({
               <div class="order-item-card">
                 <div class="order-header">
                   <div>
-                    <span class="id">Order #RM-849201</span>
+                    <span class="id">Order #LIB-849201</span>
                     <span class="date">Placed on Sep 18, 2026</span>
                   </div>
                   <span class="status-badge delivered">Delivered</span>
                 </div>
                 <div class="order-body">
-                  <p>1x Rowha Pro Noise Cancelling Wireless Headphones</p>
+                  <p>1x LIBAS Premium Cotton Jubba</p>
                   <span class="total">Total: ৳3,510</span>
                 </div>
               </div>

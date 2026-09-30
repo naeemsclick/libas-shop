@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { X, Heart, User, MapPin, Phone, Mail, Globe } from 'lucide-vue-next';
+import { X, Heart, User, MapPin, Phone, Mail, Globe, Shirt, Sparkles, Watch, Footprints, Grid } from 'lucide-vue-next';
+import CategoryIcons from '@/components/common/CategoryIcons.vue';
 import { useUiStore } from '@/stores/ui';
 import { useWishlistStore } from '@/stores/wishlist';
 import { useLocaleStore } from '@/stores/locale';
@@ -19,8 +20,8 @@ function close() {
       <div class="mobile-drawer">
         <!-- Header -->
         <div class="drawer-header">
-          <router-link to="/" class="drawer-logo-link" title="Rowha Mart Home" @click="close">
-            <img src="/images/logo.png" alt="Rowha Mart Logo" class="drawer-logo" />
+          <router-link to="/" class="drawer-logo-link" title="LIBAS Shop Home" @click="close">
+            <img src="/images/logo.png" alt="LIBAS Shop Logo" class="drawer-logo" />
           </router-link>
           <button type="button" class="close-btn" aria-label="Close menu" @click="close">
             <X :size="22" />
@@ -60,16 +61,59 @@ function close() {
 
           <!-- Main Nav Links -->
           <div class="nav-group">
-            <h4 class="group-title">Navigation Menu</h4>
+            <h4 class="group-title">Header Navigation Menu</h4>
             <ul class="nav-links">
               <li><router-link to="/" @click="close">{{ localeStore.t('nav.home') }}</router-link></li>
               <li><router-link to="/shop" @click="close">{{ localeStore.t('nav.shop') }}</router-link></li>
-              <li><router-link to="/category/fashion" @click="close">{{ localeStore.t('nav.fashion') }}</router-link></li>
-              <li><router-link to="/category/gadgets" @click="close">{{ localeStore.t('nav.gadgets') }}</router-link></li>
-              <li><router-link to="/category/beauty" @click="close">{{ localeStore.t('nav.beauty') }}</router-link></li>
-              <li><router-link to="/shop?sortBy=newest" @click="close">✨ {{ localeStore.t('nav.newArrivals') }}</router-link></li>
-              <li><router-link to="/offers" @click="close">🔥 {{ localeStore.t('nav.offers') }}</router-link></li>
-              <li><router-link to="/track-order" @click="close">📦 {{ localeStore.t('announcement.trackOrder') }}</router-link></li>
+              
+              <!-- ALL CATEGORY Accordion Group -->
+              <li class="mobile-cat-group">
+                <div class="mobile-cat-header">
+                  <Grid :size="16" class="cat-header-icon" />
+                  <span>{{ localeStore.t('nav.allCategories') }}</span>
+                </div>
+                <ul class="mobile-sub-links">
+                  <li>
+                    <router-link to="/category/clothing" @click="close">
+                      <Shirt :size="15" class="sub-link-icon" />
+                      <span>{{ localeStore.t('nav.clothing') }}</span>
+                    </router-link>
+                  </li>
+                  <li>
+                    <router-link to="/category/womens-collection" @click="close">
+                      <CategoryIcons name="womens-collection" :size="15" class="sub-link-icon" />
+                      <span>{{ localeStore.t('nav.womensCollection') }}</span>
+                    </router-link>
+                  </li>
+                  <li>
+                    <router-link to="/category/perfume" @click="close">
+                      <Sparkles :size="15" class="sub-link-icon" />
+                      <span>{{ localeStore.t('nav.perfume') }}</span>
+                    </router-link>
+                  </li>
+                  <li>
+                    <router-link to="/category/watch" @click="close">
+                      <Watch :size="15" class="sub-link-icon" />
+                      <span>{{ localeStore.t('nav.watch') }}</span>
+                    </router-link>
+                  </li>
+                  <li>
+                    <router-link to="/category/shoes" @click="close">
+                      <Footprints :size="15" class="sub-link-icon" />
+                      <span>{{ localeStore.t('nav.shoes') }}</span>
+                    </router-link>
+                  </li>
+                  <li>
+                    <router-link to="/category/sunnah" @click="close">
+                      <CategoryIcons name="sunnah" :size="15" class="sub-link-icon" />
+                      <span>{{ localeStore.t('nav.sunnah') }}</span>
+                    </router-link>
+                  </li>
+                </ul>
+              </li>
+
+              <li><router-link to="/shop?sortBy=newest" @click="close">{{ localeStore.t('nav.newArrivals') }}</router-link></li>
+              <li><router-link to="/offers" @click="close">{{ localeStore.t('nav.offers') }}</router-link></li>
               <li><router-link to="/about" @click="close">{{ localeStore.t('nav.about') }}</router-link></li>
               <li><router-link to="/contact" @click="close">{{ localeStore.t('nav.contact') }}</router-link></li>
             </ul>
@@ -91,13 +135,13 @@ function close() {
           <!-- Direct Contact -->
           <div class="drawer-contact-info">
             <h4 class="group-title">{{ localeStore.t('footer.contact') }}</h4>
-            <a href="tel:+8801410740844" class="info-row">
+            <a href="tel:+8801717000414" class="info-row">
               <Phone :size="16" />
-              <span>+88 01410 740 844</span>
+              <span>+88 01717 000 414</span>
             </a>
-            <a href="mailto:rowhamart@gmail.com" class="info-row">
+            <a href="mailto:hello@libas.shop" class="info-row">
               <Mail :size="16" />
-              <span>rowhamart@gmail.com</span>
+              <span>hello@libas.shop</span>
             </a>
             <div class="info-row">
               <MapPin :size="16" />
@@ -513,6 +557,59 @@ function close() {
   gap: 10px;
   font-size: 0.85rem;
   color: var(--color-taupe);
+}
+
+.mobile-cat-group {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-cat-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  padding: 6px 0;
+
+  .cat-header-icon {
+    color: var(--color-accent);
+  }
+}
+
+.mobile-sub-links {
+  list-style: none;
+  padding: 4px 0 4px 14px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-taupe);
+    padding: 6px 0;
+    border-bottom: none;
+
+    .sub-link-icon {
+      color: var(--color-primary);
+      transition: color 0.2s ease;
+    }
+
+    &:hover {
+      color: var(--color-accent);
+      padding-left: 4px;
+
+      .sub-link-icon {
+        color: var(--color-accent);
+      }
+    }
+  }
 }
 
 .drawer-enter-active,

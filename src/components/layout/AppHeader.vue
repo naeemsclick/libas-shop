@@ -57,8 +57,8 @@ onUnmounted(() => {
         </button>
 
         <!-- Brand Logo (Left) -->
-        <router-link to="/" class="brand-logo-link" title="Rowha Mart Home">
-          <img src="/images/logo.png" alt="Rowha Mart Logo" class="brand-logo" />
+        <router-link to="/" class="brand-logo-link" title="LIBAS Shop Home">
+          <img src="/images/logo.png" alt="LIBAS Shop Logo" class="brand-logo" />
         </router-link>
 
         <!-- Desktop Navigation Menu (Center) -->
@@ -167,15 +167,15 @@ onUnmounted(() => {
 }
 
 .brand-logo {
-  height: 42px;
-  max-width: 190px;
+  height: 33px;
+  max-width: 160px;
   width: auto;
   object-fit: contain;
   display: block;
 
   @media (max-width: 768px) {
-    height: 36px;
-    max-width: 150px;
+    height: 27px;
+    max-width: 130px;
   }
 }
 

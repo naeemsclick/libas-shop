@@ -11,7 +11,7 @@ const route = useRoute();
 
 useSeo({
   title: 'Track Your Order',
-  description: 'Track real-time status of your Rowha Mart order.'
+  description: 'Track real-time status of your LIBAS Shop order.'
 });
 
 const orderIdInput = ref('');

@@ -14,7 +14,7 @@ const uiStore = useUiStore();
 
 useSeo({
   title: 'My Wishlist',
-  description: 'Your saved Rowha Mart items.'
+  description: 'Your saved LIBAS Shop items.'
 });
 
 function moveAllToCart() {

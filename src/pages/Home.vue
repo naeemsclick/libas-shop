@@ -4,7 +4,7 @@ import CategoryExplorer from '@/components/home/CategoryExplorer.vue';
 import BestSellingSection from '@/components/home/BestSellingSection.vue';
 import FeaturedCollection from '@/components/home/FeaturedCollection.vue';
 import FlashSaleSection from '@/components/home/FlashSaleSection.vue';
-import CategoryShowcase from '@/components/home/CategoryShowcase.vue';
+import WomensCollectionBanner from '@/components/home/WomensCollectionBanner.vue';
 import BrandStorySection from '@/components/home/BrandStorySection.vue';
 import TestimonialSlider from '@/components/home/TestimonialSlider.vue';
 import TrustFeatures from '@/components/home/TrustFeatures.vue';
@@ -12,8 +12,8 @@ import NewsletterSection from '@/components/home/NewsletterSection.vue';
 import { useSeo } from '@/composables/useSeo';
 
 useSeo({
-  title: 'Rowha Mart | Fashion • Gadgets • Beauty',
-  description: 'Small Choices Make a Brighter You. Explore curated fashion, smart tech gadgets, and clean beauty essentials online.'
+  title: 'LIBAS Shop | YOUR CHOICE OUR PROMISE',
+  description: 'YOUR CHOICE OUR PROMISE. Explore modern modest fashion, Jubba collections, Abayas, Perfumes, Watches, Shoes, and Sunnah essentials online.'
 });
 </script>
 
@@ -24,7 +24,7 @@ useSeo({
     <BestSellingSection />
     <FeaturedCollection />
     <FlashSaleSection />
-    <CategoryShowcase />
+    <WomensCollectionBanner />
     <BrandStorySection />
     <TestimonialSlider />
     <TrustFeatures />

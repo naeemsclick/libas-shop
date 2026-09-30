@@ -84,7 +84,7 @@ function goToCart() {
               <input
                 v-model="couponInput"
                 type="text"
-                :placeholder="localeStore.isBangla ? 'কুপন কোড (ROWHA10)' : 'Coupon code (ROWHA10)'"
+                :placeholder="localeStore.isBangla ? 'কুপন কোড (LIBAS10)' : 'Coupon code (LIBAS10)'"
                 class="coupon-input"
               />
               <button type="button" class="apply-btn" @click="handleApplyCoupon">

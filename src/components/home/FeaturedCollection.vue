@@ -9,8 +9,8 @@ import { ArrowRight, CheckCircle } from 'lucide-vue-next';
         <!-- Visual left panel -->
         <div class="visual-panel">
           <img
-            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80"
-            alt="Rowha Mart Editorial Collection"
+            src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80"
+            alt="LIBAS Shop Editorial Collection"
             class="promo-img"
           />
           <div class="visual-badge">
@@ -21,7 +21,7 @@ import { ArrowRight, CheckCircle } from 'lucide-vue-next';
 
         <!-- Content right panel -->
         <div class="content-panel">
-          <span class="sub-heading">Rowha Editorial</span>
+          <span class="sub-heading">LIBAS Editorial</span>
           <h2 class="headline">Curated for Everyday Confidence</h2>
           <p class="description">
             Discover a thoughtfully assembled collection of everyday essentials. From high-grade vegan leather totes to smart wearables and organic botanical skincare, each choice is crafted to enhance your daily lifestyle.

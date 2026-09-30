@@ -10,9 +10,9 @@ export async function createOrder(orderPayload: Partial<Order>): Promise<Order> 
   } catch {
     // Return mock order response for frontend demonstration
     const mockOrder: Order = {
-      id: 'RM-' + Math.floor(100000 + Math.random() * 900000),
+      id: 'LIB-' + Math.floor(100000 + Math.random() * 900000),
       customerName: orderPayload.customerName || 'Valued Customer',
-      phone: orderPayload.phone || '+8801700000000',
+      phone: orderPayload.phone || '+8801717000414',
       email: orderPayload.email,
       address: orderPayload.address || 'Dhaka',
       city: orderPayload.city || 'Dhaka',
@@ -29,9 +29,9 @@ export async function createOrder(orderPayload: Partial<Order>): Promise<Order> 
     };
 
     // Save to local storage for tracking lookup
-    const existingOrders = JSON.parse(localStorage.getItem('rowha_orders') || '[]');
+    const existingOrders = JSON.parse(localStorage.getItem('libas_orders') || localStorage.getItem('rowha_orders') || '[]');
     existingOrders.push(mockOrder);
-    localStorage.setItem('rowha_orders', JSON.stringify(existingOrders));
+    localStorage.setItem('libas_orders', JSON.stringify(existingOrders));
 
     return mockOrder;
   }
@@ -41,16 +41,16 @@ export async function getOrderById(orderId: string): Promise<Order | null> {
   try {
     return await apiFetch<Order>(`/orders/${orderId}`);
   } catch {
-    const existingOrders: Order[] = JSON.parse(localStorage.getItem('rowha_orders') || '[]');
+    const existingOrders: Order[] = JSON.parse(localStorage.getItem('libas_orders') || localStorage.getItem('rowha_orders') || '[]');
     const found = existingOrders.find((o) => o.id.toLowerCase() === orderId.toLowerCase());
     if (found) return found;
 
     // Default fallback demo order if requested order ID matches demo format
-    if (orderId.toLowerCase().startsWith('rm-')) {
+    if (orderId.toLowerCase().startsWith('lib-') || orderId.toLowerCase().startsWith('rm-')) {
       return {
         id: orderId.toUpperCase(),
         customerName: 'Demo Customer',
-        phone: '+8801410740844',
+        phone: '+8801717000414',
         address: 'House 12, Road 4, Dhanmondi',
         city: 'Dhaka',
         area: 'Dhanmondi',

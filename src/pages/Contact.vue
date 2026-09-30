@@ -4,8 +4,8 @@ import { Phone, Mail, MessageCircle, MapPin, Send, CheckCircle } from 'lucide-vu
 import { useSeo } from '@/composables/useSeo';
 
 useSeo({
-  title: 'Contact Rowha Mart',
-  description: 'Get in touch with Rowha Mart customer support team.'
+  title: 'Contact LIBAS Shop',
+  description: 'Get in touch with LIBAS Shop customer support team.'
 });
 
 const isSubmitted = ref(false);
@@ -56,7 +56,7 @@ function handleSubmit() {
             </div>
             <div class="info-text">
               <h4 class="card-label">Phone Call</h4>
-              <a href="tel:+8801410740844" class="card-val">+88 01410 740 844</a>
+              <a href="tel:+8801717000414" class="card-val">+88 01717 000 414</a>
               <span class="card-sub">Available Saturday to Thursday</span>
             </div>
           </div>
@@ -67,7 +67,7 @@ function handleSubmit() {
             </div>
             <div class="info-text">
               <h4 class="card-label">WhatsApp Live Chat</h4>
-              <a href="https://wa.me/8801410740844" target="_blank" rel="noopener" class="card-val">+88 01410 740 844</a>
+              <a href="https://wa.me/8801717000414" target="_blank" rel="noopener" class="card-val">+88 01717 000 414</a>
               <span class="card-sub">Instant response on WhatsApp</span>
             </div>
           </div>
@@ -78,7 +78,7 @@ function handleSubmit() {
             </div>
             <div class="info-text">
               <h4 class="card-label">Email Support</h4>
-              <a href="mailto:rowhamart@gmail.com" class="card-val">rowhamart@gmail.com</a>
+              <a href="mailto:hello@libas.shop" class="card-val">hello@libas.shop</a>
               <span class="card-sub">Send us your queries anytime</span>
             </div>
           </div>
@@ -102,7 +102,7 @@ function handleSubmit() {
           <div v-if="isSubmitted" class="success-box">
             <CheckCircle :size="36" />
             <h3>Message Sent Successfully!</h3>
-            <p>Thank you for reaching out to Rowha Mart. Our customer support team will reply to you shortly.</p>
+            <p>Thank you for reaching out to LIBAS Shop. Our customer support team will reply to you shortly.</p>
             <button type="button" class="btn btn--outline btn--sm" @click="isSubmitted = false">
               Send Another Message
             </button>
@@ -127,7 +127,7 @@ function handleSubmit() {
 
             <div class="form-group">
               <label>Message / Inquiry *</label>
-              <textarea v-model="form.message" rows="5" placeholder="How can Rowha Mart team assist you?" required></textarea>
+              <textarea v-model="form.message" rows="5" placeholder="How can LIBAS Shop team assist you?" required></textarea>
             </div>
 
             <button type="submit" :disabled="isSubmitting" class="btn btn--primary btn--lg w-full">

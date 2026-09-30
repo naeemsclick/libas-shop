@@ -12,7 +12,7 @@ const cartStore = useCartStore();
 
 useSeo({
   title: 'Shopping Cart',
-  description: 'Review items in your Rowha Mart shopping cart.'
+  description: 'Review items in your LIBAS Shop shopping cart.'
 });
 
 const couponInput = ref('');
@@ -44,7 +44,7 @@ function proceedToCheckout() {
       <div v-if="cartStore.items.length === 0">
         <EmptyState
           title="Your Cart is Currently Empty"
-          description="Looks like you haven't added any Rowha Mart items to your cart yet."
+          description="Looks like you haven't added any LIBAS Shop items to your cart yet."
           ctaText="Start Shopping"
           ctaLink="/shop"
         />

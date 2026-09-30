@@ -19,16 +19,13 @@ const tickerItems = computed(() => [
     <div class="container announcement-content">
       <!-- Left: Social Icons -->
       <div class="top-socials">
-        <a href="https://www.facebook.com/rowhamart/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <a href="https://www.facebook.com/libasshopbd" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <Facebook :size="13" />
         </a>
-        <a href="https://www.instagram.com/rowhamart/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <a href="https://www.instagram.com/libasshopbd" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
           <Instagram :size="13" />
         </a>
-        <a href="https://www.tiktok.com/@rowhamart/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-          <Video :size="13" />
-        </a>
-        <a href="https://wa.me/8801410740844" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <a href="https://wa.me/8801717000414" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
           <MessageCircle :size="13" />
         </a>
       </div>
@@ -57,9 +54,9 @@ const tickerItems = computed(() => [
 
       <!-- Right: Customer Care, Track Order & Language Switcher -->
       <div class="announcement-right">
-        <a href="tel:+8801410740844" class="top-link customer-care-link" title="Customer Support">
+        <a href="tel:+8801717000414" class="top-link customer-care-link" title="Customer Support">
           <Headphones :size="14" class="cc-icon" />
-          <span>+88 01410 740 844</span>
+          <span>+88 01717 000 414</span>
         </a>
         <span class="divider">|</span>
         <router-link to="/track-order" class="top-link track-link">

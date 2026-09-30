@@ -9,13 +9,13 @@ import { Sparkles, ShieldCheck, Heart, Award } from 'lucide-vue-next';
         <div class="story-header">
           <div class="slogan-badge">
             <Sparkles :size="16" />
-            <span>Rowha Mart Brand Philosophy</span>
+            <span>LIBAS Shop Brand Promise</span>
           </div>
 
-          <h2 class="story-title">“Small Choices Make a Brighter You.”</h2>
+          <h2 class="story-title">“YOUR CHOICE OUR PROMISE”</h2>
 
           <p class="story-subtitle">
-            At Rowha Mart, we believe that true elegance lies in the everyday choices you make. Whether it’s choosing a handbag that compliments your outfit, a smart wearable that keeps you connected, or a gentle skincare formula that makes you glow — every small detail elevates your confidence.
+            At LIBAS Shop, we are dedicated to offering high quality modest fashion and lifestyle products that reflect your personal style and values. From signature Jubba collections and graceful Abayas to pure oriental Attars, premium watches, and footwear — we ensure a trustworthy, stylish shopping experience.
           </p>
         </div>
 
@@ -24,8 +24,8 @@ import { Sparkles, ShieldCheck, Heart, Award } from 'lucide-vue-next';
             <div class="pillar-icon">
               <Sparkles :size="24" />
             </div>
-            <h3 class="pillar-title">Curated Selection</h3>
-            <p class="pillar-text">Handpicked products across fashion, gadgets, and beauty designed for modern lifestyle needs.</p>
+            <h3 class="pillar-title">Curated Quality</h3>
+            <p class="pillar-text">Premium fabrics, superior stitching, and handpicked modest collections crafted to perfection.</p>
           </div>
 
           <div class="pillar-item">
@@ -33,23 +33,23 @@ import { Sparkles, ShieldCheck, Heart, Award } from 'lucide-vue-next';
               <ShieldCheck :size="24" />
             </div>
             <h3 class="pillar-title">Authenticity First</h3>
-            <p class="pillar-text">Directly sourced, 100% genuine products with transparent specs and reliable warranty coverage.</p>
+            <p class="pillar-text">Directly sourced, 100% genuine products with transparent quality standards and guarantees.</p>
           </div>
 
           <div class="pillar-item">
             <div class="pillar-icon">
               <Heart :size="24" />
             </div>
-            <h3 class="pillar-title">Customer Mindset</h3>
-            <p class="pillar-text">Friendly support via WhatsApp, fast doorstep delivery, and hassle-free return exchanges.</p>
+            <h3 class="pillar-title">Customer Care</h3>
+            <p class="pillar-text">Instant support via WhatsApp (+88 01717 000 414), fast nationwide delivery, and simple exchanges.</p>
           </div>
 
           <div class="pillar-item">
             <div class="pillar-icon">
               <Award :size="24" />
             </div>
-            <h3 class="pillar-title">Accessible Premium</h3>
-            <p class="pillar-text">Luxury aesthetic and high quality without exorbitant price tags.</p>
+            <h3 class="pillar-title">Accessible Value</h3>
+            <p class="pillar-text">Refined luxury aesthetic and durable quality at accessible prices.</p>
           </div>
         </div>
       </div>

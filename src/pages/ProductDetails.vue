@@ -50,12 +50,12 @@ watch(
       selectedSize.value = newProd.sizes?.[0] || '';
       const prodImg = newProd.images[0]?.startsWith('http')
         ? newProd.images[0]
-        : `https://rowhamart.pages.dev${newProd.images[0]}`;
+        : `https://libas.shop${newProd.images[0]}`;
       useSeo({
         title: newProd.name,
         description: newProd.shortDescription || newProd.description,
         image: prodImg,
-        url: `https://rowhamart.pages.dev/product/${newProd.slug}`
+        url: `https://libas.shop/product/${newProd.slug}`
       });
     }
   },
@@ -86,9 +86,9 @@ function handleBuyNow() {
 function handleWhatsAppOrder() {
   if (!product.value) return;
   const msg = encodeURIComponent(
-    `Hello Rowha Mart! I would like to order: ${product.value.name} (Price: ${formatPrice(product.value.price)})`
+    `Hello LIBAS Shop! I would like to order: ${product.value.name} (Price: ${formatPrice(product.value.price)})`
   );
-  window.open(`https://wa.me/8801410740844?text=${msg}`, '_blank');
+  window.open(`https://wa.me/8801717000414?text=${msg}`, '_blank');
 }
 </script>
 
@@ -291,7 +291,7 @@ function handleWhatsAppOrder() {
           </div>
 
           <div v-else-if="activeTab === 'returns'" class="tab-pane">
-            <p>Rowha Mart offers a 7-day hassle-free product exchange policy for defective or wrong items received. Contact our customer service via WhatsApp (+88 01410 740 844) with your order ID for immediate assistance.</p>
+            <p>LIBAS Shop offers a 7-day hassle-free product exchange policy for defective or wrong items received. Contact our customer service via WhatsApp (+88 01717 000 414) with your order ID for immediate assistance.</p>
           </div>
         </div>
       </div>

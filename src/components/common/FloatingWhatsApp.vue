@@ -8,20 +8,20 @@ const contacts = [
   {
     label: 'WhatsApp Chat',
     icon: MessageCircle,
-    url: 'https://wa.me/8801410740844',
+    url: 'https://wa.me/8801717000414',
     bg: '#25D366'
   },
   {
     label: 'Messenger Chat',
     icon: MessageSquare,
-    url: 'https://m.me/rowhamart',
+    url: 'https://m.me/libasshopbd',
     bg: '#0084FF'
   },
   {
     label: 'Direct Call',
     icon: Phone,
-    url: 'tel:+8801410740844',
-    bg: '#688F7A'
+    url: 'tel:+8801717000414',
+    bg: '#1D2A23'
   }
 ];
 </script>

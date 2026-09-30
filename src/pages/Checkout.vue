@@ -13,7 +13,7 @@ const cartStore = useCartStore();
 
 useSeo({
   title: 'Checkout Order',
-  description: 'Complete your Rowha Mart order securely.'
+  description: 'Complete your LIBAS Shop order securely.'
 });
 
 const isSubmitting = ref(false);
@@ -76,7 +76,7 @@ async function handleSubmitOrder() {
         <h1 class="success-title">Order Placed Successfully!</h1>
         <p class="order-id">Order ID: <strong>{{ orderCompleted.id }}</strong></p>
         <p class="success-desc">
-          Thank you for shopping with Rowha Mart! We have received your order and sent a confirmation SMS to <strong>{{ orderCompleted.phone }}</strong>. Our representative will contact you shortly.
+          Thank you for shopping with LIBAS Shop! We have received your order and sent a confirmation SMS to <strong>{{ orderCompleted.phone }}</strong>. Our representative will contact you shortly.
         </p>
 
         <div class="actions">

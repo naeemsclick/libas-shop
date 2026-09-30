@@ -3,8 +3,8 @@ import { Sparkles, ShieldCheck, Heart, Award, ArrowRight } from 'lucide-vue-next
 import { useSeo } from '@/composables/useSeo';
 
 useSeo({
-  title: 'About Rowha Mart',
-  description: 'Learn about Rowha Mart brand story, slogan, values, and curated e-commerce experience.'
+  title: 'About LIBAS Shop',
+  description: 'Learn about LIBAS Shop brand story, slogan, values, and modest lifestyle e-commerce experience.'
 });
 </script>
 
@@ -14,15 +14,15 @@ useSeo({
       <nav class="breadcrumb">
         <router-link to="/">Home</router-link>
         <span class="sep">/</span>
-        <span class="current">About Rowha Mart</span>
+        <span class="current">About LIBAS Shop</span>
       </nav>
 
       <!-- Hero Header -->
       <div class="about-hero">
-        <span class="brand-slogan-badge">“Small Choices Make a Brighter You.”</span>
-        <h1 class="hero-title">Welcome to Rowha Mart</h1>
+        <span class="brand-slogan-badge">“YOUR CHOICE OUR PROMISE”</span>
+        <h1 class="hero-title">Welcome to LIBAS Shop</h1>
         <p class="hero-subtitle">
-          Rowha Mart is a premier Bangladeshi lifestyle e-commerce brand celebrating curated quality across Fashion, Smart Tech Gadgets, and Organic Beauty & Care.
+          LIBAS Shop is a modern Bangladeshi e-commerce destination for modest fashion and lifestyle products, offering quality, variety and a trustworthy shopping experience.
         </p>
       </div>
 
@@ -30,33 +30,33 @@ useSeo({
       <div class="story-content-grid">
         <div class="image-box">
           <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
-            alt="Rowha Mart Corporate Headquarters Office"
+            src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1200&q=80"
+            alt="LIBAS Shop Modest Apparel Collection"
           />
         </div>
 
         <div class="text-box">
           <span class="sub-title">Our Brand Story</span>
-          <h2 class="section-title">Elevating Everyday Lifestyle</h2>
+          <h2 class="section-title">The Art of Modest Style</h2>
           <p>
-            Founded with a vision to deliver confident, stylish, and trustworthy shopping experiences, Rowha Mart bridges the gap between premium design aesthetics and accessible everyday value.
+            Founded with a commitment to quality, authenticity, and refined aesthetics, LIBAS Shop bridges traditional modest elegance with modern design value for men and women across Bangladesh.
           </p>
           <p>
-            Whether you are searching for a handcrafted saffiano leather handbag to complete your attire, an active noise-cancelling headphone for remote work, or botanical Vitamin C serums for healthy glowing skin — Rowha Mart curates choices that bring brightness to your everyday life.
+            Whether you are looking for a tailored Jubba made of pure breathable cotton, a graceful Dubai Cherry fabric Abaya, pure alcohol-free Attar perfumes, or handcrafted footwear — LIBAS Shop promises exceptional craftsmanship in every detail.
           </p>
 
           <div class="stats-row">
             <div class="stat-item">
               <span class="stat-number">100%</span>
-              <span class="stat-label">Authentic Sourcing</span>
+              <span class="stat-label">Genuine Quality</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number">24h</span>
-              <span class="stat-label">Dhaka Doorstep Delivery</span>
+              <span class="stat-number">Fast</span>
+              <span class="stat-label">Doorstep Delivery</span>
             </div>
             <div class="stat-item">
               <span class="stat-number">7-Day</span>
-              <span class="stat-label">Exchange Guarantee</span>
+              <span class="stat-label">Hassle-Free Exchange</span>
             </div>
           </div>
         </div>
@@ -64,27 +64,27 @@ useSeo({
 
       <!-- Categories Spotlight -->
       <div class="spotlight-section">
-        <h2 class="spotlight-title text-center">Our Core Categories</h2>
+        <h2 class="spotlight-title text-center">Our Core Collections</h2>
         <div class="spotlight-grid">
           <div class="spotlight-card">
-            <h3 class="card-title">Fashion Essentials</h3>
-            <p>Structured vegan leather totes, emerald quartz mesh watches, chic footwear, and daily accessories crafted for effortless style.</p>
+            <h3 class="card-title">Jubba & Men's Clothing</h3>
+            <p>Premium 100% cotton Jubbas, Punjabis, and tailored modest menswear built for comfort, daily prayers, and special occasions.</p>
           </div>
           <div class="spotlight-card">
-            <h3 class="card-title">Smart Tech Gadgets</h3>
-            <p>Studio ANC wireless headphones, AMOLED touchscreen smartwatches, dual-mic TWS earbuds, and magnetic power banks.</p>
+            <h3 class="card-title">Abaya & Women's Collection</h3>
+            <p>Graceful Dubai Cherry fabric Abayas, elegant modest wear, and premium scarves designed with dignity and beauty.</p>
           </div>
           <div class="spotlight-card">
-            <h3 class="card-title">Beauty & Self Care</h3>
-            <p>Pure steam-distilled rosewater mists, concentrated Vitamin C serums, moisturizing lip tints, and natural Xiuyan jade rollers.</p>
+            <h3 class="card-title">Attar, Watch & Sunnah Essentials</h3>
+            <p>Pure alcohol-free oriental attar oils, classic wristwatches, handmade caps, and daily Sunnah lifestyle essentials.</p>
           </div>
         </div>
       </div>
 
       <!-- CTA Footer Banner -->
       <div class="about-cta-banner">
-        <h2>Ready to Explore Rowha Mart?</h2>
-        <p>Discover products that make every day brighter and more stylish.</p>
+        <h2>Ready to Experience LIBAS Shop?</h2>
+        <p>Explore our premium modest collection today — Your Choice, Our Promise.</p>
         <router-link to="/shop" class="btn btn--primary btn--lg">
           <span>Start Shopping Now</span>
           <ArrowRight :size="18" />

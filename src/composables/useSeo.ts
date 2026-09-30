@@ -8,10 +8,10 @@ export interface SeoOptions {
   type?: string;
 }
 
-const DEFAULT_TITLE = 'Rowha Mart | Small Choices Make a Brighter You.';
-const DEFAULT_DESC = 'Curated e-commerce destination for Fashion, Smart Gadgets, and Beauty & Care essentials.';
-const DEFAULT_IMAGE = 'https://rowhamart.pages.dev/og-share-banner.jpg';
-const DEFAULT_URL = 'https://rowhamart.pages.dev/';
+const DEFAULT_TITLE = 'LIBAS Shop | YOUR CHOICE OUR PROMISE';
+const DEFAULT_DESC = 'LIBAS Shop - Modern e-commerce destination for modest fashion, Jubba, Abaya, Perfumes, Watches, Shoes, and Sunnah essentials.';
+const DEFAULT_IMAGE = 'https://libas.shop/images/logo.png';
+const DEFAULT_URL = 'https://libas.shop/';
 
 function setMetaTag(selector: string, attr: string, value: string) {
   let el = document.querySelector(selector);
@@ -30,7 +30,7 @@ function setMetaTag(selector: string, attr: string, value: string) {
 
 export function useSeo(options: SeoOptions) {
   watchEffect(() => {
-    const titleText = options.title ? `${options.title} | Rowha Mart` : DEFAULT_TITLE;
+    const titleText = options.title ? `${options.title} | LIBAS Shop` : DEFAULT_TITLE;
     document.title = titleText;
 
     const descText = options.description || DEFAULT_DESC;

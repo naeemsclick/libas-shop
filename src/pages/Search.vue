@@ -19,7 +19,7 @@ const searchResults = computed(() => {
 
 useSeo({
   title: query.value ? `Search Results for "${query.value}"` : 'Search Products',
-  description: 'Search results on Rowha Mart.'
+  description: 'Search results on LIBAS Shop.'
 });
 </script>
 

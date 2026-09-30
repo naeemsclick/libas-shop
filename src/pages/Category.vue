@@ -48,7 +48,7 @@ useSeo({
           <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
-          <span class="hero-badge">ROWHA MART COLLECTION</span>
+          <span class="hero-badge">LIBAS SHOP COLLECTION</span>
           <h1 class="category-name">{{ category.name }}</h1>
           <p class="category-desc">{{ category.description }}</p>
 

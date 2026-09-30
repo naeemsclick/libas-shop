@@ -2,48 +2,87 @@ import type { Category } from '@/types';
 
 export const categoriesData: Category[] = [
   {
-    id: 'cat-fashion',
-    slug: 'fashion',
-    name: 'Fashion',
-    description: 'Elevate your everyday wardrobe with curated luxury handbags, premium watches, elegant footwear, and essential accessories.',
-    image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80',
-    icon: 'ShoppingBag',
-    itemCount: 24,
+    id: 'cat-clothing',
+    slug: 'clothing',
+    name: 'Clothing',
+    description: 'Explore our signature Jubba collection, Punjabi, and modern tailored clothing made with 100% premium cotton and superior craftsmanship.',
+    image: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80',
+    icon: 'Shirt',
+    itemCount: 28,
     subcategories: [
-      { name: "Women's Bags", slug: 'womens-bags' },
-      { name: "Accessories", slug: 'accessories' },
-      { name: "Footwear", slug: 'footwear' },
-      { name: "Watches & Jewelry", slug: 'watches-jewelry' }
+      { name: "Premium Jubba", slug: 'jubba' },
+      { name: "Casual Shirts & Panjabi", slug: 'panjabi' },
+      { name: "Formal Trousers", slug: 'trousers' }
     ]
   },
   {
-    id: 'cat-gadgets',
-    slug: 'gadgets',
-    name: 'Gadgets',
-    description: 'Innovative tech accessories designed for seamless connectivity, wireless freedom, and high-performance daily living.',
-    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80',
-    icon: 'Smartphone',
+    id: 'cat-womens-collection',
+    slug: 'womens-collection',
+    name: "Women's Collection",
+    description: 'Elegant Dubai Cherry fabric Abayas, modest three-piece sets, scarves, and signature women fashion attire.',
+    image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80',
+    icon: 'ShoppingBag',
+    itemCount: 22,
+    subcategories: [
+      { name: "Abaya Collection", slug: 'abaya' },
+      { name: "Hijab & Scarves", slug: 'hijab' },
+      { name: "Modest Dresses", slug: 'modest-dresses' }
+    ]
+  },
+  {
+    id: 'cat-perfume',
+    slug: 'perfume',
+    name: 'Perfume',
+    description: 'Exquisite alcohol-free Attars, long-lasting oriental ouds, and French perfume oils that express pure luxury.',
+    image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80',
+    icon: 'Sparkles',
+    itemCount: 16,
+    subcategories: [
+      { name: "Attar Perfume Oils", slug: 'attar' },
+      { name: "Oud & Dehn Al Oud", slug: 'oud' },
+      { name: "Eau De Parfum", slug: 'edp' }
+    ]
+  },
+  {
+    id: 'cat-watch',
+    slug: 'watch',
+    name: 'Watch',
+    description: 'Timeless mesh and genuine leather wristwatches blending classic elegance with modern precision.',
+    image: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80',
+    icon: 'Watch',
+    itemCount: 14,
+    subcategories: [
+      { name: "Chronograph Watches", slug: 'chronograph' },
+      { name: "Leather Strap Watches", slug: 'leather-watches' },
+      { name: "Minimalist Watches", slug: 'minimalist-watches' }
+    ]
+  },
+  {
+    id: 'cat-shoes',
+    slug: 'shoes',
+    name: 'Shoes',
+    description: 'Handcrafted leather loafers, ergonomic cushion sneakers, and formal footwear for effortless comfort and style.',
+    image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80',
+    icon: 'Footprints',
     itemCount: 18,
     subcategories: [
-      { name: "Smart Gadgets", slug: 'smart-gadgets' },
-      { name: "Audio Devices", slug: 'audio-devices' },
-      { name: "Mobile Accessories", slug: 'mobile-accessories' },
-      { name: "Lifestyle Tech", slug: 'lifestyle-tech' }
+      { name: "Leather Loafers", slug: 'loafers' },
+      { name: "Cushion Sneakers", slug: 'sneakers' },
+      { name: "Formal Oxfords", slug: 'oxfords' }
     ]
   },
   {
-    id: 'cat-beauty',
-    slug: 'beauty',
-    name: 'Beauty & Care',
-    description: 'Clean skincare formulations, nourishing botanical serums, and radiant beauty rituals that make you shine effortlessly.',
-    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80',
-    icon: 'Sparkles',
+    id: 'cat-sunnah',
+    slug: 'sunnah',
+    name: 'Sunnah',
+    description: 'Essential Sunnah products including handmade prayer caps, Miswak, prayer rugs, and Islamic lifestyle products.',
+    image: 'https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=800&q=80',
+    icon: 'Bookmark',
     itemCount: 20,
     subcategories: [
-      { name: "Skincare", slug: 'skincare' },
-      { name: "Serums & Oils", slug: 'serums-oils' },
-      { name: "Makeup Essentials", slug: 'makeup' },
-      { name: "Self Care", slug: 'self-care' }
+      { name: "Prayer Caps (Tupi)", slug: 'tupi' },
+      { name: "Miswak & Oral Care", slug: 'miswak' },
+      { name: "Prayer Rugs (Jainamaz)", slug: 'jainamaz' }
     ]
   }
 ];

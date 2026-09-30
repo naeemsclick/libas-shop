@@ -6,7 +6,7 @@ export const testimonialsData: Testimonial[] = [
     name: 'Nusrat Jahan',
     location: 'Gulshan, Dhaka',
     rating: 5,
-    comment: 'The Rowha Signature Sage Leather Handbag exceeded my expectations! Super high quality finishing, fast 24h delivery, and authentic products. Rowha Mart is my new favorite store!',
+    comment: 'The LIBAS Premium Dubai Fabric Abaya exceeded my expectations! Super high quality finishing, elegant fitting, and fast delivery. LIBAS Shop is my top choice for modest fashion!',
     verified: true
   },
   {
@@ -14,7 +14,7 @@ export const testimonialsData: Testimonial[] = [
     name: 'Tanvir Hossain',
     location: 'Dhanmondi, Dhaka',
     rating: 5,
-    comment: 'Bought the Rowha Smartwatch Ultra Edition. Battery life is amazing and Bluetooth calling works seamlessly. Authentic products and responsive WhatsApp customer support!',
+    comment: 'Bought the LIBAS Premium Cotton Jubba. Fabric quality is extraordinarily comfortable and stitching is top notch. Authentic products and instant WhatsApp support!',
     verified: true
   },
   {
@@ -22,7 +22,7 @@ export const testimonialsData: Testimonial[] = [
     name: 'Sabrina Rahman',
     location: 'Agrabad, Chattogram',
     rating: 5,
-    comment: 'The Vitamin C Radiance Serum turned out to be a game-changer for my skincare routine. Delivery to Chattogram was smooth and nicely packaged. Highly recommended!',
+    comment: 'The LIBAS Signature Pure Attar turned out to be a pure long-lasting fragrance. Delivery to Chattogram was smooth and nicely packaged. Highly recommended!',
     verified: true
   },
   {
@@ -30,7 +30,7 @@ export const testimonialsData: Testimonial[] = [
     name: 'Mehadi Hasan',
     location: 'Uttara, Dhaka',
     rating: 5,
-    comment: 'Great experience shopping at Rowha Mart. The product accuracy, clean aesthetic, and cash on delivery option give complete peace of mind.',
+    comment: 'Great experience shopping at LIBAS Shop. The product accuracy, rich aesthetics, and cash on delivery option give complete peace of mind.',
     verified: true
   },
   {
@@ -38,7 +38,7 @@ export const testimonialsData: Testimonial[] = [
     name: 'Farhana Akter',
     location: 'Sylhet Sadar, Sylhet',
     rating: 5,
-    comment: 'Ordered the Rowha Air Buds Pro. Amazing sound clarity, punchy bass, and quick delivery to Sylhet. Will definitely shop from Rowha Mart again!',
+    comment: 'Ordered the LIBAS Emerald Mesh Watch. Amazing clarity and finish. Will definitely shop from LIBAS Shop again!',
     verified: true
   },
   {
@@ -46,7 +46,7 @@ export const testimonialsData: Testimonial[] = [
     name: 'Shahriar Alam',
     location: 'Khulna Sadar, Khulna',
     rating: 5,
-    comment: 'The MagCharge Magnetic Wireless Power Bank is super compact and charges my phone ultra fast. Extremely satisfied with Rowha Mart quality.',
+    comment: 'The LIBAS Leather Loafers are super comfortable for daily wear. Extremely satisfied with LIBAS Shop quality.',
     verified: true
   },
   {
@@ -54,7 +54,7 @@ export const testimonialsData: Testimonial[] = [
     name: 'Anika Tabassum',
     location: 'Mirpur, Dhaka',
     rating: 5,
-    comment: 'Loved the Organic Rosewater Hydrating Face Mist! Keeps my skin hydrated and glowing all day long. 10/10 packaging and fast delivery.',
+    comment: 'Loved the handmade Sunnah Prayer Cap & Jainamaz set! Premium feel and fast 24h delivery.',
     verified: true
   }
 ];

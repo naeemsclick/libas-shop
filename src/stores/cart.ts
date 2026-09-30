@@ -3,7 +3,7 @@ import { ref, computed } from 'vue';
 import type { CartItem, Product } from '@/types';
 
 export const useCartStore = defineStore('cart', () => {
-  const items = ref<CartItem[]>(JSON.parse(localStorage.getItem('rowha_cart') || '[]'));
+  const items = ref<CartItem[]>(JSON.parse(localStorage.getItem('libas_cart') || localStorage.getItem('rowha_cart') || '[]'));
   const couponCode = ref<string>('');
   const discountPercent = ref<number>(0);
   const selectedArea = ref<'inside' | 'outside'>('inside');
@@ -33,7 +33,7 @@ export const useCartStore = defineStore('cart', () => {
   });
 
   function saveToLocalStorage() {
-    localStorage.setItem('rowha_cart', JSON.stringify(items.value));
+    localStorage.setItem('libas_cart', JSON.stringify(items.value));
   }
 
   function addItem(product: Product, quantity = 1, size?: string, color?: string) {
@@ -77,16 +77,16 @@ export const useCartStore = defineStore('cart', () => {
 
   function applyCoupon(code: string): { success: boolean; message: string } {
     const cleanCode = code.trim().toUpperCase();
-    if (cleanCode === 'ROWHA10') {
-      couponCode.value = 'ROWHA10';
+    if (cleanCode === 'LIBAS10' || cleanCode === 'ROWHA10') {
+      couponCode.value = 'LIBAS10';
       discountPercent.value = 10;
       return { success: true, message: '10% discount coupon applied!' };
-    } else if (cleanCode === 'BRIGHTER20') {
-      couponCode.value = 'BRIGHTER20';
+    } else if (cleanCode === 'LIBAS20' || cleanCode === 'BRIGHTER20') {
+      couponCode.value = 'LIBAS20';
       discountPercent.value = 20;
       return { success: true, message: '20% special discount coupon applied!' };
     } else {
-      return { success: false, message: 'Invalid coupon code. Try ROWHA10 or BRIGHTER20' };
+      return { success: false, message: 'Invalid coupon code. Try LIBAS10 or LIBAS20' };
     }
   }
 

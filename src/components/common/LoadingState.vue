@@ -4,7 +4,7 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-  message: 'Loading Rowha Mart items...'
+  message: 'Loading LIBAS Shop items...'
 });
 </script>
 

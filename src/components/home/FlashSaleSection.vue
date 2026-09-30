@@ -19,7 +19,7 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
               <Zap :size="16" />
               <span>LIMITED TIME DEALS</span>
             </div>
-            <h2 class="section-title">Rowha Flash Sale</h2>
+            <h2 class="section-title">LIBAS Special Offers</h2>
           </div>
 
           <div class="timer-wrapper">

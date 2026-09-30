@@ -3,12 +3,12 @@ import { ref, computed } from 'vue';
 import type { WishlistItem, Product } from '@/types';
 
 export const useWishlistStore = defineStore('wishlist', () => {
-  const items = ref<WishlistItem[]>(JSON.parse(localStorage.getItem('rowha_wishlist') || '[]'));
+  const items = ref<WishlistItem[]>(JSON.parse(localStorage.getItem('libas_wishlist') || localStorage.getItem('rowha_wishlist') || '[]'));
 
   const count = computed(() => items.value.length);
 
   function saveToLocalStorage() {
-    localStorage.setItem('rowha_wishlist', JSON.stringify(items.value));
+    localStorage.setItem('libas_wishlist', JSON.stringify(items.value));
   }
 
   function isInWishlist(productId: string): boolean {

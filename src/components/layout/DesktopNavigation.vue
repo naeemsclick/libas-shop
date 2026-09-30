@@ -1,24 +1,42 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
+import { ChevronDown, Shirt, ShoppingBag, Sparkles, Watch, Footprints, Bookmark } from 'lucide-vue-next';
 import { useLocaleStore } from '@/stores/locale';
 
 const route = useRoute();
 const localeStore = useLocaleStore();
+
+const isCategoryDropdownOpen = ref(false);
+
+export interface SubMenuItem {
+  key: string;
+  label: string;
+  link: string;
+  icon: any;
+}
 
 export interface NavItem {
   key: string;
   label: string;
   link: string;
   badge?: string;
+  isDropdown?: boolean;
 }
+
+const categorySubMenu = computed<SubMenuItem[]>(() => [
+  { key: 'clothing', label: localeStore.t('nav.clothing'), link: '/category/clothing', icon: Shirt },
+  { key: 'womensCollection', label: localeStore.t('nav.womensCollection'), link: '/category/womens-collection', icon: ShoppingBag },
+  { key: 'perfume', label: localeStore.t('nav.perfume'), link: '/category/perfume', icon: Sparkles },
+  { key: 'watch', label: localeStore.t('nav.watch'), link: '/category/watch', icon: Watch },
+  { key: 'shoes', label: localeStore.t('nav.shoes'), link: '/category/shoes', icon: Footprints },
+  { key: 'sunnah', label: localeStore.t('nav.sunnah'), link: '/category/sunnah', icon: Bookmark }
+]);
 
 const navItems = computed<NavItem[]>(() => [
   { key: 'home', label: localeStore.t('nav.home'), link: '/' },
   { key: 'shop', label: localeStore.t('nav.shop'), link: '/shop' },
-  { key: 'fashion', label: localeStore.t('nav.fashion'), link: '/category/fashion' },
-  { key: 'gadgets', label: localeStore.t('nav.gadgets'), link: '/category/gadgets' },
-  { key: 'beauty', label: localeStore.t('nav.beauty'), link: '/category/beauty' },
+  { key: 'allCategories', label: localeStore.t('nav.allCategories'), link: '/shop', isDropdown: true },
   { key: 'newArrivals', label: localeStore.t('nav.newArrivals'), link: '/shop?sortBy=newest', badge: 'NEW' },
   { key: 'offers', label: localeStore.t('nav.offers'), link: '/offers', badge: 'HOT' },
   { key: 'about', label: localeStore.t('nav.about'), link: '/about' },
@@ -29,13 +47,25 @@ function isActive(link: string): boolean {
   if (link === '/') return route.path === '/';
   return route.fullPath === link || route.path.startsWith(link);
 }
+
+function isCategoryActive(): boolean {
+  return route.path.startsWith('/category/');
+}
 </script>
 
 <template>
   <nav class="desktop-navigation">
     <ul class="nav-list">
-      <li v-for="item in navItems" :key="item.label" class="nav-item">
+      <li
+        v-for="item in navItems"
+        :key="item.key"
+        :class="['nav-item', { 'has-dropdown': item.isDropdown }]"
+        @mouseenter="item.isDropdown ? (isCategoryDropdownOpen = true) : null"
+        @mouseleave="item.isDropdown ? (isCategoryDropdownOpen = false) : null"
+      >
+        <!-- Standard Nav Link -->
         <router-link
+          v-if="!item.isDropdown"
           :to="item.link"
           :class="['nav-link', { active: isActive(item.link) }]"
         >
@@ -44,6 +74,32 @@ function isActive(link: string): boolean {
             {{ item.badge }}
           </span>
         </router-link>
+
+        <!-- Dropdown Parent Link (ALL CATEGORY) -->
+        <div
+          v-else
+          :class="['nav-link', 'dropdown-trigger', { active: isCategoryActive() }]"
+        >
+          <span>{{ item.label }}</span>
+          <ChevronDown :size="14" :class="['chevron-icon', { open: isCategoryDropdownOpen }]" />
+        </div>
+
+        <!-- Dropdown Sub-Menu -->
+        <Transition name="dropdown-fade" v-if="item.isDropdown">
+          <div v-show="isCategoryDropdownOpen" class="dropdown-menu">
+            <div class="dropdown-pointer"></div>
+            <ul class="dropdown-list">
+              <li v-for="sub in categorySubMenu" :key="sub.key">
+                <router-link :to="sub.link" class="dropdown-item" @click="isCategoryDropdownOpen = false">
+                  <div class="item-icon-wrapper">
+                    <component :is="sub.icon" :size="16" />
+                  </div>
+                  <span class="item-label">{{ sub.label }}</span>
+                </router-link>
+              </li>
+            </ul>
+          </div>
+        </Transition>
       </li>
     </ul>
   </nav>
@@ -55,7 +111,7 @@ function isActive(link: string): boolean {
   border: none;
   box-shadow: none;
 
-  @media (max-width: 992px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 }
@@ -64,19 +120,24 @@ function isActive(link: string): boolean {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 20px;
   list-style: none;
   padding: 0;
   margin: 0;
 
-  @media (max-width: 1200px) {
-    gap: 12px;
+  @media (max-width: 1280px) {
+    gap: 14px;
   }
 }
 
 .nav-item {
   position: relative;
   flex-shrink: 0;
+
+  &.has-dropdown {
+    padding-bottom: 6px;
+    margin-bottom: -6px;
+  }
 }
 
 .nav-link {
@@ -84,12 +145,14 @@ function isActive(link: string): boolean {
   align-items: center;
   gap: 5px;
   padding: 8px 0;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.84rem;
+  font-weight: 700;
   color: var(--color-charcoal);
   white-space: nowrap;
+  letter-spacing: 0.02em;
   transition: var(--transition-fast);
   position: relative;
+  cursor: pointer;
 
   &::after {
     content: '';
@@ -104,7 +167,7 @@ function isActive(link: string): boolean {
   }
 
   &:hover, &.active {
-    color: var(--color-primary-dark);
+    color: var(--color-accent);
 
     &::after {
       width: 100%;
@@ -112,10 +175,81 @@ function isActive(link: string): boolean {
   }
 }
 
+.dropdown-trigger {
+  user-select: none;
+}
+
+.chevron-icon {
+  transition: transform 0.25s ease;
+  color: var(--color-muted);
+
+  &.open {
+    transform: rotate(180deg);
+    color: var(--color-accent);
+  }
+}
+
+/* Dropdown Menu Container */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 12px 32px rgba(29, 42, 35, 0.14);
+  padding: 8px 0;
+  z-index: 1000;
+}
+
+.dropdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  text-decoration: none;
+  transition: var(--transition-fast);
+
+  .item-icon-wrapper {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--color-bg-alt);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-fast);
+  }
+
+  &:hover {
+    background: var(--color-bg-alt);
+    color: var(--color-accent);
+
+    .item-icon-wrapper {
+      background: var(--color-accent);
+      color: #FFFFFF;
+    }
+  }
+}
+
 .nav-badge {
-  font-size: 0.58rem;
+  font-size: 0.55rem;
   font-weight: 700;
-  padding: 2px 6px;
+  padding: 2px 5px;
   border-radius: var(--radius-full);
   letter-spacing: 0.05em;
   line-height: 1;
@@ -125,16 +259,28 @@ function isActive(link: string): boolean {
   align-items: center;
 
   &--new {
-    background: linear-gradient(135deg, #4E856D 0%, #2A5A46 100%);
+    background: linear-gradient(135deg, #1D2A23 0%, #34443A 100%);
     color: #ffffff;
-    box-shadow: 0 2px 8px rgba(78, 133, 109, 0.4);
+    box-shadow: 0 2px 8px rgba(29, 42, 35, 0.4);
   }
 
   &--hot {
-    background: linear-gradient(135deg, #EE6D75 0%, #D63843 100%);
+    background: linear-gradient(135deg, #BE9134 0%, #A37928 100%);
     color: #ffffff;
-    box-shadow: 0 2px 8px rgba(238, 109, 117, 0.4);
+    box-shadow: 0 2px 8px rgba(190, 145, 52, 0.4);
   }
+}
+
+/* Animations */
+.dropdown-fade-enter-active,
+.dropdown-fade-leave-active {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dropdown-fade-enter-from,
+.dropdown-fade-leave-to {
+  opacity: 0;
+  transform: translateX(-50%) translateY(8px);
 }
 
 @keyframes badgePulseBlink {

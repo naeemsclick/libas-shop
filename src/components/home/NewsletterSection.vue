@@ -22,9 +22,9 @@ function handleSubscribe() {
       <div class="newsletter-card">
         <div class="card-content text-center">
           <span class="sub-heading">Stay Connected</span>
-          <h2 class="title">Join Rowha Mart</h2>
+          <h2 class="title">Join LIBAS Shop</h2>
           <p class="desc">
-            Subscribe to get exclusive previews of new arrivals, flash sale alerts, and weekly beauty & style tips directly in your inbox.
+            Subscribe to get exclusive previews of new modest collections, special offer alerts, and style updates directly in your inbox.
           </p>
 
           <form v-if="!isSubscribed" class="subscribe-form" @submit.prevent="handleSubscribe">
@@ -43,7 +43,7 @@ function handleSubscribe() {
 
           <div v-else class="success-message">
             <CheckCircle :size="20" />
-            <span>Thank you for subscribing to Rowha Mart newsletter!</span>
+            <span>Thank you for subscribing to LIBAS Shop newsletter!</span>
           </div>
         </div>
       </div>

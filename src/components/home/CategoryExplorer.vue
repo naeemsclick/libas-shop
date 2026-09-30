@@ -1,243 +1,233 @@
 <script setup lang="ts">
-import { ArrowRight, ShoppingBag, Smartphone, Sparkles } from 'lucide-vue-next';
-import { categoriesData } from '@/data/categories';
+import { computed } from 'vue';
+import { Shirt, Sparkles, Watch, Footprints, LayoutGrid } from 'lucide-vue-next';
+import CategoryIcons from '@/components/common/CategoryIcons.vue';
+import { useLocaleStore } from '@/stores/locale';
 
-const getIcon = (iconName?: string) => {
-  switch (iconName) {
-    case 'ShoppingBag': return ShoppingBag;
-    case 'Smartphone': return Smartphone;
-    case 'Sparkles': return Sparkles;
-    default: return ShoppingBag;
+const localeStore = useLocaleStore();
+
+export interface CategoryCircleItem {
+  id: string;
+  name: string;
+  nameBn?: string;
+  link: string;
+  isCustomIcon?: boolean;
+  iconName?: string;
+  lucideIcon?: any;
+  bgTint: string;
+  borderColor: string;
+  glowColor: string;
+}
+
+const categoriesList = computed<CategoryCircleItem[]>(() => [
+  {
+    id: 'clothing',
+    name: 'Clothing',
+    nameBn: 'পোশাক',
+    link: '/category/clothing',
+    lucideIcon: Shirt,
+    bgTint: '#EEF6F3',
+    borderColor: '#3D8866',
+    glowColor: 'rgba(61, 136, 102, 0.2)'
+  },
+  {
+    id: 'womens-collection',
+    name: "Women's Collection",
+    nameBn: 'উইমেনস কালেকশন',
+    link: '/category/womens-collection',
+    isCustomIcon: true,
+    iconName: 'womens-collection',
+    bgTint: '#FDF2F4',
+    borderColor: '#EE6D75',
+    glowColor: 'rgba(238, 109, 117, 0.2)'
+  },
+  {
+    id: 'perfume',
+    name: 'Perfume',
+    nameBn: 'পারফিউম ও আতর',
+    link: '/category/perfume',
+    lucideIcon: Sparkles,
+    bgTint: '#F5F0FF',
+    borderColor: '#9B51E0',
+    glowColor: 'rgba(155, 81, 224, 0.2)'
+  },
+  {
+    id: 'watch',
+    name: 'Watch',
+    nameBn: 'ঘড়ি',
+    link: '/category/watch',
+    lucideIcon: Watch,
+    bgTint: '#F0F6FF',
+    borderColor: '#2F80ED',
+    glowColor: 'rgba(47, 128, 237, 0.2)'
+  },
+  {
+    id: 'shoes',
+    name: 'Shoes',
+    nameBn: 'জুতা',
+    link: '/category/shoes',
+    lucideIcon: Footprints,
+    bgTint: '#FFF8EC',
+    borderColor: '#F2994A',
+    glowColor: 'rgba(242, 153, 74, 0.2)'
+  },
+  {
+    id: 'sunnah',
+    name: 'Sunnah',
+    nameBn: 'সুন্নাহ',
+    link: '/category/sunnah',
+    isCustomIcon: true,
+    iconName: 'sunnah',
+    bgTint: '#EFF9F2',
+    borderColor: '#27AE60',
+    glowColor: 'rgba(39, 174, 96, 0.2)'
+  },
+  {
+    id: 'view-all',
+    name: 'View All',
+    nameBn: 'সব দেখুন',
+    link: '/shop',
+    lucideIcon: LayoutGrid,
+    bgTint: '#F7F7F7',
+    borderColor: '#BE9134',
+    glowColor: 'rgba(190, 145, 52, 0.25)'
   }
-};
+]);
 </script>
 
 <template>
-  <section class="category-explorer section-spacing">
+  <section class="category-explorer-bar">
     <div class="container">
-      <div class="section-header">
-        <div>
-          <span class="sub-heading">Browse By Collection</span>
-          <h2 class="main-title">Explore Main Categories</h2>
-        </div>
-        <router-link to="/shop" class="view-all-link">
-          <span>View All Categories</span>
-          <ArrowRight :size="16" />
-        </router-link>
-      </div>
-
-      <div class="category-grid">
-        <div
-          v-for="cat in categoriesData"
-          :key="cat.id"
-          class="category-card"
+      <div class="categories-row">
+        <router-link
+          v-for="item in categoriesList"
+          :key="item.id"
+          :to="item.link"
+          class="category-circle-card"
         >
-          <div class="card-bg-image">
-            <img :src="cat.image" :alt="cat.name" loading="lazy" />
-            <div class="card-overlay"></div>
+          <!-- Circular Icon Badge with Pastel Ring Glow -->
+          <div
+            class="circle-badge"
+            :style="{
+              backgroundColor: item.bgTint,
+              boxShadow: `0 4px 14px ${item.glowColor}, inset 0 0 0 2px #ffffff`
+            }"
+          >
+            <CategoryIcons
+              v-if="item.isCustomIcon"
+              :name="item.iconName!"
+              :size="26"
+              class="circle-icon"
+              :style="{ color: item.borderColor }"
+            />
+            <component
+              v-else
+              :is="item.lucideIcon"
+              :size="26"
+              class="circle-icon"
+              :style="{ color: item.borderColor }"
+            />
           </div>
 
-          <div class="card-content">
-            <div class="icon-badge">
-              <component :is="getIcon(cat.icon)" :size="22" />
-            </div>
-
-            <h3 class="category-name">{{ cat.name }}</h3>
-            <p class="category-desc">{{ cat.description }}</p>
-
-            <div class="subcats-list">
-              <router-link
-                v-for="sub in cat.subcategories.slice(0, 3)"
-                :key="sub.slug"
-                :to="`/category/${cat.slug}?sub=${sub.slug}`"
-                class="subcat-chip"
-              >
-                {{ sub.name }}
-              </router-link>
-            </div>
-
-            <router-link :to="`/category/${cat.slug}`" class="explore-btn">
-              <span>Explore {{ cat.name }}</span>
-              <ArrowRight :size="14" />
-            </router-link>
-          </div>
-        </div>
+          <!-- Centered Title -->
+          <span class="category-name">
+            {{ localeStore.isBangla ? (item.nameBn || item.name) : item.name }}
+          </span>
+        </router-link>
       </div>
     </div>
   </section>
 </template>
 
 <style scoped lang="scss">
-.category-explorer {
-  background: var(--color-off-white);
+.category-explorer-bar {
+  background: #FFFFFF;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
 }
 
-.section-header {
+.categories-row {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 36px;
-}
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 6px 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 
-.sub-heading {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  display: block;
-  margin-bottom: 6px;
-}
-
-.main-title {
-  font-size: 1.8rem;
-  color: var(--color-charcoal);
-
-  @media (max-width: 768px) {
-    font-size: 1.4rem;
+  &::-webkit-scrollbar {
+    display: none;
   }
-}
-
-.view-all-link {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--color-primary-dark);
-
-  &:hover {
-    color: var(--color-primary);
-    gap: 10px;
-  }
-}
-
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
 
   @media (max-width: 992px) {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 6px 8px;
   }
 }
 
-.category-card {
-  position: relative;
-  height: 380px;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition-normal);
-
-  &:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
-
-    .card-bg-image img {
-      transform: scale(1.08);
-    }
-  }
-}
-
-.card-bg-image {
-  position: absolute;
-  inset: 0;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-  }
-
-  .card-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(37, 38, 46, 0.2) 0%,
-      rgba(37, 38, 46, 0.85) 100%
-    );
-  }
-}
-
-.card-content {
-  position: relative;
-  height: 100%;
-  padding: 28px;
+.category-circle-card {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  color: var(--color-white);
-  z-index: 2;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  width: 96px;
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    transform: translateY(-4px);
+
+    .circle-badge {
+      transform: scale(1.08);
+      box-shadow: 0 8px 22px rgba(29, 42, 35, 0.18) !important;
+    }
+
+    .category-name {
+      color: var(--color-accent);
+    }
+  }
+
+  @media (max-width: 600px) {
+    width: 78px;
+    gap: 6px;
+  }
 }
 
-.icon-badge {
-  width: 48px;
-  height: 48px;
+.circle-badge {
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
-  background: var(--color-primary);
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 12px rgba(104, 143, 122, 0.4);
-}
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
 
-.category-name {
-  font-size: 1.5rem;
-  color: white;
-  margin-bottom: 8px;
-}
-
-.category-desc {
-  font-size: 0.88rem;
-  color: var(--color-beige);
-  line-height: 1.45;
-  margin-bottom: 18px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.subcats-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 20px;
-}
-
-.subcat-chip {
-  padding: 4px 10px;
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(4px);
-  border-radius: var(--radius-full);
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: white;
-  transition: var(--transition-fast);
-
-  &:hover {
-    background: white;
-    color: var(--color-charcoal);
+  @media (max-width: 600px) {
+    width: 64px;
+    height: 64px;
   }
 }
 
-.explore-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--color-beige);
+.circle-icon {
+  transition: transform 0.25s ease;
+}
 
-  &:hover {
-    color: white;
-    gap: 12px;
+.category-name {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+
+  @media (max-width: 600px) {
+    font-size: 0.76rem;
   }
 }
 </style>

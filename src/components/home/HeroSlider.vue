@@ -24,13 +24,13 @@ const localeStore = useLocaleStore();
             :modules="modules"
             :slides-per-view="1"
             :loop="true"
-            :speed="1400"
+            :speed="2600"
             :effect="'fade'"
             :fadeEffect="{ crossFade: true }"
-            :autoplay="{ delay: 5500, disableOnInteraction: false }"
+            :autoplay="{ delay: 7500, disableOnInteraction: false }"
             :pagination="{ clickable: true }"
             :navigation="true"
-            class="hero-swiper"
+            class="hero-swiper background-slideshow"
           >
             <SwiperSlide v-for="slide in heroSlidesData" :key="slide.id">
               <div class="hero-slide-item">
@@ -62,37 +62,37 @@ const localeStore = useLocaleStore();
 
         <!-- Right Side: 2 Stacked Side Banners (approx 32% width) -->
         <div class="hero-side-banners">
-          <!-- Top Card: Fashion & Lifestyle Banner -->
+          <!-- Top Card: Premium Modest Style Banner -->
           <div class="side-banner-card">
-            <img src="/images/hero/hero-fashion.png" alt="Trendy Fashion" class="side-card-bg" />
+            <img src="/images/banners/hero-right-top.jpg" alt="Premium Modest Style" class="side-card-bg" />
             <div class="side-card-overlay"></div>
             <div class="side-card-content">
               <span class="side-badge">
-                {{ localeStore.isBangla ? 'নিউ কালেকশন' : 'NEW COLLECTION' }}
+                CLOTHING
               </span>
               <h3 class="side-title">
-                {{ localeStore.isBangla ? 'ট্রেন্ডি ফ্যাশন ও লাইফস্টাইল এসেনশিয়ালস' : 'Trendy Fashion & Lifestyle Essentials' }}
+                {{ localeStore.isBangla ? 'প্রিমিয়াম শালীন ফ্যাশন ও পোশাক' : 'PREMIUM MODEST STYLE' }}
               </h3>
-              <router-link to="/category/fashion" class="side-link">
-                <span>{{ localeStore.isBangla ? 'অর্ডার করুন' : 'Order Now' }}</span>
+              <router-link to="/category/clothing" class="side-link">
+                <span>{{ localeStore.isBangla ? 'অর্ডার করুন' : 'Shop Now' }}</span>
                 <ArrowRight :size="14" />
               </router-link>
             </div>
           </div>
 
-          <!-- Bottom Card: Beauty & Care Banner -->
+          <!-- Bottom Card: Shoes & Footwear Banner -->
           <div class="side-banner-card">
-            <img src="/images/hero/hero-beauty.png" alt="Beauty & Care" class="side-card-bg" />
+            <img src="/images/banners/hero-right-bottom.jpg" alt="Premium Shoes Collection" class="side-card-bg" />
             <div class="side-card-overlay"></div>
             <div class="side-card-content">
-              <span class="side-badge badge-accent">
-                {{ localeStore.isBangla ? 'স্পেশাল অফার' : 'SPECIAL OFFER' }}
+              <span class="side-badge">
+                SHOES
               </span>
               <h3 class="side-title">
-                {{ localeStore.isBangla ? 'বিউটি অ্যান্ড কেয়ার প্রিমিয়াম সামগ্রী' : 'Beauty & Skincare Premium Items' }}
+                {{ localeStore.isBangla ? 'প্রিমিয়াম জুতা ও স্যান্ডেল কালেকশন' : 'PREMIUM SHOES COLLECTION' }}
               </h3>
-              <router-link to="/category/beauty" class="side-link">
-                <span>{{ localeStore.isBangla ? 'অর্ডার করুন' : 'Order Now' }}</span>
+              <router-link to="/category/shoes" class="side-link">
+                <span>{{ localeStore.isBangla ? 'অর্ডার করুন' : 'Shop Now' }}</span>
                 <ArrowRight :size="14" />
               </router-link>
             </div>
@@ -227,16 +227,16 @@ const localeStore = useLocaleStore();
   object-fit: cover;
   object-position: center;
   transform: scale(1);
-  transition: transform 6s cubic-bezier(0.1, 1, 0.1, 1);
+  transition: transform 12s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 :deep(.swiper-slide-active) {
   .slide-bg-img {
-    transform: scale(1.042);
+    transform: scale(1.055);
   }
 
   .slide-content {
-    animation: fadeInUpContent 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: fadeInUpContent 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 }
 
@@ -294,7 +294,7 @@ const localeStore = useLocaleStore();
 .slide-badge {
   display: inline-block;
   padding: 5px 14px;
-  background: #D66B5F;
+  background: var(--color-accent);
   color: #FFFFFF;
   font-size: 0.75rem;
   font-weight: 700;
@@ -302,7 +302,7 @@ const localeStore = useLocaleStore();
   margin-bottom: 14px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  box-shadow: 0 4px 12px rgba(214, 107, 95, 0.35);
+  box-shadow: 0 4px 12px rgba(190, 145, 52, 0.4);
 
   @media (max-width: 600px) {
     padding: 3px 8px;
@@ -363,18 +363,18 @@ const localeStore = useLocaleStore();
   align-items: center;
   gap: 8px;
   padding: 12px 28px;
-  background: #D66B5F;
+  background: var(--color-accent);
   color: #FFFFFF;
   font-size: 0.95rem;
   font-weight: 700;
   border-radius: 999px;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 18px rgba(214, 107, 95, 0.4);
+  box-shadow: 0 6px 18px rgba(190, 145, 52, 0.4);
 
   &:hover {
-    background: #BE564B;
+    background: var(--color-accent-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(190, 86, 75, 0.5);
+    box-shadow: 0 8px 22px rgba(163, 121, 40, 0.5);
   }
 
   @media (max-width: 600px) {
@@ -447,7 +447,7 @@ const localeStore = useLocaleStore();
 .side-badge {
   display: inline-block;
   padding: 4px 10px;
-  background: #D66B5F;
+  background: var(--color-accent);
   color: #FFFFFF;
   font-size: 0.7rem;
   font-weight: 700;
@@ -457,7 +457,7 @@ const localeStore = useLocaleStore();
   text-transform: uppercase;
 
   &.badge-accent {
-    background: #D66B5F;
+    background: var(--color-primary);
   }
 }
 
@@ -485,7 +485,7 @@ const localeStore = useLocaleStore();
   transition: all 0.2s ease;
 
   &:hover {
-    color: #EE6D75;
+    color: var(--color-accent);
     transform: translateX(3px);
   }
 }
