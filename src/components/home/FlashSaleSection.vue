@@ -48,10 +48,10 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
 
 .flash-banner-card {
   background: linear-gradient(135deg, #24362B 0%, #17241C 100%);
-  border: 3.5px solid var(--color-accent);
+  border: 3.5px solid #946E22;
   border-radius: var(--radius-xl);
   padding: 36px;
-  box-shadow: 0 0 30px rgba(190, 145, 52, 0.65), 0 0 50px rgba(190, 145, 52, 0.3), 0 12px 32px rgba(29, 42, 35, 0.25);
+  box-shadow: 0 0 30px rgba(148, 110, 34, 0.75), 0 0 50px rgba(148, 110, 34, 0.35), 0 12px 32px rgba(29, 42, 35, 0.25);
   position: relative;
   overflow: hidden;
 

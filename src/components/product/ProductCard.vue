@@ -135,9 +135,9 @@ function handleQuickView(e: Event) {
   position: relative;
 
   &:hover {
-    box-shadow: var(--shadow-card);
+    box-shadow: 0 8px 25px rgba(163, 121, 40, 0.3), 0 4px 16px rgba(29, 42, 35, 0.15);
     transform: translateY(-4px);
-    border-color: var(--color-border-hover);
+    border-color: #A37928;
 
     .hover-add-cart-btn {
       transform: translateY(0);
