@@ -359,14 +359,31 @@ function handleQuickView(e: Event) {
   }
 }
 
+.badge--sale {
+  animation: badgeSlideInRight 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.product-card:hover .old-price::after {
+  animation: strikethroughHoverExpand 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.product-card:hover .badge--sale {
+  animation: badgeHoverPulse 0.5s ease-in-out;
+}
+
 @keyframes strikethroughExpand {
   to {
     transform: translateY(-50%) scaleX(1);
   }
 }
 
-.badge--sale {
-  animation: badgeSlideInRight 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+@keyframes strikethroughHoverExpand {
+  0% {
+    transform: translateY(-50%) scaleX(0);
+  }
+  100% {
+    transform: translateY(-50%) scaleX(1);
+  }
 }
 
 @keyframes badgeSlideInRight {
@@ -377,5 +394,14 @@ function handleQuickView(e: Event) {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes badgeHoverPulse {
+  0%, 100% {
+    transform: scale(1) translateX(0);
+  }
+  50% {
+    transform: scale(1.16) translateX(-3px);
   }
 }</style>

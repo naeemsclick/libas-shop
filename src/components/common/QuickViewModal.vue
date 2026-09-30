@@ -5,6 +5,7 @@ import { useUiStore } from '@/stores/ui';
 import { useCartStore } from '@/stores/cart';
 import { useWishlistStore } from '@/stores/wishlist';
 import { formatPrice } from '@/utils/formatters';
+import { getColorHex } from '@/utils/colors';
 
 const uiStore = useUiStore();
 const cartStore = useCartStore();
@@ -95,10 +96,17 @@ function handleToggleWishlist() {
                   v-for="color in product.colors"
                   :key="color"
                   type="button"
-                  :class="['pill-btn', { active: (selectedColor || product.colors[0]) === color }]"
+                  :class="['color-pill-btn', { active: (selectedColor || product.colors[0]) === color }]"
                   @click="selectedColor = color"
                 >
-                  {{ color }}
+                  <span
+                    class="color-dot"
+                    :style="{
+                      backgroundColor: getColorHex(color),
+                      border: color.toLowerCase().includes('white') || color.toLowerCase().includes('সাদা') ? '1px solid #CCCCCC' : 'none'
+                    }"
+                  ></span>
+                  <span>{{ color }}</span>
                 </button>
               </div>
             </div>
@@ -338,6 +346,54 @@ function handleToggleWishlist() {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+  }
+
+  .color-pill-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 12px 5px 7px;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-charcoal);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+    .color-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+
+    &:hover {
+      border-color: var(--color-accent);
+      color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(190, 145, 52, 0.18);
+
+      .color-dot {
+        transform: scale(1.15);
+      }
+    }
+
+    &.active {
+      border-color: var(--color-accent);
+      background: linear-gradient(135deg, #1D2A23 0%, #2C3F35 100%);
+      color: #FFFFFF;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(29, 42, 35, 0.25);
+
+      .color-dot {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 2px #FFFFFF;
+      }
+    }
   }
 
   .pill-btn {

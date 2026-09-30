@@ -13,6 +13,8 @@ import { useUiStore } from '@/stores/ui';
 import { useSeo } from '@/composables/useSeo';
 import { formatPrice } from '@/utils/formatters';
 
+import { getColorHex } from '@/utils/colors';
+
 const route = useRoute();
 const router = useRouter();
 const productStore = useProductStore();
@@ -152,7 +154,7 @@ function handleWhatsAppOrder() {
 
           <p class="short-desc">{{ product.shortDescription || product.description }}</p>
 
-          <!-- Color options -->
+          <!-- Color options with visual swatches -->
           <div v-if="product.colors && product.colors.length" class="variant-group">
             <label class="variant-label">Color: <span>{{ selectedColor }}</span></label>
             <div class="variant-options">
@@ -160,10 +162,17 @@ function handleWhatsAppOrder() {
                 v-for="color in product.colors"
                 :key="color"
                 type="button"
-                :class="['option-chip', { active: selectedColor === color }]"
+                :class="['color-chip-btn', { active: selectedColor === color }]"
                 @click="selectedColor = color"
               >
-                {{ color }}
+                <span
+                  class="color-dot"
+                  :style="{
+                    backgroundColor: getColorHex(color),
+                    border: color.toLowerCase().includes('white') || color.toLowerCase().includes('সাদা') ? '1px solid #CCCCCC' : 'none'
+                  }"
+                ></span>
+                <span>{{ color }}</span>
               </button>
             </div>
           </div>
@@ -460,7 +469,22 @@ function handleWhatsAppOrder() {
 .old-price {
   font-size: 1.1rem;
   color: var(--color-taupe);
-  text-decoration: line-through;
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-error);
+    transform: translateY(-50%) scaleX(0);
+    transform-origin: left center;
+    animation: strikethroughExpand 0.75s 0.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
 }
 
 .discount-tag {
@@ -470,6 +494,55 @@ function handleWhatsAppOrder() {
   border-radius: var(--radius-sm);
   font-size: 0.8rem;
   font-weight: 700;
+  animation: badgeSlideInRight 0.6s 0.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.color-chip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 8px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+
+  .color-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(190, 145, 52, 0.2);
+
+    .color-dot {
+      transform: scale(1.18);
+    }
+  }
+
+  &.active {
+    border-color: var(--color-accent);
+    background: linear-gradient(135deg, #1D2A23 0%, #2C3F35 100%);
+    color: #FFFFFF;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(29, 42, 35, 0.25);
+    transform: scale(1.05);
+
+    .color-dot {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 2px #FFFFFF;
+    }
+  }
 }
 
 .short-desc {
