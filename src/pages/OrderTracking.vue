@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
-import { Search, PackageCheck, Truck, Clock, CheckCircle2 } from 'lucide-vue-next';
+import { Search, PackageCheck, Truck, Clock, CheckCircle2, ShieldCheck, Sparkles } from 'lucide-vue-next';
 import { getOrderById } from '@/services/orders';
 import type { Order } from '@/types';
 import { useSeo } from '@/composables/useSeo';
@@ -10,7 +10,7 @@ import { formatPrice, formatDate } from '@/utils/formatters';
 const route = useRoute();
 
 useSeo({
-  title: 'Track Your Order',
+  title: 'Track Your Order | LIBAS Shop',
   description: 'Track real-time status of your LIBAS Shop order.'
 });
 
@@ -57,7 +57,17 @@ onMounted(() => {
 <template>
   <div class="order-tracking-page section-spacing">
     <div class="container">
-      <div class="tracking-card">
+      <nav class="breadcrumb">
+        <router-link to="/">Home</router-link>
+        <span class="sep">/</span>
+        <span class="current">Track Your Order</span>
+      </nav>
+
+      <div class="tracking-card glass-card">
+        <div class="header-badge text-center">
+          <Sparkles :size="14" />
+          <span>REAL-TIME TRACKING SYSTEM</span>
+        </div>
         <h1 class="page-title text-center">Track Your Order</h1>
         <p class="subtitle text-center">Enter your Order ID (e.g. LIB-849201) or Mobile Number (e.g. 01717000414) to check status.</p>
 
@@ -69,7 +79,7 @@ onMounted(() => {
             required
             class="tracking-input"
           />
-          <button type="submit" :disabled="isLoading" class="btn btn--primary btn--md">
+          <button type="submit" :disabled="isLoading" class="btn btn--primary btn--md track-submit-btn">
             <Search :size="18" />
             <span>{{ isLoading ? 'Checking...' : 'Track Order' }}</span>
           </button>
@@ -79,7 +89,7 @@ onMounted(() => {
 
         <!-- Tracking Timeline Result -->
         <div v-if="searchedOrder" class="tracking-results">
-          <div class="result-header">
+          <div class="result-header glass-header-inner">
             <div>
               <span class="order-label">Order Details</span>
               <h3 class="order-id-title">{{ searchedOrder.id }}</h3>
@@ -112,11 +122,14 @@ onMounted(() => {
           </div>
 
           <!-- Order Summary Details -->
-          <div class="order-summary-box">
-            <h4>Delivery Address</h4>
-            <p>{{ searchedOrder.customerName }} ({{ searchedOrder.phone }})</p>
-            <p>{{ searchedOrder.address }}, {{ searchedOrder.area }}, {{ searchedOrder.city }}</p>
-            <p class="amount">Total Amount: <strong>{{ formatPrice(searchedOrder.totalAmount) }}</strong> ({{ searchedOrder.paymentMethod }})</p>
+          <div class="order-summary-box glass-pill">
+            <div class="summary-header">
+              <ShieldCheck :size="18" class="shield-gold" />
+              <h4>Delivery & Order Summary</h4>
+            </div>
+            <p class="customer-info"><strong>Recipient:</strong> {{ searchedOrder.customerName }} ({{ searchedOrder.phone }})</p>
+            <p class="address-info"><strong>Address:</strong> {{ searchedOrder.address }}, {{ searchedOrder.area }}, {{ searchedOrder.city }}</p>
+            <p class="amount">Total Amount: <strong>{{ formatPrice(searchedOrder.totalAmount) }}</strong> (Payment: {{ searchedOrder.paymentMethod }})</p>
           </div>
         </div>
       </div>
@@ -126,30 +139,62 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .order-tracking-page {
-  background: var(--color-off-white);
+  background: linear-gradient(180deg, #F9F7F2 0%, #F4F0E6 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--color-taupe);
+  margin-bottom: 24px;
+
+  .sep { opacity: 0.5; }
+  .current { color: var(--color-charcoal); font-weight: 600; }
 }
 
 .text-center { text-align: center; }
 
-.tracking-card {
-  max-width: 760px;
-  margin: 0 auto;
-  background: white;
+.glass-card {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-radius: var(--radius-xl);
-  padding: 44px;
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-md);
+  padding: 48px;
+  border: 1.5px solid rgba(190, 145, 52, 0.25);
+  box-shadow: 0 12px 36px rgba(29, 42, 35, 0.08);
+  max-width: 780px;
+  margin: 0 auto;
 
-  @media (max-width: 768px) { padding: 24px 16px; }
+  @media (max-width: 768px) { padding: 28px 18px; }
 }
 
-.page-title { font-size: 2rem; margin-bottom: 8px; }
-.subtitle { font-size: 0.92rem; color: var(--color-taupe); margin-bottom: 28px; }
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  background: rgba(190, 145, 52, 0.12);
+  color: #8E661B;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-full);
+  margin-bottom: 14px;
+  border: 1px solid rgba(190, 145, 52, 0.25);
+}
+
+.page-title { font-size: 2.3rem; margin-bottom: 8px; color: var(--color-charcoal); }
+.subtitle { font-size: 0.96rem; color: var(--color-taupe); margin-bottom: 32px; line-height: 1.55; }
 
 .tracking-form {
   display: flex;
-  gap: 10px;
-  max-width: 520px;
+  gap: 12px;
+  max-width: 560px;
   margin: 0 auto 32px;
 
   @media (max-width: 480px) {
@@ -159,24 +204,34 @@ onMounted(() => {
 
 .tracking-input {
   flex: 1;
-  padding: 12px 18px;
+  padding: 14px 20px;
   border-radius: var(--radius-md);
-  border: 1.5px solid var(--color-border);
+  border: 1.5px solid rgba(226, 230, 227, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   outline: none;
-  font-size: 0.95rem;
+  font-size: 0.96rem;
+  transition: all 0.2s ease;
 
-  &:focus { border-color: var(--color-primary); }
+  &:focus {
+    border-color: #BE9134;
+    box-shadow: 0 0 14px rgba(190, 145, 52, 0.22);
+    background: #FFFFFF;
+  }
+}
+
+.track-submit-btn {
+  box-shadow: 0 6px 18px rgba(29, 42, 35, 0.22);
 }
 
 .error-msg {
   color: var(--color-error);
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 10px;
 }
 
 .tracking-results {
   margin-top: 36px;
-  border-top: 1px solid var(--color-border);
+  border-top: 1.5px solid rgba(190, 145, 52, 0.2);
   padding-top: 32px;
 }
 
@@ -185,18 +240,24 @@ onMounted(() => {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 32px;
+  background: rgba(246, 243, 236, 0.7);
+  padding: 18px 20px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(190, 145, 52, 0.2);
 }
 
-.order-label { font-size: 0.78rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; }
-.order-id-title { font-size: 1.5rem; margin-bottom: 2px; }
-.order-date { font-size: 0.82rem; color: var(--color-taupe); }
+.order-label { font-size: 0.78rem; font-weight: 700; color: #BE9134; text-transform: uppercase; letter-spacing: 0.04em; }
+.order-id-title { font-size: 1.55rem; margin-bottom: 2px; color: var(--color-charcoal); }
+.order-date { font-size: 0.84rem; color: var(--color-taupe); }
 
 .status-pill-badge {
-  background: var(--color-primary-subtle);
-  color: var(--color-primary-dark);
-  padding: 6px 14px;
+  background: #2D4035;
+  color: #F7EFCF;
+  padding: 6px 16px;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  font-size: 0.84rem;
+  border: 1px solid #BE9134;
+  box-shadow: 0 4px 12px rgba(45, 64, 53, 0.25);
 }
 
 .timeline-wrapper {
@@ -212,7 +273,7 @@ onMounted(() => {
     left: 10%;
     right: 10%;
     height: 3px;
-    background: var(--color-border);
+    background: rgba(190, 145, 52, 0.2);
     z-index: 1;
   }
 
@@ -233,19 +294,20 @@ onMounted(() => {
   gap: 8px;
 
   .step-icon {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     background: white;
-    border: 2px solid var(--color-border);
+    border: 2px solid rgba(190, 145, 52, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-taupe);
+    transition: all 0.3s ease;
   }
 
   .step-title {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     font-weight: 600;
     text-transform: capitalize;
     color: var(--color-taupe);
@@ -253,23 +315,34 @@ onMounted(() => {
 
   &.completed {
     .step-icon {
-      background: var(--color-primary);
-      border-color: var(--color-primary);
+      background: #BE9134;
+      border-color: #BE9134;
       color: white;
+      box-shadow: 0 0 14px rgba(190, 145, 52, 0.45);
     }
-    .step-title { color: var(--color-charcoal); }
+    .step-title { color: var(--color-charcoal); font-weight: 700; }
   }
 }
 
-.order-summary-box {
-  background: var(--color-off-white);
-  padding: 20px;
-  border-radius: var(--radius-md);
-  font-size: 0.9rem;
+.glass-pill {
+  background: rgba(246, 243, 236, 0.85);
+  border: 1.5px solid rgba(190, 145, 52, 0.25);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  font-size: 0.92rem;
   color: var(--color-charcoal);
-
-  h4 { margin-bottom: 8px; }
-  p { margin-bottom: 4px; color: var(--color-taupe); }
-  .amount { margin-top: 10px; color: var(--color-charcoal); }
 }
+
+.summary-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+
+  .shield-gold { color: #BE9134; }
+  h4 { font-size: 1.1rem; color: var(--color-charcoal); }
+}
+
+.customer-info, .address-info { margin-bottom: 6px; color: var(--color-taupe); }
+.amount { margin-top: 12px; color: var(--color-charcoal); font-size: 1rem; border-top: 1px solid rgba(190, 145, 52, 0.2); padding-top: 10px; }
 </style>

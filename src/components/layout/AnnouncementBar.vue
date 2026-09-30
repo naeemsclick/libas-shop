@@ -195,12 +195,24 @@ const tickerItems = computed(() => [
   }
 
   .customer-care-link {
-    font-weight: 600;
+    font-weight: 700;
+    animation: phoneFlickerGold 2.8s ease-in-out infinite;
 
     .cc-icon {
       color: var(--color-accent);
     }
   }
+
+@keyframes phoneFlickerGold {
+  0%, 100% {
+    color: #FFFFFF;
+    text-shadow: none;
+  }
+  50% {
+    color: #BE9134;
+    text-shadow: 0 0 8px rgba(190, 145, 52, 0.45);
+  }
+}
 
   .track-link {
     color: var(--color-beige);

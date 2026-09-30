@@ -94,7 +94,8 @@ const categorySubMenu = computed<SubMenuItem[]>(() => [
     key: 'sunnah',
     label: localeStore.t('nav.sunnah'),
     link: '/category/sunnah',
-    icon: Bookmark,
+    isCustomIcon: true,
+    iconName: 'sunnah',
     subCategories: [
       { label: 'Islamic Cap & Tupi', link: '/category/sunnah' },
       { label: 'Natural Miswak & Surma', link: '/category/sunnah' },
