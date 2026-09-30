@@ -654,6 +654,14 @@ function handleWhatsAppOrder() {
 }
 
 .add-cart-btn {
+  background: #3A5646 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #2C4236 !important;
+
+  &:hover {
+    background: #2B3D32 !important;
+  }
+
   @media (max-width: 600px) {
     grid-column: 1 / 2;
   }
