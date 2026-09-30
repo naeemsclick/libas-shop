@@ -150,8 +150,8 @@ useSeo({
 .about-hero {
   text-align: center;
   max-width: 840px;
-  margin: 0 auto 56px;
-  padding: 48px 36px;
+  margin: 0 auto 48px;
+  padding: 44px 36px;
   position: relative;
   overflow: hidden;
 
@@ -170,7 +170,7 @@ useSeo({
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .sparkle-gold {
@@ -190,25 +190,25 @@ useSeo({
 }
 
 .hero-title {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   color: var(--color-charcoal);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 
   @media (max-width: 768px) { font-size: 2rem; }
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--color-taupe);
   line-height: 1.65;
 }
 
 .story-content-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 36px;
-  align-items: center;
-  margin-bottom: 72px;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+  margin-bottom: 64px;
 
   @media (max-width: 992px) {
     grid-template-columns: 1fr;
@@ -217,15 +217,19 @@ useSeo({
 
 .glass-image-container {
   position: relative;
-  height: 460px;
+  min-height: 460px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: 0 20px 48px rgba(29, 42, 35, 0.22), 0 0 28px rgba(190, 145, 52, 0.35);
+  box-shadow: 0 16px 40px rgba(29, 42, 35, 0.14), 0 0 20px rgba(190, 145, 52, 0.25);
   border: 2.5px solid #BE9134;
 
   .boutique-img {
     width: 100%;
     height: 100%;
+    flex: 1;
     object-fit: cover;
     transition: transform 0.6s ease;
   }
@@ -255,9 +259,15 @@ useSeo({
 }
 
 .text-box {
-  padding: 40px;
+  padding: 36px 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2.5px solid #BE9134;
+  box-shadow: 0 16px 40px rgba(29, 42, 35, 0.14), 0 0 20px rgba(190, 145, 52, 0.25);
 
-  @media (max-width: 768px) { padding: 24px; }
+  @media (max-width: 768px) { padding: 28px 24px; }
 }
 
 .sub-title {

@@ -10,7 +10,7 @@ export interface SeoOptions {
 
 const DEFAULT_TITLE = 'LIBAS Shop | YOUR CHOICE OUR PROMISE';
 const DEFAULT_DESC = 'LIBAS Shop - Modern e-commerce destination for modest fashion, Jubba, Abaya, Perfumes, Watches, Shoes, and Sunnah essentials.';
-const DEFAULT_IMAGE = 'https://libas.shop/images/logo.png';
+const DEFAULT_IMAGE = 'https://libas.shop/images/og-share-banner.jpg';
 const DEFAULT_URL = 'https://libas.shop/';
 
 function setMetaTag(selector: string, attr: string, value: string) {
@@ -34,16 +34,25 @@ export function useSeo(options: SeoOptions) {
     document.title = titleText;
 
     const descText = options.description || DEFAULT_DESC;
-    const imgUrl = options.image || DEFAULT_IMAGE;
+    let imgUrl = options.image || DEFAULT_IMAGE;
+
+    if (!imgUrl.startsWith('http://') && !imgUrl.startsWith('https://')) {
+      const origin = typeof window !== 'undefined' && window.location.origin ? window.location.origin : 'https://libas.shop';
+      const cleanPath = imgUrl.startsWith('/') ? imgUrl : `/${imgUrl}`;
+      imgUrl = `${origin}${cleanPath}`;
+    }
+
     const pageUrl = options.url || (typeof window !== 'undefined' ? window.location.href : DEFAULT_URL);
 
     setMetaTag('meta[name="description"]', 'content', descText);
     setMetaTag('meta[property="og:site_name"]', 'content', 'LIBAS Shop');
-    setMetaTag('meta[property="og:type"]', 'content', options.type || 'article');
+    setMetaTag('meta[property="og:type"]', 'content', options.type || 'product');
     setMetaTag('meta[property="og:title"]', 'content', titleText);
     setMetaTag('meta[property="og:description"]', 'content', descText);
     setMetaTag('meta[property="og:image"]', 'content', imgUrl);
     setMetaTag('meta[property="og:image:secure_url"]', 'content', imgUrl);
+    setMetaTag('meta[property="og:image:width"]', 'content', '1200');
+    setMetaTag('meta[property="og:image:height"]', 'content', '630');
     setMetaTag('meta[property="og:url"]', 'content', pageUrl);
 
     setMetaTag('meta[name="twitter:card"]', 'content', 'summary_large_image');

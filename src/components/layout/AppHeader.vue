@@ -143,34 +143,25 @@ onUnmounted(() => {
   position: sticky;
   top: 0;
   z-index: 950;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-}
-
-.app-header-root.is-scrolled {
-  background: rgba(255, 255, 255, 0.65) !important;
-  backdrop-filter: blur(20px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  box-shadow: 0 8px 32px rgba(29, 42, 35, 0.15) !important;
-  border-bottom: 1.5px solid rgba(190, 145, 52, 0.35) !important;
+  background: transparent;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .main-header-row {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
   padding: 8px 0;
   border-bottom: 1px solid rgba(226, 232, 228, 0.8);
   transition: all 0.3s ease;
 }
 
 .app-header-root.is-scrolled .main-header-row {
-  background: rgba(255, 255, 255, 0.65) !important;
-  backdrop-filter: blur(20px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  border-bottom: 1.5px solid rgba(190, 145, 52, 0.25) !important;
+  background: rgba(255, 255, 255, 0.55) !important;
+  backdrop-filter: blur(24px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(200%) !important;
+  box-shadow: 0 10px 30px rgba(29, 42, 35, 0.12), 0 2px 10px rgba(190, 145, 52, 0.15) !important;
+  border-bottom: 1.5px solid rgba(190, 145, 52, 0.4) !important;
 }
 
 .header-flex-container {
