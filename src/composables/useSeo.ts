@@ -10,8 +10,8 @@ export interface SeoOptions {
 
 const DEFAULT_TITLE = 'LIBAS Shop | YOUR CHOICE OUR PROMISE';
 const DEFAULT_DESC = 'LIBAS Shop - Modern e-commerce destination for modest fashion, Jubba, Abaya, Perfumes, Watches, Shoes, and Sunnah essentials.';
-const DEFAULT_IMAGE = 'https://libas.shop/images/og-share-banner.jpg';
-const DEFAULT_URL = 'https://libas.shop/';
+const DEFAULT_IMAGE = 'https://libas-shop.pages.dev/images/og-share-banner.jpg';
+const DEFAULT_URL = 'https://libas-shop.pages.dev/';
 
 function setMetaTag(selector: string, attr: string, value: string) {
   let el = document.querySelector(selector);

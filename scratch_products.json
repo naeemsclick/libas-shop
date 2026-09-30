@@ -1,0 +1,818 @@
+[
+  {
+    "id": "libas-7230",
+    "slug": "pew-soul-arabian",
+    "name": "PU Sole Arabian Shoes । পিউ সোল এরাবিয়ান জুতা",
+    "image": "https://libas.shop/wp-content/uploads/2026/02/পিউ-সোল-এরাবিয়ান-Pew-Soul-Arabian-1.jpg",
+    "price": 900,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-7211",
+    "slug": "arabian-package",
+    "name": "Arabian package । এরাবিয়ান প্যাকেজ",
+    "image": "https://libas.shop/wp-content/uploads/2026/02/Arabian-package.webp",
+    "price": 5160,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-7104",
+    "slug": "elite-jubba-eid-libas",
+    "name": "Elite Jubba | এলিট জুব্বা [ঈদ স্পেশাল]",
+    "image": "https://libas.shop/wp-content/uploads/2026/02/Libas-Elite-Jubba-eid-Special-11.webp",
+    "price": 2500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-7066",
+    "slug": "nawabi-package",
+    "name": "Nawabi Package | নবাবী প্যাকেজ",
+    "image": "https://libas.shop/wp-content/uploads/2026/02/Nawabi-Package-Libas-নবাবী-প্যাকেজ.webp",
+    "price": 2450,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6584",
+    "slug": "reversible-waistcoat-arabian-style",
+    "name": "Reversible Waistcoat (Arabian Style)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/New-Koti-Black-Main.webp",
+    "price": 1750,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6542",
+    "slug": "arabian-opulent-thobe",
+    "name": "Arabian Opulent Thobe",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/Jubba-Winter-Black-Main.webp",
+    "price": 1200,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6484",
+    "slug": "arwa-borka",
+    "name": "Arwa Borka",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/Arwa-Borka-Main-1.webp",
+    "price": 2450,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6474",
+    "slug": "hurrem-borka",
+    "name": "Hürrem Borka",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/Hurrem-Borka-Main-1.webp",
+    "price": 2450,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6449",
+    "slug": "zip-up-hoodie-black",
+    "name": "Zip-Up Hoodie (Black)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/Hoodie-Black-Main.webp",
+    "price": 1790,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6443",
+    "slug": "zip-up-hoodie-light-coffee",
+    "name": "Zip-Up Hoodie (Light Coffee)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/Hoodie-Light-Coffee-Main.webp",
+    "price": 1790,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6437",
+    "slug": "zip-up-hoodie-ash-grey",
+    "name": "Zip-Up Hoodie (Ash Grey)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/Hoodie-Ash-Grey-Main.webp",
+    "price": 1790,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6418",
+    "slug": "zip-up-hoodie-orange",
+    "name": "Zip-Up Hoodie (Orange)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/Hoodie-Orange-Main.webp",
+    "price": 1790,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6406",
+    "slug": "dawah-t-shirt-free-palestine",
+    "name": "Dawah T-Shirt (FREE PALESTINE)",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/T-Shirt-04.webp",
+    "price": 225,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6400",
+    "slug": "dawah-t-shirt-save-al-aqsa",
+    "name": "Dawah T-Shirt (SAVE AL AQSA)",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/T-Shirt-01.webp",
+    "price": 225,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6394",
+    "slug": "dawah-t-shirt-barakah",
+    "name": "Dawah T-Shirt (BARAKAH)",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/T-Shirt-03.webp",
+    "price": 225,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6388",
+    "slug": "dawah-t-shirt-change-your-mind",
+    "name": "Dawah T-Shirt (CHANGE YOUR MIND)",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/T-Shirt-02.webp",
+    "price": 225,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6360",
+    "slug": "libas-waistcoat-koti-20",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/23-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6352",
+    "slug": "libas-waistcoat-koti-19",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/25-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6344",
+    "slug": "libas-waistcoat-koti-18",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/10-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6336",
+    "slug": "libas-waistcoat-koti-17",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/09-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6328",
+    "slug": "libas-waistcoat-koti-16",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/18-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6320",
+    "slug": "libas-waistcoat-koti-15",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/20-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6312",
+    "slug": "libas-waistcoat-koti-14",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/08-Koti-Main-1.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6304",
+    "slug": "libas-waistcoat-koti-13",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/15-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6296",
+    "slug": "libas-waistcoat-koti-12",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/14-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6288",
+    "slug": "libas-waistcoat-koti-11",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/16-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6280",
+    "slug": "libas-waistcoat-koti-10",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/13-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6272",
+    "slug": "libas-waistcoat-koti-9",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/17-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6264",
+    "slug": "libas-waistcoat-koti-8",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/12-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6256",
+    "slug": "libas-waistcoat-koti-7",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/11-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6249",
+    "slug": "libas-waistcoat-koti-6",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/01-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6241",
+    "slug": "libas-waistcoat-koti-5",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/05-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6233",
+    "slug": "libas-waistcoat-koti-4",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/04-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6225",
+    "slug": "libas-waistcoat-koti-3",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/06-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6217",
+    "slug": "libas-waistcoat-koti-2",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/07-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6202",
+    "slug": "libas-waistcoat-koti",
+    "name": "Libas Waistcoat (Koti)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/21-Koti-Main.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6146",
+    "slug": "cozy-ladies-shawl-kashmiri-6",
+    "name": "Cozy Ladies Shawl (Kashmiri)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/06-Ladies-Shawl-Main-4.webp",
+    "price": 1550,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6143",
+    "slug": "cozy-ladies-shawl-kashmiri-5",
+    "name": "Cozy Ladies Shawl (Kashmiri)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/05-Ladies-Shawl-Main-4.webp",
+    "price": 1550,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6140",
+    "slug": "cozy-ladies-shawl-kashmiri-4",
+    "name": "Cozy Ladies Shawl (Kashmiri)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/04-Ladies-Shawl-Main-5.webp",
+    "price": 1550,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6137",
+    "slug": "cozy-ladies-shawl-kashmiri-3",
+    "name": "Cozy Ladies Shawl (Kashmiri)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/03-Ladies-Shawl-Main-2.webp",
+    "price": 1550,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6134",
+    "slug": "cozy-ladies-shawl-kashmiri-2",
+    "name": "Cozy Ladies Shawl (Kashmiri)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/02-Ladies-Shawl-Main-1.webp",
+    "price": 1550,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6130",
+    "slug": "pashmina-duke-shawl-6",
+    "name": "Pashmina Duke Shawl | পশমিনা ডিউক শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/10-Pashmina-Shawl-002-Main-11.webp",
+    "price": 4200,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6126",
+    "slug": "pashmina-duke-shawl-5",
+    "name": "Pashmina Duke Shawl | পশমিনা ডিউক শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/09-Pashmina-Shawl-002-Main-5.webp",
+    "price": 4200,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6122",
+    "slug": "pashmina-duke-shawl-4",
+    "name": "Pashmina Duke Shawl | পশমিনা ডিউক শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/08-Pashmina-Shawl-002-Main-10.webp",
+    "price": 4200,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6118",
+    "slug": "pashmina-duke-shawl-3",
+    "name": "Pashmina Duke Shawl | পশমিনা ডিউক শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/06-Pashmina-Shawl-002-Main-3.webp",
+    "price": 4200,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6114",
+    "slug": "pashmina-duke-shawl-2",
+    "name": "Pashmina Duke Shawl | পশমিনা ডিউক শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/03-Pashmina-Shawl-002-Main-8.webp",
+    "price": 4200,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6110",
+    "slug": "kashmiri-dapper-shawl-6",
+    "name": "Kashmiri Dapper Shawl | কাশ্মীরি ড্যাপার শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/02-Pashmina-Shawl-001-Main-5.webp",
+    "price": 4300,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6106",
+    "slug": "kashmiri-dapper-shawl-5",
+    "name": "Kashmiri Dapper Shawl | কাশ্মীরি ড্যাপার শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/01-Pashmina-Shawl-001-Main-5.webp",
+    "price": 4300,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6102",
+    "slug": "kashmiri-dapper-shawl-4",
+    "name": "Kashmiri Dapper Shawl | কাশ্মীরি ড্যাপার শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/07-Pashmina-Shawl-002-Main-12.webp",
+    "price": 4300,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6098",
+    "slug": "kashmiri-dapper-shawl-3",
+    "name": "Kashmiri Dapper Shawl | কাশ্মীরি ড্যাপার শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/05-Pashmina-Shawl-002-Main-8.webp",
+    "price": 4300,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6094",
+    "slug": "kashmiri-dapper-shawl-2",
+    "name": "Kashmiri Dapper Shawl | কাশ্মীরি ড্যাপার শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/04-Pashmina-Shawl-002-Main-5.webp",
+    "price": 4300,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6090",
+    "slug": "plush-kashmiri-shawl-7",
+    "name": "Plush Kashmiri Shawl | প্লাশ কাশ্মীরি শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/06-Pashmina-Shawl-VIP-Main-5.webp",
+    "price": 2150,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6085",
+    "slug": "plush-kashmiri-shawl-6",
+    "name": "Plush Kashmiri Shawl | প্লাশ কাশ্মীরি শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/07-Pashmina-Shawl-VIP-Main-25.webp",
+    "price": 2150,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6081",
+    "slug": "plush-kashmiri-shawl-5",
+    "name": "Plush Kashmiri Shawl | প্লাশ কাশ্মীরি শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/05-Pashmina-Shawl-VIP-Main-49.webp",
+    "price": 2150,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6077",
+    "slug": "plush-kashmiri-shawl-4",
+    "name": "Plush Kashmiri Shawl | প্লাশ কাশ্মীরি শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/04-Pashmina-Shawl-VIP-Main-39.webp",
+    "price": 2150,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6073",
+    "slug": "plush-kashmiri-shawl-3",
+    "name": "Plush Kashmiri Shawl | প্লাশ কাশ্মীরি শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/03-Pashmina-Shawl-VIP-Main-25.webp",
+    "price": 2150,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6069",
+    "slug": "plush-kashmiri-shawl-2",
+    "name": "Plush Kashmiri Shawl | প্লাশ কাশ্মীরি শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/02-Pashmina-Shawl-VIP-Main-5.webp",
+    "price": 2150,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6050",
+    "slug": "cozy-ladies-shawl-kashmiri",
+    "name": "Cozy Ladies Shawl (Kashmiri)",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/01-Ladies-Shawl-Main-7.webp",
+    "price": 1550,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6040",
+    "slug": "kashmiri-dapper-shawl",
+    "name": "Kashmiri Dapper Shawl | কাশ্মীরি ড্যাপার শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/02-Pashmina-Shawl-002-Main-19.webp",
+    "price": 4300,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6030",
+    "slug": "pashmina-duke-shawl",
+    "name": "Pashmina Duke Shawl | পশমিনা ডিউক শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/01-Pashmina-Shawl-002-Main-44.webp",
+    "price": 4200,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-6018",
+    "slug": "plush-kashmiri-shawl",
+    "name": "Plush Kashmiri Shawl | প্লাশ কাশ্মীরি শাল",
+    "image": "https://libas.shop/wp-content/uploads/2025/11/01-Pashmina-Shawl-VIP-Main-10.webp",
+    "price": 2150,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5825",
+    "slug": "premium-dignity-gift-man-6",
+    "name": "Premium Dignity Gift (Men)",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Premium-Dignity-Gift-Man-4.webp",
+    "price": 2250,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5784",
+    "slug": "affectionate-ladies-gift-7",
+    "name": "Affectionate Ladies Gift",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Affectionate-Ladies-Gift-4.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5836",
+    "slug": "premium-dignity-gift-man-10",
+    "name": "Premium Dignity Gift (Men)",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Premium-Dignity-Gift-Man-7.webp",
+    "price": 2250,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5835",
+    "slug": "affectionate-ladies-gift-10",
+    "name": "Affectionate Ladies Gift",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Affectionate-Ladies-Gift-2.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5837",
+    "slug": "happy-couple-watch-11",
+    "name": "Happy Couple Watch",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Happy-Couple-Watch-1.webp",
+    "price": 2000,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5807",
+    "slug": "happy-couple-watch-9",
+    "name": "Happy Couple Watch",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Happy-Couple-Watch-3.webp",
+    "price": 2000,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5828",
+    "slug": "premium-dignity-gift-man-9",
+    "name": "Premium Dignity Gift (Men)",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Premium-Dignity-Gift-Man-1.webp",
+    "price": 2250,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5827",
+    "slug": "premium-dignity-gift-man-8",
+    "name": "Premium Dignity Gift (Men)",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Premium-Dignity-Gift-Man-2.webp",
+    "price": 2250,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5826",
+    "slug": "premium-dignity-gift-man-7",
+    "name": "Premium Dignity Gift (Men)",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Premium-Dignity-Gift-Man-3.webp",
+    "price": 2250,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5824",
+    "slug": "premium-dignity-gift-man-5",
+    "name": "Premium Dignity Gift (Men)",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Premium-Dignity-Gift-Man-5.webp",
+    "price": 2250,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5823",
+    "slug": "premium-dignity-gift-man-4",
+    "name": "Premium Dignity Gift (Men)",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Premium-Dignity-Gift-Man-6.webp",
+    "price": 2250,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5822",
+    "slug": "premium-dignity-gift-man-3",
+    "name": "Premium Dignity Gift (Men)",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Premium-Dignity-Gift-Man-8.webp",
+    "price": 2250,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5821",
+    "slug": "premium-dignity-gift-man-2",
+    "name": "Premium Dignity Gift (Men)",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Premium-Dignity-Gift-Man-9.webp",
+    "price": 2250,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5820",
+    "slug": "premium-dignity-gift-man",
+    "name": "Premium Dignity Gift (Men)",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Premium-Dignity-Gift-Man-10.webp",
+    "price": 2250,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5808",
+    "slug": "happy-couple-watch-10",
+    "name": "Happy Couple Watch",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Happy-Couple-Watch-2.webp",
+    "price": 2000,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5806",
+    "slug": "happy-couple-watch-8",
+    "name": "Happy Couple Watch",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Happy-Couple-Watch-4.webp",
+    "price": 2000,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5805",
+    "slug": "happy-couple-watch-7",
+    "name": "Happy Couple Watch",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Happy-Couple-Watch-5.webp",
+    "price": 2000,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5804",
+    "slug": "happy-couple-watch-6",
+    "name": "Happy Couple Watch",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Happy-Couple-Watch-6.webp",
+    "price": 2000,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5803",
+    "slug": "happy-couple-watch-5",
+    "name": "Happy Couple Watch",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Happy-Couple-Watch-7.webp",
+    "price": 2000,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5802",
+    "slug": "happy-couple-watch-4",
+    "name": "Happy Couple Watch",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Happy-Couple-Watch-8.webp",
+    "price": 2000,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5801",
+    "slug": "happy-couple-watch-3",
+    "name": "Happy Couple Watch",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Happy-Couple-Watch-9.webp",
+    "price": 2000,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5800",
+    "slug": "happy-couple-watch-2",
+    "name": "Happy Couple Watch",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Happy-Couple-Watch-10.webp",
+    "price": 2000,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5799",
+    "slug": "happy-couple-watch",
+    "name": "Happy Couple Watch",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Happy-Couple-Watch-11.webp",
+    "price": 2000,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5786",
+    "slug": "affectionate-ladies-gift-9",
+    "name": "Affectionate Ladies Gift",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Affectionate-Ladies-Gift-1.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5785",
+    "slug": "affectionate-ladies-gift-8",
+    "name": "Affectionate Ladies Gift",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Affectionate-Ladies-Gift-3.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5783",
+    "slug": "affectionate-ladies-gift-6",
+    "name": "Affectionate Ladies Gift",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Affectionate-Ladies-Gift-5.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5782",
+    "slug": "affectionate-ladies-gift-5",
+    "name": "Affectionate Ladies Gift",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Affectionate-Ladies-Gift-6.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5781",
+    "slug": "affectionate-ladies-gift-4",
+    "name": "Affectionate Ladies Gift",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Affectionate-Ladies-Gift-7.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5780",
+    "slug": "affectionate-ladies-gift-3",
+    "name": "Affectionate Ladies Gift",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Affectionate-Ladies-Gift-8.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5779",
+    "slug": "affectionate-ladies-gift-2",
+    "name": "Affectionate Ladies Gift",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Affectionate-Ladies-Gift-9.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5778",
+    "slug": "affectionate-ladies-gift",
+    "name": "Affectionate Ladies Gift",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Affectionate-Ladies-Gift-10.webp",
+    "price": 1500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5691",
+    "slug": "vampire-blood",
+    "name": "Vampire Blood",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Attar-Bottle-01-1.webp",
+    "price": 300,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5687",
+    "slug": "ehsas-al-arabia",
+    "name": "Ehsas Al Arabia",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Attar-Bottle-08-1.webp",
+    "price": 400,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5683",
+    "slug": "jannatul-ferdaus",
+    "name": "Jannatul Ferdaus",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Attar-Bottle-02-1.webp",
+    "price": 300,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5679",
+    "slug": "black-oud",
+    "name": "Black Oud",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Attar-Bottle-04-1.webp",
+    "price": 400,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5675",
+    "slug": "paris-hilton",
+    "name": "Paris Hilton",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Attar-Bottle-06-1.webp",
+    "price": 240,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5671",
+    "slug": "baccarat-rouge",
+    "name": "Baccarat Rouge",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Attar-Bottle-09-1.webp",
+    "price": 400,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5657",
+    "slug": "cool-water",
+    "name": "Cool Water",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Attar-Bottle-03-1.webp",
+    "price": 300,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-5615",
+    "slug": "contrast-jubba",
+    "name": "Contrast Jubba | কন্ট্রাস্ট জুব্বা",
+    "image": "https://libas.shop/wp-content/uploads/2025/10/Jubba-Contrast-Main.webp",
+    "price": 2500,
+    "desc": "Premium Quality Product from LIBAS Shop."
+  },
+  {
+    "id": "libas-7105",
+    "slug": "emirati-royal-thobe-jubba",
+    "name": "Emirati Royal Thobe | এমিরেটস রয়্যাল জুব্বা",
+    "image": "https://libas.shop/wp-content/uploads/2026/02/Libas-Elite-Jubba-eid-Special-10.webp",
+    "price": 2700,
+    "desc": "Royal Emirati Thobe Jubba by LIBAS Shop."
+  },
+  {
+    "id": "libas-7106",
+    "slug": "classic-sultan-cotton-jubba",
+    "name": "Classic Sultan Jubba | সুলতান সুতি জুব্বা",
+    "image": "https://libas.shop/wp-content/uploads/2026/02/Libas-Elite-Jubba-eid-Special-7.webp",
+    "price": 2400,
+    "desc": "Classic Sultan Cotton Jubba by LIBAS Shop."
+  }
+]
