@@ -47,11 +47,11 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
 }
 
 .flash-banner-card {
-  background: linear-gradient(135deg, #1D2A23 0%, #141E19 100%);
-  border: 1.5px solid var(--color-accent);
+  background: linear-gradient(135deg, #3A5646 0%, #273A2F 100%);
+  border: 3.5px solid var(--color-accent);
   border-radius: var(--radius-xl);
   padding: 36px;
-  box-shadow: 0 12px 32px rgba(29, 42, 35, 0.25);
+  box-shadow: 0 0 30px rgba(190, 145, 52, 0.65), 0 0 50px rgba(190, 145, 52, 0.3), 0 12px 32px rgba(29, 42, 35, 0.25);
   position: relative;
   overflow: hidden;
 
@@ -65,15 +65,15 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
     background: linear-gradient(
       45deg,
       transparent 0%,
-      transparent 42%,
-      rgba(255, 255, 255, 0.08) 48%,
-      rgba(190, 145, 52, 0.3) 50%,
-      rgba(255, 255, 255, 0.08) 52%,
-      transparent 58%,
+      transparent 40%,
+      rgba(255, 255, 255, 0.15) 47%,
+      rgba(247, 239, 207, 0.6) 50%,
+      rgba(255, 255, 255, 0.15) 53%,
+      transparent 60%,
       transparent 100%
     );
     transform: rotate(30deg);
-    animation: flashShineSwipe 5s infinite cubic-bezier(0.25, 1, 0.5, 1);
+    animation: flashShineSwipe 2.0s infinite cubic-bezier(0.2, 1, 0.4, 1);
     pointer-events: none;
   }
 
@@ -84,13 +84,13 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
 
 @keyframes flashShineSwipe {
   0% {
-    transform: translateX(-120%) rotate(30deg);
+    transform: translateX(-130%) rotate(30deg);
   }
-  88% {
-    transform: translateX(120%) rotate(30deg);
+  75% {
+    transform: translateX(130%) rotate(30deg);
   }
   100% {
-    transform: translateX(120%) rotate(30deg);
+    transform: translateX(130%) rotate(30deg);
   }
 }
 
