@@ -70,10 +70,10 @@ const banners = [
           :modules="modules"
           :slides-per-view="1"
           :loop="true"
-          :speed="3000"
+          :speed="1800"
           :effect="'fade'"
           :fadeEffect="{ crossFade: true }"
-          :autoplay="{ delay: 5500, disableOnInteraction: false }"
+          :autoplay="{ delay: 2500, disableOnInteraction: false }"
           :pagination="{ clickable: true }"
           class="womens-banner-swiper"
         >
