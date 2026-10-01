@@ -15,7 +15,7 @@ const modules = [Autoplay, Navigation, Pagination];
 const productStore = useProductStore();
 const flashProducts = computed(() => {
   const list = productStore.flashSaleProducts;
-  return list.length > 0 ? list : productStore.products.slice(0, 10);
+  return list.length > 0 ? list.slice(0, 8) : productStore.products.slice(0, 8);
 });
 </script>
 
@@ -47,17 +47,17 @@ const flashProducts = computed(() => {
           <Swiper
             :modules="modules"
             :slides-per-view="4"
-            :space-between="20"
+            :space-between="18"
             :loop="true"
             :speed="700"
-            :autoplay="{ delay: 1500, disableOnInteraction: false, pauseOnMouseEnter: true }"
+            :autoplay="{ delay: 1800, disableOnInteraction: false, pauseOnMouseEnter: true }"
             :navigation="true"
-            :pagination="{ clickable: true }"
+            :pagination="{ clickable: true, dynamicBullets: true, dynamicMainBullets: 3 }"
             :breakpoints="{
               0: { slidesPerView: 1.2, spaceBetween: 12 },
               480: { slidesPerView: 2, spaceBetween: 14 },
               768: { slidesPerView: 3, spaceBetween: 16 },
-              1024: { slidesPerView: 4, spaceBetween: 20 }
+              1024: { slidesPerView: 4, spaceBetween: 18 }
             }"
             class="flash-swiper"
           >
@@ -80,7 +80,7 @@ const flashProducts = computed(() => {
   background: linear-gradient(135deg, #FDFBF7 0%, #F5F1E6 100%);
   border: 1px solid rgba(190, 145, 52, 0.35);
   border-radius: var(--radius-xl);
-  padding: 36px;
+  padding: 32px 28px 28px;
   box-shadow: 0 10px 30px rgba(29, 42, 35, 0.06), 0 2px 12px rgba(190, 145, 52, 0.1);
   position: relative;
   overflow: hidden;
@@ -108,7 +108,7 @@ const flashProducts = computed(() => {
   }
 
   @media (max-width: 768px) {
-    padding: 24px 14px;
+    padding: 20px 12px 16px;
   }
 }
 
@@ -128,12 +128,14 @@ const flashProducts = computed(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
+  padding: 0 8px;
 
   @media (max-width: 992px) {
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: 16px;
+    padding: 0;
   }
 }
 
@@ -158,11 +160,11 @@ const flashProducts = computed(() => {
 }
 
 .section-title {
-  font-size: 1.9rem;
+  font-size: 1.85rem;
   color: var(--color-charcoal);
 
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
   }
 }
 
@@ -188,8 +190,15 @@ const flashProducts = computed(() => {
 }
 
 .flash-swiper {
-  padding-bottom: 40px !important;
-  padding-top: 6px;
+  padding-left: 28px !important;
+  padding-right: 28px !important;
+  padding-bottom: 36px !important;
+  padding-top: 4px;
+
+  @media (max-width: 768px) {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
 
   :deep(.swiper-slide) {
     height: auto;
@@ -200,50 +209,42 @@ const flashProducts = computed(() => {
     width: 100%;
   }
 
-  /* Custom Navigation Arrow Buttons */
+  /* Sleek Minimal Arrow Buttons inside padding gutter */
   :deep(.swiper-button-prev),
   :deep(.swiper-button-next) {
-    width: 36px;
-    height: 36px;
-    background: #FFFFFF;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-    border: 1px solid rgba(190, 145, 52, 0.25);
-    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
     color: var(--color-charcoal);
-    transition: all 0.25s ease;
+    transition: all 0.2s ease;
+    margin-top: -24px;
+    opacity: 0.65;
 
     &::after {
-      font-size: 13px;
-      font-weight: 800;
+      font-size: 16px;
+      font-weight: 900;
     }
 
     &:hover {
-      background: var(--color-accent);
-      color: #FFFFFF;
-      border-color: var(--color-accent);
-      transform: scale(1.1);
+      opacity: 1;
+      color: var(--color-accent);
+      transform: scale(1.25);
     }
   }
 
   :deep(.swiper-button-prev) {
-    left: -14px;
-
-    @media (max-width: 768px) {
-      left: 0;
-    }
+    left: -2px;
   }
 
   :deep(.swiper-button-next) {
-    right: -14px;
-
-    @media (max-width: 768px) {
-      right: 0;
-    }
+    right: -2px;
   }
 
-  /* Custom Pagination Bullets */
+  /* Custom Pagination Bullets - Limited to 3-4 active/dynamic dots */
   :deep(.swiper-pagination) {
-    bottom: 4px;
+    bottom: 2px;
   }
 
   :deep(.swiper-pagination-bullet) {

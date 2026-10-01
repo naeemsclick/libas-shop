@@ -1,16 +1,15 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules';
+import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 import { ArrowRight } from 'lucide-vue-next';
 import { heroSlidesData } from '@/data/heroSlides';
 import { useLocaleStore } from '@/stores/locale';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 
-const modules = [Autoplay, Pagination, Navigation, EffectFade];
+const modules = [Autoplay, Pagination, EffectFade];
 const localeStore = useLocaleStore();
 </script>
 
@@ -29,7 +28,7 @@ const localeStore = useLocaleStore();
             :fadeEffect="{ crossFade: true }"
             :autoplay="{ delay: 7500, disableOnInteraction: false }"
             :pagination="{ clickable: true }"
-            :navigation="true"
+            :navigation="false"
             class="hero-swiper background-slideshow"
           >
             <SwiperSlide v-for="slide in heroSlidesData" :key="slide.id">
