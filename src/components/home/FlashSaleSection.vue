@@ -47,11 +47,11 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
 }
 
 .flash-banner-card {
-  background: linear-gradient(135deg, #24362B 0%, #17241C 100%);
-  border: 3.5px solid #946E22;
+  background: linear-gradient(135deg, #FDFBF7 0%, #F5F1E6 100%);
+  border: 1px solid rgba(190, 145, 52, 0.35);
   border-radius: var(--radius-xl);
   padding: 36px;
-  box-shadow: 0 0 30px rgba(148, 110, 34, 0.75), 0 0 50px rgba(148, 110, 34, 0.35), 0 12px 32px rgba(29, 42, 35, 0.25);
+  box-shadow: 0 10px 30px rgba(29, 42, 35, 0.06), 0 2px 12px rgba(190, 145, 52, 0.1);
   position: relative;
   overflow: hidden;
 
@@ -66,14 +66,14 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
       45deg,
       transparent 0%,
       transparent 40%,
-      rgba(255, 255, 255, 0.15) 47%,
-      rgba(247, 239, 207, 0.6) 50%,
-      rgba(255, 255, 255, 0.15) 53%,
+      rgba(190, 145, 52, 0.08) 47%,
+      rgba(247, 239, 207, 0.3) 50%,
+      rgba(190, 145, 52, 0.08) 53%,
       transparent 60%,
       transparent 100%
     );
     transform: rotate(30deg);
-    animation: flashShineSwipe 5.0s infinite ease-in-out;
+    animation: flashShineSwipe 6.0s infinite ease-in-out;
     pointer-events: none;
   }
 
@@ -129,7 +129,7 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
 
 .section-title {
   font-size: 1.9rem;
-  color: #FFFFFF;
+  color: var(--color-charcoal);
 
   @media (max-width: 768px) {
     font-size: 1.5rem;
@@ -144,7 +144,7 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
   .timer-label {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #ECEFEA;
+    color: var(--color-taupe);
   }
 }
 
