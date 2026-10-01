@@ -58,7 +58,7 @@ export async function onRequest(context) {
 
   let pageTitle = 'LIBAS Shop | YOUR CHOICE OUR PROMISE';
   let pageDesc = 'Discover modern Bangladeshi fashion, Jubba collections, Abayas, Perfumes, Watches, Shoes, and Sunnah essentials. Fast delivery across Bangladesh!';
-  let pageImage = \`\${hostDomain}/images/og-share-banner.jpg?v=libas2\`;
+  let pageImage = \`\${hostDomain}/images/whatsapp-thumb.jpg\`;
 
   if (path.startsWith('/product/')) {
     const slug = path.replace('/product/', '').split('/')[0].split('?')[0];
@@ -89,6 +89,10 @@ export async function onRequest(context) {
       }
     }
   }
+
+  const isSquareThumb = pageImage.includes('whatsapp-thumb.jpg');
+  const imgWidth = isSquareThumb ? '600' : '1200';
+  const imgHeight = isSquareThumb ? '600' : '630';
 
   const rewriter = new HTMLRewriter()
     .on('meta[property="fb:app_id"]', {
@@ -145,12 +149,12 @@ export async function onRequest(context) {
     })
     .on('meta[property="og:image:width"]', {
       element(el) {
-        el.setAttribute('content', '1200');
+        el.setAttribute('content', imgWidth);
       }
     })
     .on('meta[property="og:image:height"]', {
       element(el) {
-        el.setAttribute('content', '630');
+        el.setAttribute('content', imgHeight);
       }
     })
     .on('meta[property="og:url"]', {
