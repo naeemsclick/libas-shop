@@ -31,18 +31,33 @@ const addedToCartSuccess = ref(false);
 
 const isZoomed = ref(false);
 const zoomOrigin = ref('center center');
+let animationFrameId: number | null = null;
 
 function handleImageMouseMove(e: MouseEvent) {
   const container = e.currentTarget as HTMLElement;
   if (!container) return;
-  const rect = container.getBoundingClientRect();
-  const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
-  const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
-  zoomOrigin.value = `${x.toFixed(2)}% ${y.toFixed(2)}%`;
-  isZoomed.value = true;
+  
+  if (animationFrameId) {
+    cancelAnimationFrame(animationFrameId);
+  }
+
+  const clientX = e.clientX;
+  const clientY = e.clientY;
+
+  animationFrameId = requestAnimationFrame(() => {
+    const rect = container.getBoundingClientRect();
+    const x = Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100));
+    const y = Math.max(0, Math.min(100, ((clientY - rect.top) / rect.height) * 100));
+    zoomOrigin.value = `${x.toFixed(1)}% ${y.toFixed(1)}%`;
+    isZoomed.value = true;
+  });
 }
 
 function handleImageMouseLeave() {
+  if (animationFrameId) {
+    cancelAnimationFrame(animationFrameId);
+    animationFrameId = null;
+  }
   isZoomed.value = false;
 }
 
@@ -398,7 +413,7 @@ function handleWhatsAppOrder() {
     height: 100%;
     object-fit: contain;
     padding: 24px;
-    transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), transform-origin 0.08s ease-out;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform-origin 0s ease;
     pointer-events: none;
     will-change: transform, transform-origin;
   }
