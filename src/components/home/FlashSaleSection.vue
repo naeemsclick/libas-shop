@@ -1,12 +1,22 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { Zap, ArrowRight } from 'lucide-vue-next';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import FlashSaleTimer from './FlashSaleTimer.vue';
-import ProductGrid from '@/components/product/ProductGrid.vue';
+import ProductCard from '@/components/product/ProductCard.vue';
 import { useProductStore } from '@/stores/product';
 
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+const modules = [Autoplay, Navigation, Pagination];
 const productStore = useProductStore();
-const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4));
+const flashProducts = computed(() => {
+  const list = productStore.flashSaleProducts;
+  return list.length > 0 ? list : productStore.products.slice(0, 10);
+});
 </script>
 
 <template>
@@ -34,7 +44,27 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
         </div>
 
         <div class="flash-products-wrapper">
-          <ProductGrid :products="flashProducts" :columns="4" />
+          <Swiper
+            :modules="modules"
+            :slides-per-view="4"
+            :space-between="20"
+            :loop="true"
+            :speed="700"
+            :autoplay="{ delay: 1500, disableOnInteraction: false, pauseOnMouseEnter: true }"
+            :navigation="true"
+            :pagination="{ clickable: true }"
+            :breakpoints="{
+              0: { slidesPerView: 1.2, spaceBetween: 12 },
+              480: { slidesPerView: 2, spaceBetween: 14 },
+              768: { slidesPerView: 3, spaceBetween: 16 },
+              1024: { slidesPerView: 4, spaceBetween: 20 }
+            }"
+            class="flash-swiper"
+          >
+            <SwiperSlide v-for="product in flashProducts" :key="product.id">
+              <ProductCard :product="product" />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
     </div>
@@ -78,7 +108,7 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
   }
 
   @media (max-width: 768px) {
-    padding: 24px 16px;
+    padding: 24px 14px;
   }
 }
 
@@ -151,4 +181,86 @@ const flashProducts = computed(() => productStore.flashSaleProducts.slice(0, 4))
 .flash-cta {
   box-shadow: 0 6px 18px rgba(190, 145, 52, 0.35);
 }
+
+.flash-products-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.flash-swiper {
+  padding-bottom: 40px !important;
+  padding-top: 6px;
+
+  :deep(.swiper-slide) {
+    height: auto;
+    display: flex;
+  }
+
+  :deep(.swiper-slide > *) {
+    width: 100%;
+  }
+
+  /* Custom Navigation Arrow Buttons */
+  :deep(.swiper-button-prev),
+  :deep(.swiper-button-next) {
+    width: 36px;
+    height: 36px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(190, 145, 52, 0.25);
+    border-radius: 50%;
+    color: var(--color-charcoal);
+    transition: all 0.25s ease;
+
+    &::after {
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    &:hover {
+      background: var(--color-accent);
+      color: #FFFFFF;
+      border-color: var(--color-accent);
+      transform: scale(1.1);
+    }
+  }
+
+  :deep(.swiper-button-prev) {
+    left: -14px;
+
+    @media (max-width: 768px) {
+      left: 0;
+    }
+  }
+
+  :deep(.swiper-button-next) {
+    right: -14px;
+
+    @media (max-width: 768px) {
+      right: 0;
+    }
+  }
+
+  /* Custom Pagination Bullets */
+  :deep(.swiper-pagination) {
+    bottom: 4px;
+  }
+
+  :deep(.swiper-pagination-bullet) {
+    background: rgba(190, 145, 52, 0.35);
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+    margin: 0 4px !important;
+    transition: all 0.3s ease;
+  }
+
+  :deep(.swiper-pagination-bullet-active) {
+    background: var(--color-accent);
+    width: 22px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(190, 145, 52, 0.4);
+  }
+}
 </style>
+

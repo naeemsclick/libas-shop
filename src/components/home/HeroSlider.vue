@@ -62,8 +62,8 @@ const localeStore = useLocaleStore();
 
         <!-- Right Side: 2 Stacked Side Banners (approx 32% width) -->
         <div class="hero-side-banners">
-          <!-- Top Card: Premium Modest Style Banner -->
-          <div class="side-banner-card">
+          <!-- Top Card: Premium Modest Style Banner (Entire Card Clickable) -->
+          <router-link to="/category/clothing" class="side-banner-card" title="Explore Clothing Collection">
             <img src="/images/banners/hero-right-top.jpg" alt="Premium Modest Style" class="side-card-bg" />
             <div class="side-card-overlay"></div>
             <div class="side-card-content">
@@ -73,15 +73,15 @@ const localeStore = useLocaleStore();
               <h3 class="side-title">
                 {{ localeStore.isBangla ? 'প্রিমিয়াম শালীন ফ্যাশন ও পোশাক' : 'PREMIUM MODEST STYLE' }}
               </h3>
-              <router-link to="/category/clothing" class="side-link">
+              <div class="side-link">
                 <span>{{ localeStore.isBangla ? 'অর্ডার করুন' : 'Shop Now' }}</span>
                 <ArrowRight :size="14" />
-              </router-link>
+              </div>
             </div>
-          </div>
+          </router-link>
 
-          <!-- Bottom Card: Shoes & Footwear Banner -->
-          <div class="side-banner-card">
+          <!-- Bottom Card: Shoes & Footwear Banner (Entire Card Clickable) -->
+          <router-link to="/category/shoes" class="side-banner-card" title="Explore Shoes Collection">
             <img src="/images/banners/hero-right-bottom.jpg" alt="Premium Shoes Collection" class="side-card-bg" />
             <div class="side-card-overlay"></div>
             <div class="side-card-content">
@@ -91,12 +91,12 @@ const localeStore = useLocaleStore();
               <h3 class="side-title">
                 {{ localeStore.isBangla ? 'প্রিমিয়াম জুতা ও স্যান্ডেল কালেকশন' : 'PREMIUM SHOES COLLECTION' }}
               </h3>
-              <router-link to="/category/shoes" class="side-link">
+              <div class="side-link">
                 <span>{{ localeStore.isBangla ? 'অর্ডার করুন' : 'Shop Now' }}</span>
                 <ArrowRight :size="14" />
-              </router-link>
+              </div>
             </div>
-          </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -441,6 +441,23 @@ const localeStore = useLocaleStore();
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18), 0 0 20px rgba(190, 145, 52, 0.3);
+
+    .side-card-bg {
+      transform: scale(1.07);
+    }
+
+    .side-link {
+      color: var(--color-accent);
+      transform: translateX(4px);
+    }
+  }
 
   @media (max-width: 991px) {
     height: 190px;
