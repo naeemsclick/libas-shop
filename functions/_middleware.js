@@ -23,7 +23,7 @@ export async function onRequest(context) {
 
   let pageTitle = 'LIBAS Shop | YOUR CHOICE OUR PROMISE';
   let pageDesc = 'Discover modern Bangladeshi fashion, Jubba collections, Abayas, Perfumes, Watches, Shoes, and Sunnah essentials. Fast delivery across Bangladesh!';
-  let pageImage = `${hostDomain}/images/og-share-banner.jpg`;
+  let pageImage = `${hostDomain}/images/og-share-banner.jpg?v=libas2`;
 
   if (path.startsWith('/product/')) {
     const slug = path.replace('/product/', '').split('/')[0].split('?')[0];
