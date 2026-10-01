@@ -146,10 +146,17 @@ function handleWhatsAppOrder() {
             </span>
           </div>
 
-          <div class="price-box">
-            <span class="current-price">{{ formatPrice(product.price) }}</span>
-            <span v-if="product.compareAtPrice" class="old-price">{{ formatPrice(product.compareAtPrice) }}</span>
-            <span v-if="product.discount" class="discount-tag">-{{ product.discount }}% OFF</span>
+          <div class="price-section-container">
+            <div class="price-box">
+              <span class="current-price">{{ formatPrice(product.price) }}</span>
+              <span v-if="product.compareAtPrice" class="old-price">{{ formatPrice(product.compareAtPrice) }}</span>
+              <span v-if="product.discount" class="discount-tag">-{{ product.discount }}% OFF</span>
+            </div>
+            <div v-if="product.compareAtPrice && product.compareAtPrice > product.price" class="save-badge-row">
+              <span class="save-badge">
+                Your Save: <strong>{{ formatPrice(product.compareAtPrice - product.price) }}</strong>
+              </span>
+            </div>
           </div>
 
           <p class="short-desc">{{ product.shortDescription || product.description }}</p>
@@ -453,11 +460,15 @@ function handleWhatsAppOrder() {
   &.out-stock { background: #FCE8E8; color: var(--color-error); }
 }
 
+.price-section-container {
+  margin-bottom: 20px;
+}
+
 .price-box {
   display: flex;
   align-items: baseline;
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 6px;
 }
 
 .current-price {
@@ -467,8 +478,8 @@ function handleWhatsAppOrder() {
 }
 
 .old-price {
-  font-size: 1.1rem;
-  color: var(--color-taupe);
+  font-size: 1.15rem;
+  color: #888888;
   position: relative;
   text-decoration: none;
   display: inline-block;
@@ -477,13 +488,23 @@ function handleWhatsAppOrder() {
     content: '';
     position: absolute;
     top: 50%;
-    left: 0;
-    width: 100%;
+    left: -2px;
+    width: calc(100% + 4px);
     height: 2px;
-    background-color: var(--color-error);
+    background-color: #E53935;
+    box-shadow: 0 0 4px rgba(229, 57, 53, 0.4);
     transform: translateY(-50%) scaleX(0);
     transform-origin: left center;
     animation: strikethroughExpand 0.75s 0.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+@keyframes strikethroughExpand {
+  0% {
+    transform: translateY(-50%) scaleX(0);
+  }
+  100% {
+    transform: translateY(-50%) scaleX(1);
   }
 }
 
@@ -495,6 +516,31 @@ function handleWhatsAppOrder() {
   font-size: 0.8rem;
   font-weight: 700;
   animation: badgeSlideInRight 0.6s 0.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.save-badge-row {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.save-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 12px;
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+  color: #1B5E20;
+  border: 1px solid #A5D6A7;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(27, 94, 32, 0.08);
+
+  strong {
+    font-weight: 800;
+    color: #2E7D32;
+  }
 }
 
 .color-chip-btn {
