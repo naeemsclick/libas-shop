@@ -99,7 +99,12 @@ const localeStore = useLocaleStore();
     <div class="footer-bottom">
       <div class="container bottom-container">
         <p class="copyright">
-          {{ localeStore.t('footer.rights') }}
+          <template v-if="localeStore.isBangla">
+            © ২০২৬ <span class="brand-name-gold">লিবাস শপ</span> | সর্বস্বত্ব সংরক্ষিত।
+          </template>
+          <template v-else>
+            © 2026 <span class="brand-name-gold">LIBAS Shop</span> | All Rights Reserved.
+          </template>
         </p>
 
         <!-- Center Policy Links -->
@@ -300,6 +305,11 @@ const localeStore = useLocaleStore();
   font-size: 0.85rem;
   color: #93B5A5;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  .brand-name-gold {
+    color: var(--color-accent);
+    font-weight: 700;
+  }
 }
 
 .bottom-container {
