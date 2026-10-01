@@ -91,6 +91,23 @@ export async function onRequest(context) {
         el.setAttribute('content', pageImage);
       }
     })
+    .on('meta[property="og:image:type"]', {
+      element(el) {
+        const ext = pageImage.split('.').pop().split('?')[0].toLowerCase();
+        const mime = ext === 'png' ? 'image/png' : ext === 'webp' ? 'image/webp' : 'image/jpeg';
+        el.setAttribute('content', mime);
+      }
+    })
+    .on('meta[property="og:image:width"]', {
+      element(el) {
+        el.setAttribute('content', '1200');
+      }
+    })
+    .on('meta[property="og:image:height"]', {
+      element(el) {
+        el.setAttribute('content', '630');
+      }
+    })
     .on('meta[property="og:url"]', {
       element(el) {
         el.setAttribute('content', hostUrl);
