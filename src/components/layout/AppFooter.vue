@@ -101,6 +101,18 @@ const localeStore = useLocaleStore();
         <p class="copyright">
           {{ localeStore.t('footer.rights') }}
         </p>
+
+        <!-- Center Policy Links -->
+        <div class="footer-policy-links">
+          <router-link to="/return-policy" class="footer-policy-link">
+            {{ localeStore.t('footer.returnPolicy') }}
+          </router-link>
+          <span class="policy-divider">|</span>
+          <router-link to="/privacy-policy" class="footer-policy-link">
+            {{ localeStore.t('footer.privacyPolicy') }}
+          </router-link>
+        </div>
+
         <p class="creator">
           Design & Developed by |
           <a
@@ -294,12 +306,35 @@ const localeStore = useLocaleStore();
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     text-align: center;
   }
+}
+
+.footer-policy-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-policy-link {
+  color: #B2D0C3;
+  font-size: 0.85rem;
+  transition: var(--transition-fast);
+
+  &:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+}
+
+.policy-divider {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.8rem;
 }
 
 .creator-link {

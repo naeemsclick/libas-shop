@@ -90,6 +90,21 @@ const router = createRouter({
           component: () => import('@/pages/Shop.vue')
         },
         {
+          path: 'return-policy',
+          name: 'ReturnPolicy',
+          component: () => import('@/pages/ReturnPolicy.vue')
+        },
+        {
+          path: 'refund-policy',
+          name: 'RefundPolicy',
+          component: () => import('@/pages/ReturnPolicy.vue')
+        },
+        {
+          path: 'privacy-policy',
+          name: 'PrivacyPolicy',
+          component: () => import('@/pages/PrivacyPolicy.vue')
+        },
+        {
           path: ':notFound(.*)*',
           name: 'NotFound',
           component: () => import('@/pages/NotFound.vue')

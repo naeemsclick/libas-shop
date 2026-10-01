@@ -126,6 +126,8 @@ const translations: Record<string, { bn: string; en: string }> = {
   'footer.customerCare': { bn: 'কাস্টমার কেয়ার', en: 'Customer Care' },
   'footer.contact': { bn: 'সরাসরি যোগাযোগ', en: 'Direct Contact' },
   'footer.rights': { bn: '© ২০২৬ লিবাস শপ | সর্বস্বত্ব সংরক্ষিত।', en: '© 2026 LIBAS Shop | All Rights Reserved.' },
+  'footer.returnPolicy': { bn: 'রিটার্ন ও রিফান্ড পলিসি', en: 'Return & Refund Policy' },
+  'footer.privacyPolicy': { bn: 'প্রাইভেসি পলিসি', en: 'Privacy Policy' },
   'footer.creator': { bn: 'Created by | Naeem Nahiyan', en: 'Created by | Naeem Nahiyan' }
 };
 
