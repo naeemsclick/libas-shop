@@ -1,10 +1,17 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { ArrowRight, Sparkles } from 'lucide-vue-next';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
 import ProductGrid from '@/components/product/ProductGrid.vue';
 import { useProductStore } from '@/stores/product';
 import { useLocaleStore } from '@/stores/locale';
 
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/pagination';
+
+const modules = [Autoplay, EffectFade, Pagination];
 const localeStore = useLocaleStore();
 const productStore = useProductStore();
 
@@ -13,6 +20,29 @@ const womensProducts = computed(() => {
   if (items.length > 0) return items.slice(0, 4);
   return productStore.products.slice(0, 4);
 });
+
+const banners = [
+  {
+    id: 1,
+    image: '/images/banners/womens-collection-banner.png',
+    badgeEn: 'EXCLUSIVE ABAYA & THREE-PIECE',
+    badgeBn: 'বিশেষ আবায়া ও থ্রি-পিস',
+    titleEn: 'ELEGANCE & MODESTY REDEFINED',
+    titleBn: 'শালীনতা ও অভিজাত্যের অনন্য প্রকাশ',
+    subEn: 'Discover Dubai Cherry Abayas, Premium Hijabs & Designer Dresses',
+    subBn: 'দুবাই চেরি আবায়া, প্রিমিয়াম হিজাব এবং সুদৃশ্য ড্রেস কালেকশন'
+  },
+  {
+    id: 2,
+    image: '/images/banners/womens-collection-banner-2.jpg',
+    badgeEn: 'NEW SEASON LUXURY WEAR',
+    badgeBn: 'নতুন সিজন লাক্সারি ওয়্যার',
+    titleEn: 'PREMIUM EMBROIDERED & FESTIVE COLLECTION',
+    titleBn: 'প্রিমিয়াম এমব্রয়ডারি ও এথনিক থ্রি-পিস',
+    subEn: 'Exquisite Crafts, Vibrant Colors & Luxurious Fabric Quality',
+    subBn: 'নান্দনিক কারুকাজ, আকর্ষণীয় রঙ ও প্রিমিয়াম ফ্যাব্রিকের সমাহার'
+  }
+];
 </script>
 
 <template>
@@ -36,30 +66,44 @@ const womensProducts = computed(() => {
       </div>
 
       <div class="banner-wrapper">
-        <router-link to="/category/womens-collection" class="banner-link">
-          <img
-            src="/images/banners/womens-collection-banner.png"
-            alt="Women's Collection - Dubai Cherry Abayas & Modest Wear"
-            class="banner-img"
-          />
-          <div class="banner-overlay"></div>
+        <Swiper
+          :modules="modules"
+          :slides-per-view="1"
+          :loop="true"
+          :speed="3000"
+          :effect="'fade'"
+          :fadeEffect="{ crossFade: true }"
+          :autoplay="{ delay: 5500, disableOnInteraction: false }"
+          :pagination="{ clickable: true }"
+          class="womens-banner-swiper"
+        >
+          <SwiperSlide v-for="banner in banners" :key="banner.id">
+            <router-link to="/category/womens-collection" class="banner-link">
+              <img
+                :src="banner.image"
+                :alt="banner.titleEn"
+                class="banner-img"
+              />
+              <div class="banner-overlay"></div>
 
-          <div class="banner-content">
-            <span class="badge-pill">
-              {{ localeStore.isBangla ? 'বিশেষ আবায়া ও থ্রি-পিস' : 'EXCLUSIVE ABAYA & THREE-PIECE' }}
-            </span>
-            <h3 class="banner-heading">
-              {{ localeStore.isBangla ? 'শালীনতা ও অভিজাত্যের অনন্য প্রকাশ' : 'ELEGANCE & MODESTY REDEFINED' }}
-            </h3>
-            <p class="banner-subtext">
-              {{ localeStore.isBangla ? 'দুবাই চেরি আবায়া, প্রিমিয়াম হিজাব এবং সুদৃশ্য ড্রেস কালেকশন' : 'Discover Dubai Cherry Abayas, Premium Hijabs & Designer Dresses' }}
-            </p>
-            <span class="shop-btn">
-              <span>{{ localeStore.isBangla ? 'শপ করুন' : 'Shop Women Collection' }}</span>
-              <ArrowRight :size="16" />
-            </span>
-          </div>
-        </router-link>
+              <div class="banner-content">
+                <span class="badge-pill">
+                  {{ localeStore.isBangla ? banner.badgeBn : banner.badgeEn }}
+                </span>
+                <h3 class="banner-heading">
+                  {{ localeStore.isBangla ? banner.titleBn : banner.titleEn }}
+                </h3>
+                <p class="banner-subtext">
+                  {{ localeStore.isBangla ? banner.subBn : banner.subEn }}
+                </p>
+                <span class="shop-btn">
+                  <span>{{ localeStore.isBangla ? 'শপ করুন' : 'Shop Women Collection' }}</span>
+                  <ArrowRight :size="16" />
+                </span>
+              </div>
+            </router-link>
+          </SwiperSlide>
+        </Swiper>
       </div>
 
       <!-- 4 Category Products Grid below banner -->
@@ -147,6 +191,30 @@ const womensProducts = computed(() => {
   margin-bottom: 28px;
 }
 
+.womens-banner-swiper {
+  width: 100%;
+
+  :deep(.swiper-pagination) {
+    bottom: 14px;
+  }
+
+  :deep(.swiper-pagination-bullet) {
+    background: rgba(255, 255, 255, 0.55);
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+    margin: 0 4px !important;
+    transition: all 0.3s ease;
+  }
+
+  :deep(.swiper-pagination-bullet-active) {
+    background: #FFFFFF;
+    width: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+}
+
 .banner-link {
   display: block;
   position: relative;
@@ -202,7 +270,7 @@ const womensProducts = computed(() => {
 
   @media (max-width: 600px) {
     top: auto;
-    bottom: 16px;
+    bottom: 24px;
     left: 16px;
     right: 16px;
     transform: none;
