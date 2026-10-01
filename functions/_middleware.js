@@ -91,6 +91,16 @@ export async function onRequest(context) {
         el.setAttribute('content', pageImage);
       }
     })
+    .on('link[rel="image_src"]', {
+      element(el) {
+        el.setAttribute('href', pageImage);
+      }
+    })
+    .on('meta[name="image"]', {
+      element(el) {
+        el.setAttribute('content', pageImage);
+      }
+    })
     .on('meta[property="og:image:type"]', {
       element(el) {
         const ext = pageImage.split('.').pop().split('?')[0].toLowerCase();
