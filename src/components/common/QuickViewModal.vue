@@ -312,7 +312,7 @@ function handleToggleWishlist() {
 }
 
 .discount-pill {
-  background: var(--color-accent);
+  background: #E53935;
   color: white;
   padding: 2px 8px;
   border-radius: var(--radius-sm);

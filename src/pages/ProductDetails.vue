@@ -556,7 +556,7 @@ function handleWhatsAppOrder() {
 }
 
 .discount-tag {
-  background: var(--color-accent);
+  background: #E53935;
   color: white;
   padding: 4px 10px;
   border-radius: var(--radius-sm);
