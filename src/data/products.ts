@@ -24,8 +24,8 @@ export const productsData: Product[] = [
     "badge": "NEW",
     "description": "Classic Style Meets Everyday Elegance. Introducing the Shirt Collar Jubba, designed for those who appreciate a smart, sophisticated look with a touch of traditional elegance. Made from premium Tayba fabric, this jubba offers a refined appearance with a stylish shirt collar, cuff sleeves, and high-quality snap buttons. Its clean design makes it a versatile choice for everyday wear, Jummah prayers, Eid celebrations, and special occasions.\n\nKey Features:\n• Premium Tayba Fabric – For a refined and elegant look.\n• Stylish Shirt Collar – Adds a smart, modern touch.\n• Cuff Sleeves – Designed for a neat and polished finish.\n• High-Quality Snap Buttons – For convenient fastening and a clean look.\n• Versatile Design – Suitable for everyday wear, Jummah, Eid, and special occasions.",
     "shortDescription": "Made from premium Tayba fabric featuring a smart shirt collar, cuff sleeves, and high-quality snap buttons.",
-    "sizes": ["M", "L", "XL", "XXL"],
-    "colors": ["White", "Navy", "Beige"],
+    "sizes": ["50/20", "50/21", "50/22", "52/21", "52/22", "52/23", "54/22", "54/24", "54/26", "56/24", "56/25", "56/26"],
+    "colors": ["White"],
     "tags": ["Jubba", "Shirt Collar Jubba", "Thobe", "Sunnah", "LIBAS"]
   },
   {
@@ -51,7 +51,7 @@ export const productsData: Product[] = [
     "badge": "NEW",
     "description": "Experience timeless elegance with the Elite Jubba V.2 in Deep Olive. Designed for those who appreciate premium fabric, refined details, and a sophisticated look. Crafted from premium Pakistani Esco fabric with Cantas Sherwani fabric detailing, this jubba combines elegance and comfort for a distinguished appearance. High-quality snap buttons and a stylish koti-style chest pocket add a touch of sophistication to its overall design.\n\nKey Features:\n• Premium Pakistani Esco Fabric – A refined fabric choice for an elegant appearance.\n• Cantas Sherwani Fabric – Adds a distinctive touch to the design.\n• High-Quality Snap Buttons – Designed for a polished finish and convenient fastening.\n• Koti-Style Chest Pocket – A stylish detail that enhances the overall look.\n• Elegant & Versatile Design – Suitable for Jummah, Eid, religious gatherings, and special occasions.",
     "shortDescription": "Crafted from premium Pakistani Esco fabric with Cantas Sherwani fabric detailing, snap buttons, and a koti-style chest pocket.",
-    "sizes": ["M", "L", "XL", "XXL"],
+    "sizes": ["50/20", "50/22", "52/20", "52/22", "52/24", "54/22", "54/24", "54/26"],
     "colors": ["Deep Olive"],
     "tags": ["Elite Jubba", "Jubba", "Deep Olive", "Thobe", "LIBAS"]
   },
@@ -78,7 +78,7 @@ export const productsData: Product[] = [
     "badge": "NEW",
     "description": "Experience timeless elegance with the Elite Jubba V.2 in Ash. Designed for those who appreciate premium fabric, refined details, and a sophisticated look. Crafted from premium Pakistani Esco fabric with Cantas Sherwani fabric detailing, this jubba combines elegance and comfort for a distinguished appearance. High-quality snap buttons and a stylish koti-style chest pocket add a touch of sophistication to its overall design.\n\nKey Features:\n• Premium Pakistani Esco Fabric – A refined fabric choice for an elegant appearance.\n• Cantas Sherwani Fabric – Adds a distinctive touch to the design.\n• High-Quality Snap Buttons – Designed for a polished finish and convenient fastening.\n• Koti-Style Chest Pocket – A stylish detail that enhances the overall look.\n• Elegant & Versatile Design – Suitable for Jummah, Eid, religious gatherings, and special occasions.",
     "shortDescription": "Crafted from premium Pakistani Esco fabric with Cantas Sherwani fabric detailing, snap buttons, and a koti-style chest pocket.",
-    "sizes": ["M", "L", "XL", "XXL"],
+    "sizes": ["50/20", "50/22", "52/20", "52/22", "52/24", "54/22", "54/24", "54/26"],
     "colors": ["Ash"],
     "tags": ["Elite Jubba", "Jubba", "Ash", "Thobe", "LIBAS"]
   },
@@ -105,7 +105,7 @@ export const productsData: Product[] = [
     "badge": "NEW",
     "description": "Experience timeless elegance with the Elite Jubba V.2 in Coffee. Designed for those who appreciate premium fabric, refined details, and a sophisticated look. Crafted from premium Pakistani Esco fabric with Cantas Sherwani fabric detailing, this jubba combines elegance and comfort for a distinguished appearance. High-quality snap buttons and a stylish koti-style chest pocket add a touch of sophistication to its overall design.\n\nKey Features:\n• Premium Pakistani Esco Fabric – A refined fabric choice for an elegant appearance.\n• Cantas Sherwani Fabric – Adds a distinctive touch to the design.\n• High-Quality Snap Buttons – Designed for a polished finish and convenient fastening.\n• Koti-Style Chest Pocket – A stylish detail that enhances the overall look.\n• Elegant & Versatile Design – Suitable for Jummah, Eid, religious gatherings, and special occasions.",
     "shortDescription": "Crafted from premium Pakistani Esco fabric with Cantas Sherwani fabric detailing, snap buttons, and a koti-style chest pocket.",
-    "sizes": ["M", "L", "XL", "XXL"],
+    "sizes": ["50/20", "50/22", "52/20", "52/22", "52/24", "54/22", "54/24", "54/26"],
     "colors": ["Coffee"],
     "tags": ["Elite Jubba", "Jubba", "Coffee", "Thobe", "LIBAS"]
   },
@@ -263,8 +263,8 @@ export const productsData: Product[] = [
     "id": "libas-6584",
     "slug": "reversible-waistcoat-arabian-style",
     "name": "Reversible Waistcoat (Arabian Style)",
-    "category": "Shoes",
-    "categorySlug": "shoes",
+    "category": "Clothing",
+    "categorySlug": "clothing",
     "images": [
       "https://libas.shop/wp-content/uploads/2025/11/New-Koti-Black-Main.webp",
       "https://libas.shop/wp-content/uploads/2025/11/New-Koti-Navy-Blue-Main.webp",
