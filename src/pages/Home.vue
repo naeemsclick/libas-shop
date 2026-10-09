@@ -35,7 +35,7 @@ useSeo({
       badgeBn="ঈদ স্পেশাল"
       categorySlug="clothing"
       link="/category/clothing"
-      :filter-fn="p => (p.name.toLowerCase().includes('jubba') || p.name.includes('জুব্বা') || p.name.toLowerCase().includes('panjabi')) && !p.name.toLowerCase().includes('hoodie')"
+      :filter-fn="p => !p.id.startsWith('libas-jubba-') && (p.name.toLowerCase().includes('jubba') || p.name.includes('জুব্বা') || p.name.toLowerCase().includes('panjabi')) && !p.name.toLowerCase().includes('hoodie')"
     />
 
     <!-- 2. NEW ARRIVALS -->
